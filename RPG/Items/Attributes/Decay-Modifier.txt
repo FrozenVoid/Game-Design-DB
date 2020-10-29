@@ -1,0 +1,7 @@
+Decay modifier(s) is a stat that decreases with use.
+What is for: Replaces durability systems with realistic alternative.
+Advantages: Items are not quickly disabled by use, but depowered gradually.
+Examples:
+A sword that does 6-10 damage, after N strikes decays to 5-9 damage sword.
+A shield that has 30 defense, after N hits decays to 29 defense.
+
