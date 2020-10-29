@@ -1,0 +1,3 @@
+A clock bonus items alters the 'remaining level time' for time-limited 
+levels. Usually a positive bonus is applied(but malicious items can steal time from player).
+Visual: depicted as time piece, clock or "T" block.
