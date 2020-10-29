@@ -1,0 +1,5 @@
+This weapon powerup modifies the character default weapon.
+The previous weapon is erased(unless its the initial 'base weapon').
+Character mode is unaffected(unlike Mario and Fire flower).
+Example:
+Laser gun on Contra.
