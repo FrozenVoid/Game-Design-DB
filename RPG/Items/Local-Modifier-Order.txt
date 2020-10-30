@@ -1,0 +1,7 @@
+A system of modifiers usually adds all modifiers independent of their order in an item:
+Item with +10% damage and +40 damage, will apply the same as Item with +40 damage and +10% damage, with attribute order irrelevan to the item.
+
+With Local Modifier Order, the item attributes are applies based on their order from the top: The firest attribute, then next,etc.
+What this creates: A more complex item generation that creates complex modifier interactions, where a stat(e.g. defense) can affected in multiple ways dependent on
+item's attribute order.
+ 
