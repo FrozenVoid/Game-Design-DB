@@ -3,16 +3,24 @@ Character Level=C
 Exp=E
 Interval = 100*1.1^C 
 Gained Exp= (E/C) //divided by character level(1<>N)
-Expirience in interval system is calculated as percentage of expirience before gaining a level: you cannot lose levels(expirience below 0 doesn't change) or gain multiple levels in this system, with gaining 100%+ exp of required interval advanced to next level and resets exp to zero.
+Expirience in interval system is calculated as percentage
+ of expirience before gaining a level: you cannot 
+ lose levels(expirience below 0 doesn't change) or 
+ gain multiple levels in this system, with gaining 
+ 100%+ exp of required interval advanced to next level
+  and resets exp to zero.
 
 Every level interval C to C+1 is treated as (0% to 100%) expirience
  fill bar from 0 to (100*1.1^C), with actions giving E=(1/C)*exp_gain.
 Example:
 Level 6 character performs action giving 20 exp.
-This translates to (1/6)*20=3.33exp(0.0188 of interval) where level 6-7 interval requires
+This translates to (1/6)*20=3.33exp(0.0188 of interval) 
+where level 6-7 interval requires
 100*1.1^6= 	177.1561 exp points to reach level 7.
-At level 12 the same 20 points will be (1/12)*20=1.66 exp(0.005 of interval) in an interval
+At level 12 the same 20 points will be (1/12)*20
+=1.66 exp(0.005 of interval) in an interval
  length of 	313.84exp points.
- At level 60 the same 20 point will be 20/60 0.33exp in an interval length
- of 100*1.1^60=30448 exp or (0.00001083 of interval).
+ At level 60 the same 20 point will be 20/60 or
+  0.33exp in  interval where exp bar length
+ of 100*1.1^60=30448 exp, which is (0.00001083 of interval).
  
