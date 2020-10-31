@@ -8,3 +8,11 @@ to add exp with formula type similar to:
 Example:
 Character cast level 8.110 spell Firebolt(+1.0exp per cast),
 getting 1/8.110 exp to 8.110+1/8.110= upgrade to level 8.233
+
+Advantages:
+Combines skill level and its expirience points into a single variable.
+Allows to upgrade skills dynamically(continous upgrade,no skill levelup events).
+
+Drawbacks:
+Some overhead due dividing by level at each skill-use event.
+enables grinding gameplay as gamestyle creates continous rewards.
