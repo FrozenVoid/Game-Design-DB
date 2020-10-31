@@ -1,0 +1,14 @@
+In Skill-Use-Leveling system, each skill/spell has an expirience bar
+ that defines its current level progress(for each level N<>N+1)
+The expirience is gained by using the skill or triggering its use(for random chance/trait-type/passive skill) in some situation.
+This system replaces "Skill Points" by allowing each skill to be independetly upgraded, with intuitive "Use->Skill Expirience" mechanic that is more realistic than arbitrary skill allocation.
+Unlocking new skills: usually a combination of the following
+A.Nth level of pre-required skill is reached 
+B.an object(e.g. spellbook, shrine, NPC trainer) is activated granting access to skill.
+
+Benefits:
+Highly intuitive, no pre-planned "Skill Build" allocation needed.
+Variety of game styles, with more diverse skills and less specialization(i.e. single skill builds don't exist in principle).
+Drawbacks:
+The system doesn't have much build diversity vs limited point pools(gained by leveling or pre-allocation), since it allows to maximize
+ all unlocked skills(with unlocking new skills being the main level-gating mechanism).
