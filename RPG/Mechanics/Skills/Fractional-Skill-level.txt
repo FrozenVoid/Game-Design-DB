@@ -1,0 +1,10 @@
+Fractional skill level is form of skill-use-leveling system
+without discrete levels. Each level insted is represented by
+a floating point number(e.g. skill_level=10.203)
+where expirience granted by skill use changes the skill_level
+(usually combined with https://github.com/FrozenVoid/Game-Design-DB/blob/main/RPG/Stats/Expirience/Interval-expirience.txt as interval 0.0-1.0 is most precise in floating point )
+to add exp with formula type similar to:
+  skill_level+=gained_base_exp/current_skill_level;
+Example:
+Character cast level 8.110 spell Firebolt(+1.0exp per cast),
+getting 1/8.110 exp to 8.110+1/8.110= upgrade to level 8.233
