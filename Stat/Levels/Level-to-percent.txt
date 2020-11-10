@@ -1,4 +1,10 @@
-formula:percent_fraction =  '1-1/2^(LEVEL/25)'
+formula:percent_fraction =  '1-1/2^(LEVEL/50)'
 to convert a level to percent in stat that is limited
  from 0.0-1.0(0% 100%).
+divisor can be adjusted for various limits;examples below;
+level 1    5     10    25    50    75   100   150   200   300     500
+/25  2%   12%   24%   50%   75%    87%  93%   98%   99.6% 99.97%  99.999%
+/50  1%   6%    12%   29%   50%    64%  75%   87%   93.6% 98%     99.9%
+/100 0.6% 3.4%  6%    15%   29%    40%  50%   64%   75%   87%     96.8%
+
  
