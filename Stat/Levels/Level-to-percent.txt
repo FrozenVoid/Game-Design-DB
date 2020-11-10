@@ -1,0 +1,4 @@
+formula:percent_fraction =  '1-1/2^(LEVEL/25)'
+to convert a level to percent in stat that is limited
+ from 0.0-1.0(0% 100%).
+ 
