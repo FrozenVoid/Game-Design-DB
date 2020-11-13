@@ -1,0 +1,54 @@
+A summary of most common economic archetypes of players, focusing on MMO with developed economies. These archetypes are not mutually exclusive, but generally indicate the primary behavior pattern of player that can be observed to be stable over time, with long-term goals and plans.
+
+1.Collectors:While "power fantasy" characters(Fighters/Tankers/Rangers/Assassins) do want to collect "the best equip ever", but Collectors concentrate on just rare items, unique modifiers or item sets/uniques with defensive bonuses for the sake of having them or "trying the setup" adding it to their 'Collection'.
+Some strive to find ultra-rare items or resources for crafting or trading, but Collectors are perfectly find with random magic junk for their PvE efforts. Games which want to attract Collectors need:
+A.Make items more unique, with more modifiers on average(a game has to spawn items with possible pool thousands of unique modifiers and items with lists of modifiers).
+B.Reduce vendor junk and low-quality loot, more magical/rare items.
+C.Large/Huge inventories by default: Collectors are hoarders and can't bear to drop/destroy anything.
+D.Areas filled with chests/boxes of loot, hidden treasures and hidden rooms. Collectors are natural Explorers.
+E.Many unique character builds which depend on item sets or require unique/rare items with unique/rare modifiers(especially modifiers that influence loot drop/chance rates/gathering of resource).
+
+A specific sub-class of collectors is the Munchkin(a min-maxing player that is theorycrafting the "ultimate setup" and only seeks to obtain it without regard to everything else: even using that setup in-game, their power fantasy is to win by stats/ they see the game as equation to solve with everything else as decorations).
+Munchkins see economy as means to getting their setup but don't want to work for it, usually resorting to buying only the most cost efficient items for their goals or parts of 'dream setup', using easiest and quickest cookie cutter builds to get to the endgame and collecting most
+ of in-game resources the fastest.
+
+Collectors(and especially Munchkins) dream is getting "Unfair Item Advantage" vs the Fighters or "Invulnerability Setup" which would allow them to be Explorers everywhere and risk nothing.Munchkins often get bored if they actually get their Dream Setup and resort to grief or unfair PvP to boost their ego.
+
+(usually Non-munchkin) Collectors often search the market for unique items(auction that exposes new items, filters for unique/rare items will help here) which they want to add to their collection.
+Collectors lacks the tactical/fighter skills so they tend to overvalue static/passive bonuses, chance to cast/hit/recover/do X and defensive abilities.
+Collectors are extremely defensive until they feel their "dream setup" is complete: they are not much after PvP or high-end instances/raid/bosses as they at best tend to be Tankers or Healers in the group - the items and in-game economy is more important to them(they are Collecting achievements/Reputation points/Quests rewards and are often completionist). If they have more offensive gear and free time, they would farm lower-level monsters as if they were magical pinatas full of random items, safely or withing protection of higher-level chars.
+Collectors which concentrate on economy are often targeting "dream setup" by getting gold/resources and vendor junk to assemble enough for trade. When they see another "dream setup" they will want it too 'for variety' or as alternative if the next setup allows something unique/special not available with current setup(item-only skills/charges/abilities/modifiers).
+
+2.The Crafters:
+Crafters are key component of player-centric economy as they can afford to concentrate on providing quality items for the market. Games which want to attract Crafters need:
+A.Low investment curve to start crafting and selling items.
+B.Crafters are often spending their time in town/safe zone and are not eager to withstand danger to get required resources(they are likely to trade or barter for them).
+C.Crafters are either interested in Reputation or Creating the Dream Setup for their Collector character. The Reputation crafters are mostly interested in currency/reward to maintain their flow of crafting work, so they sell everything they craft - their focus is creating many valuable items at least expense. The Dream Setup crafters are rarely sellers but usually craft out of need, they are essentially Collectors playing an item mini-game.
+Attracting Reputation Crafters:Items marked with their name/notes/text and uniqueness of their crafts determines prestige and level of respect(the main value of their work) - items which can be customized or personalized, but not bound to character work well.
+Attracting Dream Setup crafters:Easier crafting(low cost,less unique resources,less time wasted on crafting), user-friendly crafting techniques, upgrade crafts(socketed items/upgradeability). Dream Setup crafters often create different items in attempt for min/maxing some attribute/modifier(stacked stats/attributes/modifiers) which is essential to their main character build. The best way to encourage Dream Setup crafters is not placing penalties on non-crafters(allowing Collectors to Craft occasionally) such as Craft skill levels, specific craft-quests or any task which depends on crafting many items(Dream Setuppers are not interested of game revolving around crafting, they just want to get their hand on Dream Setup for their build and use it as quickly as possible.).
+
+
+3.Traders.
+Traders are the free market elite that could be either Arbitrators(getting gold/resources by selling items at higher price than they buy it), Manipulators(getting their hands on rare resources/items and auctioning/hoarding them) or Shopmaster(interested in owning a shop-centric expirience, social interaction and local influence)
+
+Games which want to attract Traders need:
+A.Rich, complex economy that is reflecting demand/supply: many resource types, consumables and non-unique artifacts such as gems.
+B. Arbitrators like to 'manipulate the market' with arbitrage, hoarding or price-fixing for unfair advantage. They are natural economists and tend to exploit every flaw in economy to its fullest potential. They need a robust auction system with little if any limits on trade.
+Arbitrators delight at "advance information": any changes in 'average prices', 'opportunities' for quick profit or some in-game event is their primary interest.
+Arbitrators also delight at unfair deals/scams/fraud and actively seek them, with the motive of profit above all(usually targeting top-level currency/resource/cash shop tokens).
+Arbitrators secondary characters are usually fully equipped with the best gear money can buy, however Arbitrators aren't good tactical fighters and use that gear mostly for bragging and boasting.
+Economy which attracts Manipulators tend to become inflationary/maladaptive and their in-game presence doesn't create any benefit for the market: designers should usually avoid attracting Arbitrators - provide real-time data on average/last/past prices, scam warnings, unfair deal warnings,etc.
+Designers need to have mechanisms to deter Arbitrator groups(in-game cartels and monopolies) so they cannot create disproportionate influence on the economy.
+
+
+C.Manipulators seek "influence on the market" their power fantasy is owning Nth percent of all X in game.
+They need user-friendly auction system which allows long auctions and vast inventories/mailboxes for storing their 'loot' they buy/sell. Manipulators are meta-gamers: they see the game economy as one of venues where they can exhibit global influence(but not centered on their reputation).
+They love volatile, explosive markets and last-second auctions:thrill of getting that item at their own terms(similar to Collectors getting part of their dream setup, except the item is viewed as leverage/resource to influence the economy/players/traders(as "status/prestige item" vs "useful item")).
+Manipulators aren't interested in boring Arbitrator work(selling and buying hundreds of items for profit), they seek top-level materials/items for which fierce competition exists(i.e. prestige of having these items/resources, their importance in the game).
+Crafter/Manipulators are interested at controlling resources or being the best source for X item-class(usually selling 'Dream setup' for specific cookie cutter build)
+Fighter/Manipulators are PvE farmers which use secondary characters to provide auction items or resources en masse(this player type is likely to resort to bots, as they don't like the grind as much as market control and influence)
+
+D.Shopmasters are thrilled when they have opportunities to create shops(persistent player owned locations with vendor-like interfaces),their power fantasy is controlled a trade network:the profits are secondary, but often welcome: Shopmasters seek in effect social interaction/price haggling/market expirience where they chat or advice player.
+Games need to have easy shop setup and allow multiple vendor points for players, a persistent shop which doesn't close after log-off. Shopmasters don't care about the auction system: trading for them is more social expirience than item exchange.
+Shopmasters often resort to having expensive items that nobody buys to 'diversify'/'decorate' their shop(as there little customization usually to player owned shops), allowing vast supply of unique/rare items and resources that are 'available to one who really needs it'.
+Shopmasters secondary characters are often Crafters(usually combining Reputation Crafter/Shopmaster) which create a persistent stream of new items: but unlike pure Reputation Crafters the items are sold at high price and stay in the shop for much longer(as shop being filled is more important then actually spreading crafted items).
