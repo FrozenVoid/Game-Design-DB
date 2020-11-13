@@ -1,0 +1,185 @@
+MMO Red flags, Flaws and dark patterns.
+User interface:
+1.A permanent fixture in UI that is:
+a.A commercial ad, in-game currency or paid feature/content/upgrade. This fixture permanently occupies a portion of UI(user interface).
+b.Superflous/Artistic element that wastes space or has to be avoided manually.
+
+2.Player-hostile UI: 
+a.Speed of interaction is visible as UI lag.
+b.UI is overly complex for executing common tasks.
+c.UI lacks customization and cannot be change in settings.
+
+Economic:
+3. Gold-sink economy:
+Game provides easy and fast sources of currency, creating constant inflation of prices of items/resources.
+a.Player is forced to perform repetive actions which cost resources/currency of the game such as :repair, rest, heal.
+b.High currency fees for ingame features:mail, auction,chat.(often used as gold-sink)
+c.Cash Shop-centric economy: since currency-based economy is in constant inflation, it uses Cash Shop items as basis for barter or price.
+
+4. Grind-based gameplay:
+Gameplay requires repetitive expirience point farming or repeated quests to advance to new levels, as central part of game. Game is heavily segregated by level of players.
+a.Experience is lost easily and obtained very slowly past the starter/newbie levels.
+b.Most endgame/high-level content is not available for majority which is stuck at mid/low character levels.
+c.Game Company sells expirience/level booster items to make advantage of situation.
+d.High-level content and gameplay are radically different or provide more entertainment value, different social circles and cliques, not available to new players.
+e.Anti-grinding features that either cripple character or have specific time limits for expirience gain. Signifies half-hearted attempts to band-aid the problem without altering the game mechanics.
+f.Players that change accounts/characters to circumvent the system #e (or want to experiment) create an artificial expectation that "expirience/level is valuable and is fairly allocated" which actually promote grinding.
+
+5. Pay-to-Win gameplay:
+Gameplay quality depend on player financial investment.
+a.Cash Shop items or items bought with special currency(often bought for cash or high-level resources) dominate the game.
+b.Key game features and utility items are cash shop exclusive.
+c.At higher levels of gameplay, player become dependent on above points to perform optimally or even normally.
+d."Enforced scarcity":Forcing some aspects of the game adhere to real-world laws/rules("Fake realism"), such as eating limited food to survive,full player loot on death,limited stamina(movement time) or stat/attribute decay on use. Paying players can protect themself with cash-shop items.
+
+Software:
+6. Anti-Cheat
+Game lacks server-side security and depends on players having 
+security measures on the client-side(anti-cheat programs or in-game protection features) 
+a.Game depends on security-by-obscurity.
+b.Game lacks encryption for communication with game servers.
+c.Game depends on third-party anti-cheat functioning.
+d.Game tries to detect cheating proactively.
+
+7. Automation simplifies gameplay:
+Game is ill-designed so that bots improve gameplay by automating repetitive tasks and mandatory actions.
+a.Expirience farming bots: the game is grind-centric and players compensate by delegating grind to programs.
+b.Item-farming bots:game overvalues rare items and its economy devolved to barter/trade due inflation of currency.
+c.Certain tasks/actions cannot be automated within game but are highly repetitive and require no skill.
+d.Game doesn't have macros or features simplifying long-term gameplay(combos,auto-attacks/guard modes, shortcuts, player-controlled skill-bars/icons). 
+e.The game is ill-designed if common actions are cumbersome or require constant thinking.
+f.Presence of automated expirience/currency gathering(player-owned minion/item, often cash-shop based) item/NPC in the game, that gives exp regardless of player actions.
+
+Social:
+8. Freemium and Player segregation.
+Game is present as several forms depending on player investment/subscription status(paid in cash/in-game currency).
+a.High level content is labeled premium and is restricted to paying players, creating a class separation within game.
+b.Game features are segregated into free and paid versions.
+c.Free players are limited in their progression/in-game choices and serve mainly to bulk-up player count for the servers.
+
+9.Lack of private servers, hypercentralization.
+Game is completely dependent on few central or regional servers controlled by the game company. Loss of servers makes the game unplayable. Game centralization can't hold the playerbase and they easily move to other games.
+a.Lack of alternative servers and persecution of private servers often combine with
+b.Closed-source, secret server software that has to be emulated or reconstructed from game client.
+c.A single-point of failure is central login/game site on which the game functioning is heavily dependent.
+d.Empty servers at prime time due lack of player interest(or age of the game),game-breaking bugs or exploits.
+
+10. New account restrictions.
+Game lacks anti-spam and security features, compensating by restricting new accounts and manually moderating the rest.
+a.Non-combat restrictions which restrict interaction via trade,messaging or mail/auction system
+b.The game feels crippled without being a verified/old/high-level character.
+
+
+11. Hostile game community.
+Game cultivates atmosphere of disrespect and mutual hostility, creating barriers to cooperation or diplomacy.
+a.Non-competition activity(roleplaying,diplomacy,experimenting) is heavily discouraged or not tolerated. Only a set few gameplay styles are accepted as correct(e.g. PvP,clan wars).
+b.Heavy in-game competition for resources/currency/territory, driven by scarcity or assymetric balance of power derived from owning/controlling game resources/territory.
+c.PvP and war are central aspect of gameplay by design with no protection or security system for new players.
+d.Game is centered on inter-clan warfare and all players must choose to be in a clan to play/survive/quest/move over territory safely.
+e.Game that lacks option of solo gameplay, forced parties, forced grouping and many penalties for solo players."Us-them" mentality encouraged and artificially constructed.
+f.A specific clan/clique dominates a server and creates its own rules for server players. The game gives players control over towns or even safe zones. Open-world locations can be occupied by player buildings/constructs.
+
+Technical flaws:
+12. Game lag disrupts gameplay(physics).
+Game design flaws that make slow hardware performance for client-side(visual/audio media output speed) translate or create problems at server-side: lag(position, speed of character/vehicle, delays), skipping, teleporting.
+a.Highly dynamic content creates lag on the server.
+b.Game has limits on number of player in location and servers cannot handle complexity of normal player concentration.
+c.Lowering quality settings has minimal effect.
+
+Gameplay patterns:
+13. Achievement grind(100% completion)
+Game contains thousands of pieces/tasks/features to be unlocked by achievement chasers and little to nothing content/reward behind the achievements.
+a.Many easy or numeric limit achievements.
+b.Achievement of specific ingame constraints.
+c.perfect completion of levels/maps.
+d.Achievement points alter player status but don't provide any in-game advantage or perk.
+e.Achievement mandate repetitive activity(grind), tied to engaging specific parts of the game.
+
+14. Fake atmosphere:
+Game company creates a fake atmosphere of success, engagement and progress, while in reality games is unfixed and losing players fast.
+a.Official Forums that are filled only with praise and sugary formal statements from staff.
+b.Official Forums embrace censorship and heavy-handed moderation, in extreme cases pre-moderation.
+c.Denial of major problems/exploits and empty/vague promises from non-technical company personell.
+d.PR-speech filled with buzzwords, misleading vague statements, euphemisms and generic advertisement-level characterizations of the game qualities/future/state.
+e.Game company conceals real state of its finances, player count, server costs, in-game security,etc.
+f.Official Game forums are filled with irrelavant and off-topic content:game-centric content is censored and segregated to specific subforums. Dominant content is forum-centric.
+g.Player-owned/private forums are considered the central point of community and host most content/information regarding the game. Official forums exist as pale imitation of player-owned community and try to replicate its content/atmosphere.
+h.Game community suggestions are ignored or its concerns are dismissed by staff, hostile to feedback(but presenting themselves as listening and accepting).Forum Staff typically serves as PR shields for developers and managements.
+j.Desperate attempts to retain playerbase: large login bonuses, new/exclusive rewards for playing/returning, drastic economy changes to attract/retain new players, change in staff tone within forums from authoritative to cooperative(asking for suggestions suddenly, reducing censorship or allowing controversial opinions, promises of change without actual control over development).
+k,Game company/developer studio purchased by large entertainment company/conglomerate/corporation. Layoffs or many changes in staff,any developers leaving.
+Introduction of new business models, premium or cash-shop items/features.
+
+15.Bad moderation.
+Moderation system that is either.
+a.Ill-designed, forcing complex in-game or out-of-game interactions from players to report/complain.
+b.Lenient on repeat offenders and lacks principles("Hands-off atmosphere"): allowing actions/things that violate the spirit/laws of the game, as long as their don't break balance.
+c.Heavy-handed atmosphere where gamemasters/moderators rule the game as kings and players as their subjects.
+d.Moderation delegated to veteran/volunteer players: often exploited for ingame advantage or threat against other players.
+e.A persistent trend of in-game abuse and grief which continues with many patches, may indicate ill-designed gameplay mechanics or many unfixed exploits/bugs, which moderators/gamemasters try to weed out manually with varying levels of success.
+f. Favoritism by game creator/company towards a specific clan/clique/player(especially streamers/reviewer). Unequal treatment of celebrity players vs average players by staff/support. Biased/Corrupt moderators/game masters influencing gameplay.
+
+Rigid design:
+16. Lack of customization:
+a.hotkeys/resolution/ui/graphics/settings are either static or are allowed very few choices.
+b.Lack of tunable settings:choices are hardcoded and limited.
+c.Paid character transfers between servers and paid character slots, limiting number of character builds/choices.(Game lacks good inter-server communication, low capacity or the company is desperate at squeezing money from players.)
+
+17. Flaw-centric gameplay:
+Game design flaws force most players to adopt a specific kind of gameplay or character build("cookie-cutter build") that maximizes their potential.
+Gamers which don't adopt the above style suffer vast disadvantages, even with better game skills.
+a.Game punishes bad choices by ruining "character build" performance/qualities vs cookie-cutter builds.
+b.Game flaw exploitation are central to gameplay and are considered normal part of character build considerations.
+c.Attempts to reduce min-maxing by force(banning/moderation/character reset) or regulate gameplay beyond gameplay mechanics:creating a set of official laws/rules which don't mesh with gameplay or distract from it.
+d.Presence of unwritten rules/etiquette that is non-apparent from the game content or website.
+A strict roleplay policy and many character restrictions that allow only a narrow role, despite flexible of game mechanics. 
+e.Hidden reputation/karma systems to punish offensive/problematic/griefing players, instead of fixing the game.
+
+18. Ill-designed Quest systems:
+Quests which don't contribute to storyline and provide repetitive, mundane content that is available outside quests.
+a.Grinding disguised as quests(defeat N enemies, collect N items).
+b.Fetch quests:Fetch N items from point A to point B.
+c. Daily/Repeated quests: finish the same map/area N times.
+d.Filler quests: similar to Fetch quests without items, talk to NPC A then NPC B then NPC C.. reward at end(often as #c).
+e.Acrobatic/Jumping puzzle: adds a physical skill element to quests, often repeated. Disrupts the game flow and general atmosphere with genre-shifting(rpg to 3D platformer).
+
+19. Item-centric gameplay.
+Gameplay and economy is centered on upgrading/crafting/acquiring/trading various items and resources, game skill is secondary to finances and inventory content.
+a.Items are worthless without upgrading/crafting/enchancements that apply effects/perks to the items.
+b.Skills require items to function and base their effects on power/quality of items.
+c.Gameplay requires potions or consumable resources during battle. Size of inventory is crucial to survival or efficiency of combat.
+d.Cash Shop provides rare or exclusive resources that otherwise require high gameplay investment to acquire.
+e.In-game Economy centers on commodity resources and consumables, without which the gameplay difficulty increases exponentially.
+f.In-game competition for scarce resources/material creates hostility and antagonism.
+h.Limited inventory or storage space(especially if cash-shop dependent) when players often lack space in it.
+A game that forces selling/trashing most items picked up("junk item scrapyard"). Inventory expansion is common premium.
+
+Chaotic design:
+20. Frequent patches.
+Large, frequesnt patches signify instability in the design and implementation. Frequent Game mechanics patches are sign of flawed balance and gameplay concepts(exploited by players).
+a.Game is in "permanent beta", with testing servers, server-specific patches and rollbacks.
+b.Game mechanics patches attempt to fix/disable bugs of the engine.
+c.Patches break or disrupt character builds,items and skills often.
+d.Nerfing/Boosting specific items/skills as response to their increased use or popularity/obscurity, regardless of gameplay mechanics. Sometimes disguised as content-level improvement.
+
+21. Abandoment of core gameplay:
+Players are flustrated with game state and adopt non-game-centric gameplay such as roleplaying or exploring.
+a.Gameplay elements are ignored, social elements central.
+b.Players use the game for chatting and roleplay, like a 3D chat system.
+c.Players use the game aesthethics as props to some form of social project/roleplay/demonstration with no intention of actually playing anything.
+d.players impose various voluntary rules and constraints on their characters to improve/enrich gameplay expirience. 
+e.Game content is parodied, ignored or replaced with modified versions to enrich gameplay. Game is used as engine to simulate other games.
+
+22. Scarcity of information.
+Game is either badly documented or lacks documentation/manuals. 
+a.Content documenting the game is player-generated.
+b.Game forums refers to third-party sites for reference.
+c.Game mechanics are secret and change with patches.
+d.Lack of wikis/manuals/in-game help or presence of only foreign-language material, requiring forums use or asking players.
+e.Game developers present lack of documentation as setting of atmosphere of secrecy, or excuse it as "documentation is breaking immersion".
+
+23. Media-centric game expirience.
+Game feels more like interactive movie.
+a.Long interruptions: cinematics or sound/movie sequences in quests, during quests and within gameplay events.
+b.All content that is only viewed/listened once and contributes heavily to the size/performance of the game.
+c.Lack of in-game quest/story instances and scripted in-game content(scripted dialogue/chars and Text2Speech software), instead game loads movies and hardcoded animations. 
+d.Attempts to add artistic qualities and atmosphere with mandatory mini-cutscenes, short animations that disrupt flow of the game.
