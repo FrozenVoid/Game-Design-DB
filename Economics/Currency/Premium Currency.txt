@@ -1,0 +1,26 @@
+A premium currency in a game is usually acquired by paying the game company externally
+(cash shop, subscription reward, bonus for purchases of specific content/item)
+with in-game means to gather such currency(or premium resource) being scarce to non-existent.
+Many micro-transaction based games rely on premium currency system to avoid
+player realizing the true nature of micro-transactions:
+1.The sunk cost fallacy dictates that once purchased the premium currency must be spent:
+Users are often prevented from hoarding currency by means of expiring tokens
+(limited chance/item/bonus that has to be used in N days) and
+inflation of paid content prices, decided on whims of game managers.
+
+2.Premium currency is usually non-refundable and exists only in statistic account.
+The purchases of such currency is one-way cash flow into company profits:
+the gamers are not holding anything externally valuable that would exist without the
+virtual world managed by the company.
+
+3.Micro-transactions in premium currency hide their cost in real-world currency.
+Psychologically, the virtual currency is not viewed as valuable due it being limited and
+confined to a game(artificially set value of currency unit), thus stimulating its use vs real-money purchases
+(e.g. 5$ item vs 500 Crystals item).
+
+4.THe real cost of specific content is often hidden with layers of 
+indirect purchases of resources/craft material and other expenses that are required
+to get high-level items: the chain of cash->premium currency-> resource->material-> item
+is not readily apparent and hidden by in-game economy providing 'alternatives' to
+paid resources or ability to buy them from other players(who paid for them in 
+premium currency) with in-game currency/resource. 
