@@ -1,0 +1,31 @@
+Fixture is defined as persistent fixed element that is embeded into UI without a dynamic
+functionality. e.g. a link button in the UI that serves the same functionality at any point.
+The problems with fixtures:
+1.The waste mental and visual space.
+2.They rarely provide any useful functionality, usually serving as ads/hints/infodumps.
+3.The function of a fixture is trivially available in other UI parts/ dynamic UI elements,
+thus a fixture duplicates functionality.
+
+Usual reason fixtures are created;
+1.The designer believes a fixture is underappreciated 'feature' without prominence.
+2.Fixture serves as beacon for some statistic/metric involving its content.
+3.The fixture is advertisement for something.
+4.The fixture is serving as context-less "help/info" button.
+5.Functionality of some generic function is moved out of menus to improve reachability.
+Only rare case of #5 can be justified, with rest exhibiting the 'fixture anti-pattern' 
+that forces a persistent UI element without a valid reason:
+1.Features that deserve a persistent fixed element in UI are symptom 
+of rigid UI design that crams all functionality into main interface:
+the problem is mixing different functionality into same UI space.
+2.statistic/metric from a persistent element doesn't show actual user interest since the
+interaction with a fixture is forced and shoved into mainline experience.
+3.Adverisements without context only harms the user perception, due it stealing visual space
+in the game. User don't like to be reminded of advertised content all the time.
+4.context-less help/info buttons are better served as context tooltip for each element,
+with a 'Help/Info/[?]' interface link beside them, since users don't connect the
+"persistent element(fixture)" with dynamic elements(the connection of context-less elements
+with current context exists only in the mind of the designer).
+5.A functionality that 'deserves a fixture' is better served as hotkey command in the game,
+since if its important enough for a persistent element, its use should be either automated 
+or hotkeyed for rapid use. Forcing the user to repeatedly click the fixture is just asinine
+and leads to RSI and mental fatigue(e.g. Cookie Clicker manual clicks).
