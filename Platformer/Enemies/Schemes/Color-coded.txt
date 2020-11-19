@@ -1,0 +1,11 @@
+color coded enemies
+The idea is to assign attributes to enemies based on color
+where a base category e.g. a 'turtle' is given specific attribute
+examples;
+red turtle - faster movespeed
+green turtle - jumps higher
+yellow turtle - runs away from player's avatar
+blue turtle - spits acid
+white turtle - regenerates fast
+black turtle - increased base hp/hits
+purple turtle - teleports
