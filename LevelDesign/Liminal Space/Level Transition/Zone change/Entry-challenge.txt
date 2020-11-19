@@ -1,0 +1,9 @@
+Entry challenge are a form of gating levels with 
+various quest-like setups, with player permanent entry to a zone
+dependent on completing a challenge in entry area.
+Typical challenge:
+1.acrobatic puzzle; usually a sequence of jumps to reach key object.
+2.Maze solving: a small maze with traps or moving elements(sokoban-type).
+3.Mini-game with NPC; usually a short game of skill
+4.Mini-game with area objects:usually  Placement/Configuration puzzles.
+5.Trick attack: players have to perform some skill with precision.
