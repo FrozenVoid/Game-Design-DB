@@ -1,0 +1,30 @@
+Theme mismatch occurs where two objects have different themes
+in their design; The dissonance occurs where either A or B object violates
+the player expectation of game theme:
+Examples:
+1.Sharp differences in appearance style, quality or visual structure.
+Player expect a consistent apperance of in-game content at specific location.
+
+2.Incoherent application of game rules that makes A or B a messy exception,
+creating its own specific rules/themes inside the game.
+example;item-specific unique mechanics
+ 
+3.Disconnect with overall game mechanics, out of place/unique features that
+clash with similar objects:e.g. location-based rule changes, attributes that override
+ other attributes or modify them unexpectedly.
+3b.Location-specific game functionality that is not used elsewhere outside the level or its type.
+e.g. vertical levels/climbing mode, underwater-only equipment/tools/skills.
+
+4.Inconsistency in design that manifests in duplicate but differrent functionality,
+confusing players, adding extra levels of indirection to features, applying functionality
+dependent on context,etc.
+
+5.Unwarranted complexity of interaction; creating specific algorithms, rules and techniques
+ to perform simple tasks, then allowing shortcuts to use them.
+
+6.Visuals that create impression of artificial worlds inside a natural setting.
+artificial looking:low-complexity level boundaries(walls, geometric shapes),
+fake hydrological system(linear canals vs complex rivers),super-flat terrain
+
+
+
