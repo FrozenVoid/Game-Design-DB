@@ -7,7 +7,7 @@ in healing will benefit from such specialized build.
 Healing is the main specialization of such archetype;
 direct spells, healing projectiles, healing auras and artifacts 
 which add 'healing/regen',
-as well as potion making are primary skills.
+as well as potion making are primary skills(healing with potions).
 
 Buffs that healers provide can be classified as 
 A.Protection buff; add anti-curse/anti-debuff status effects.
