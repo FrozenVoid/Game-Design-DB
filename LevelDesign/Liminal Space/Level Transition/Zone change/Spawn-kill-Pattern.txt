@@ -1,0 +1,12 @@
+Spawn-kill anti-pattern results from level design where.
+1.Spawn area/Initial entry point is not set as neutral territory(disabling attacks from outside,
+but not from inside).
+2.Mobs/traps/debuffs/spells are allowed to enter spawn area.
+3.Players character interacts with environment before level loads visually,
+allowing little or none response time to surprise attack.
+This phenomenon is exploited by PvP tactics such as 
+"luring" - where players lure high-level monsters to spawn area
+and "spawn camping" - placing traps/debuffs directly on spawn area.
+The above tactics also apply where player spawns
+via portals or generic waypoints.
+
