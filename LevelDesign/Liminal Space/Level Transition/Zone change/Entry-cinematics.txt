@@ -1,0 +1,9 @@
+Area entry Cinematics:
+Usually displayed once(repeated area change cinematics are annoying).
+The player reaching a new zone, before it loads will be shown
+ 'Area entry cinematics' that depict himself solving previous area quests
+ and reaching to new zone/region.
+Mostly such cinematics can be replaced by entry-area machinima,
+with entry area in the zone serving as scripted tutorial/lore reveal sequence
+which is more interactive than static cinematics(of course forcing repeat
+of such area is even more annoying that skipping cinematics).
