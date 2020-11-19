@@ -1,0 +1,11 @@
+Bottleneck pattern or chokepoint occurts where pathing is 
+limited by level design:
+A. wide path is suddenly forced into a small space("classic chokepoint") due
+terrain shape.
+B.Area x transitions to area Y within a narrow path("bottleneck entry point")
+C.Functional chokepoint: the moving entities are slowed due environment(water,sand,
+sticky terrain,lowering speed at the area as if there was a 'chokepoint') and unable
+to change course with area boundaries preventing leaving the chokepoint path.
+D.Interaction chokepoint: players interfere with each other while interacting
+with object/npc where limited space is shared by many players,e.g. in a small room
+or narrow path where normal movement is unobstructed in general. 
