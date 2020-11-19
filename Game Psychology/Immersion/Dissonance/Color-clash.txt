@@ -1,0 +1,7 @@
+Color clash appears when an objects and background color schemes 
+have a sharp contrast or create unnatural appearance that seems out of place:
+usually the colors are either too saturated(appearing 'painted' in a muted setting)
+or too bland(appearing as monochrome scheme in a varied color setting).
+In rarer cases, specific colors like e.g. blue/purple will appear unnatural in a setting
+that largely excludes them(usually applies to colors rare in nature), unless the color is
+heavily muted(desaturated/dark).
