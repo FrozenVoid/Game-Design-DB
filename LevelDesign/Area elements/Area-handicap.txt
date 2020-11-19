@@ -1,0 +1,9 @@
+Area handicaps are temporary debuffs that either disable or nullify 
+some player attribute for additional challenge.
+Types of handicaps:
+1.Spell class handicap: some class of spells is disabled.
+2.item attribute depower;specific item attributes cease to work
+or greatly diminished in power/scope.
+3.regen handicap; stats/charges cannot be restored by attribute.
+4.Speed handicap; area limits all terrain speeds.
+5.Vision handicap; area is obscured by e.g. fog.
