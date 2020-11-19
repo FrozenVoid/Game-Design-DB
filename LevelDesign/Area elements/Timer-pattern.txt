@@ -1,0 +1,7 @@
+Timer is a event design pattern where some 
+interaction triggers a timed area event,
+usually quest-related task that has to be accomplished in time:
+Area then sets a specific timer shown at top/bottom of screen to 
+informa the player of the game mode change in the area.
+Usually the quest/task is failed when condition is not met with 
+timer expiring, but some designs allow to restart events.
