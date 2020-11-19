@@ -17,7 +17,10 @@ recipes by the community, as new meta-game facts and tactics are discovered with
 Item attributes, skills and stat combinations that are optimal in some way.
 B.Tacticians; discover optimal tactics vs monsters/npcs/player classes.
 C.Speedrun theorists; discover optimal/fastest/easiest pathing.
+C2.Quest/task optimizers; discover fastest solution to a single task.
 D.Economists; research game economy and especially its flaws.
 E.Exotic Builders; theorycraft underutilized/rare setups and experimenting.
-F.Mechanics; research game mechanics interactions.
-H.Craft theorists; research item crafting aspects.
+e2.Glitch build specialist; research on glitches/bugs used as cornerstone of exotic build.
+e3.Skill synergy researcher; research on exotic skill/spell mechanics that magnify each other.
+F.Mechanics; research of game mechanics interactions, usually combat-related.
+H.Craft theorists; research item crafting aspects,e.g. item attribute generation.
