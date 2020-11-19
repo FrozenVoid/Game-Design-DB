@@ -1,0 +1,2 @@
+timestopper bonus object freezes all movables on screen for N seconds,
+freezing platforms,enemies and hazards at their current location.
