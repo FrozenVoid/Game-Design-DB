@@ -1,0 +1,15 @@
+Zone change reset occurs where character arrives from another zone
+indirectly(transport) or from portal, movement through zones usually does not.
+The following attributes are commonly reset.
+1.Character debuffs/buffs, including timed debuffs(e.g. poison/freeze/etc).
+In some games character is healed and energy/mana/ammo is reset to default.
+2.Summon status; non-permanent summons/pets are removed to storage.
+3.Combat status: charges, modifiers and status effects are reset to pre-combat state.
+4.(in non-neutral areas): monsters/traps are reset,
+as interaction spawns new objects when
+ the area is approached again.
+ 
+ *Area-proximity resets can despawn monsters already set
+ to change their random characteristics in next entry
+ (such as weaker attributes) into the area/zone.
+ 
