@@ -1,0 +1,17 @@
+A gatekeeper pattern is usually a NPC or interactive object that
+blocks player progress until its condition/quest/task is solved.
+Types:
+1.Special blocker object; an object that requires specific equipment to destroy/unblock.
+1b.Broken bridge; object has to be repaired to continue to next area.
+1c.Build-a-gate; object has to be built by player to enter(e.g. stairs)
+2.Combat challenge NPC; NPC forces player to defeat him in combat to advance
+3.Task NPC:NPC presents a task to complete to unblock passage/gate.
+5.Gate filter:Area entry denied if requirements are not met(usually level,special item or stat).
+6.combination gate-lock;Gate requires solving some internal configuration puzzle to unlock.
+7.Combination portal; entry requires a specific 'portal recipe' to execute.
+8.Maze gate;Entry is free, but gate is located in a maze.
+9.Hidden gate; the entry is hidden, usually in some building/structure hinted at.
+10.Toll booth; gate is protected by NPC which requires payment.
+
+
+
