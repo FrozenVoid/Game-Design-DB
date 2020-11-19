@@ -1,0 +1,5 @@
+Instance trap is a phenomenon where player is 'trapped' in new zone
+until he solves the quest or escapes somehow(usually dying).
+The common approach used in design of such zones,is disallowing
+portals outside or restricting players teleport ability to force
+solving quests in one session as challenge.
