@@ -1,0 +1,12 @@
+Typically the player is notified with message in the center
+ of screen like "Entering AreaName"
+(such messages are superfluous and can be ommited for minor area
+transitions)
+ and environment loads(if not pre-loaded at border).
+ for quest area longer messages are appropriate, telling 
+ the player the local lore/rules/quest in non-modal fashion
+ as scrolling text(infodump scroll).
+ The player character in some settings may involuntary add
+ a scripted comment/voice message 
+ or react to new zone with pose/stance/emote.
+ 
