@@ -1,0 +1,10 @@
+Loud and sharp sounds have a jarring effect and 
+are considered a nuisance if repeated in any substantial quantity.
+A good design would limit volume of sounds, reduce
+contrast and avoid sounds which are unusual in the settings.
+Horror genre games tend to abuse the 'surprise sound'(loud and sharp)
+pattern to induce a cheap emotional scare or disturb the player;
+while this technique is effective, it cheapens the game quality,
+with more subtle alternatives giving more effect:
+allowing imagination of players to construct a scenario is more
+flexible and potent way as "a whisper is louder than a shout".
