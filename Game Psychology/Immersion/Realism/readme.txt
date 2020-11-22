@@ -1,4 +1,7 @@
 Realism is not equivalent to immersion. 
+Many aspects of reality don't mesh with immersive game loops:
+this folder explains some common problems with realism in
+video games and their effect on perception.
 
 Realism is a stylistic design choice that
 can aid immersion by anticipating player expectations of game world:
