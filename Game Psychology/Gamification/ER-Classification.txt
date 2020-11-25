@@ -1,0 +1,16 @@
+Types of E/R situations:
+Timesink - low-effort low-reward (e.g. entertainment)
+Timesinks are insidiously deceptive as 
+low-effort adds up and time spent can be used elsewhere.
+
+Hobby  - High-effort low-reward (e.g. painting/writing)
+Hobbies can train skills but require disproportionate time 
+investment for their result.
+
+Task - Low-effort High-reward (e.g. fixing something)
+Tasks are immediate quick fixes for problems or goals,
+which have high-reward ratio but don't train much skill
+
+Job - High-effort High-reward 
+Jobs are longer-term tasks which cultivate skill 
+and have a definite reward/result.
