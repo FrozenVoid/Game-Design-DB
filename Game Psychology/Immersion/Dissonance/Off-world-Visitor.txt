@@ -14,6 +14,9 @@ or set any constraints to this 'kitchen-sink amalgamation'
 of real and fantastic,
 operating on player/viewer ad-hoc fantasy roleplay as
 basis for building the game script.
+Litmus test for consistency: Imagine the isekai setting in 100 years in the future, what
+would player from that period think of 'isekai real world'(from which the protagonist
+is taken to fantasy world)?
 
 vs Fantasy roleplaying game:
 The difference between isekai fantasy and a player in a fantasy MMORPG/RPG,
