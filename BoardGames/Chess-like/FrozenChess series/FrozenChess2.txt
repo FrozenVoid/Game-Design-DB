@@ -1,0 +1,38 @@
+Board12x12:12 pawns+12 pieces per side:
+    PPPPPPPP PPPP`
+    RNBDJQKJDBNR
+    general Abilities:
+    empower - piece which is protected by one piece gains its native movement and capture ability(Kings/pawns cannot be empowered or give empowerment). e.g. a knight protected by a rook can move and capture like a rook.
+
+    Guards - if a unit is protected by two or more (non-pawn) pieces it is not empowered but cannot be captured(the guarded unit can capture normally). Kings cannot be guarded.
+
+    capture immunity - a non-pawn piece cannot capture a piece of its own kind(e.g. knight vs knight).
+
+    Double move - (applies to native movement only, empowered pieces can only use single move of empowering piece as first of two moves), if a piece/pawn doesn't capture(at both moves) it can move two moves(if unit can move two types of moves it can use both).e.g knight protected by bishop, can move bishop move+knight move,knight move +knight move or bishop capture/move and knight capture/move.Kings cannot double move.
+    -------------
+    Pieces movement
+    Bishop:as chess bishop.
+    Knight:as chess knight.
+    Rook: as chess rook.
+    Dragon: as chess knight or bishop.
+
+
+    Jester:moves as knight and any move/doublemove of guarding/attacking piece/pawn(enemy or firendly),
+    immobilizes all nearby 3x3 enemies.immobilized pieces cannot move/use ability.
+    Cannot capture units.Explodes 3x3 when captured(explosion bypasses "cannot be captured").
+    Jesters/kings are immune to jesters immobilization.
+
+    King: movement:Can exchange place with any friendly(non-attacked) unit in the game(kings exchange),but can't move on its own(exchanged piece is removed from board, so each "teleport" costs a pawn/piece to make).
+    If king is captured/checkmated the enemy wins.
+
+    pawns:1 square in any direction
+    pawns at last file, promote to knight/bishop/rook/queen/dragon/jester.
+    Pawn capturing a non-pawn transforms into that piece(early promotion).if a side loses all pawns it loses the game(promoted pawns count as lost,.i.e its a mistake to promote all pawns), as alternative to checkmate.
+
+    Queen:move: 1knight,1bishop or 1rook move,
+    Queen ability:
+    when queen captures a piece/pawn, on move(queen) from that square the square becomes a death trap/removed square
+    Units cannot move(bishop/rook/pawn move) through such a square, if they land at their end of movement on it they die(if its only legal move to move into deathtrap the unit dies/is checkmated).
+    if last file square is removed(by queen) promotion occurs at the square nearest to the boards enemy side (that can be reached by pawn movement).
+    (50 moves rule not enforced,3fold repetition is draw)
+    If a side cannot move(stalemate) it loses the game.
