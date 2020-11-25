@@ -1,0 +1,60 @@
+This is a hypothethical 3d variant:
+Board Size:Cube cells 8x8x8
+The sides of The Cube are connected with their opposites:
+e.g.The right side is connected to the left side forming 
+a closed tunnel,where liberties are shared through 
+the edge side of the cube cell.
+
+
+Liberties:
+only external to structure are valid(shell liberties), 
+internal empty cubes not counted.
+The liberty must be orthogonally connected(i.e.form a tube)
+ with a cell in the player structure(diagonal liberties are not valid).
+Picture 6 liberties of single cube:
+https://i.imgur.com/3kxVP0I.png
+
+Score:By Number of stones on the board(higher number wins)
++0.5 stone for white(as compensation for first move)
++handicap (decided by rating).
+Handicap stones are not placed on board.
+
+Capture: Surrounded(zero liberties) stones change color 
+to capturer side. Surround requires covering structure 
+with shell(edge cubes can be deprived of liberties by
+ surrounding the mirror side with liberties on the edge)
+
+Standard Move:
+drop 1 stone in any cell that allows at least 1 liberty
+(chain with 1 liberty(eye) is alive).
+Teleport - same as above, but a stone is removed
+(as selected by player:stone selected -> cube cell destination)
+Special Moves:
+-------------------
+Diagonal Conversion: if an unconnected(does not form a tube)
+ enemy stone exists diagonally adjacent to your stone
+ you can capture it to your color.In 3D diagonals are 
+all not orthogonally/vertically/horizontally connected tubes
+(i.e. not up/down left/right/forward/backward direction)
+
+SideSwap - swap with nearby enemy stones:
+if stones touch by sides of cubes(3D 2cube tube ),
+enemy stone[E][Y] it swaps to [Y][E]
+
+Push -
+Move stone(must be connected to friendly stone(s) 
+at the moment of move) forward 1sq to any orthogonal direction
+(in 3d tube-connected)) occupied by enemy stone, 
+pushing the enemy and following stones by the line 
+towards the side of the cube(if no gaps exists, 
+otherwise pushes them into gap).(if stones move over the edge
+ they reappear at opposite side:the cube is closed).
+
+
+
+
+===============
+Cube Rotation(is rotated over 1 axis):
+Cube NxNxN(N:2-7) cells can be rotated 90deg, 
+180deg and 270deg on a chosen axis of rotation,
+if your units are the majority in the cube.
