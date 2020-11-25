@@ -1,0 +1,144 @@
+Board Dimensions: 12x12
+    Each side is located at South/North sides of board(South pieces:a1 b1 c1 d1 e1 f1 g1 h1 i1 j1 k1 l1).
+    Each side contains 12 pawns on 2nd or 11th file.
+    Each side contains from left(a) to right(l)
+    PPPPPPPP PPPP
+    RNBDJQKJDBNR(where R=Rook,N=Knight,B=Bishop,D=Dragon,J=Jester,Q=queen,K=King)
+    ----------------------------
+    Basic Movement types:
+    Pawn:one square in any direction(as chess king).
+    Knight:as chess knight(2squares in one direction,1 square to the side(L/R)).
+    Bishop:as chess bishop(diagonals).
+    Dragon:as bishop or knight
+    Rook:as chess rook(orthogonal)
+    Queen:as rook,bishop or knight.
+    King:1squares in any direction.
+    jester: as knight
+
+    ----------------
+    Advanced movement:
+    DoubleMove:
+    Double move - If a pieces doesn't capture it can move two moves(empowered moves occur only when the unit square is empowered at the moment of movement).
+    Double Move Stop - after a doublemove, the piece cannot move at next move(resting), except if only legal move is to move that piece(stalemate), then it can move a single move(i.e.no consecutive double move).
+    Double move exceptions:
+    Knights and Bishops can capture within double move ,but any capture ends movement.
+    -----------
+    Bounce - A ranged(line) move can bounce off non-empty-squares/edge-of-board at 90deg turn and continue up max range 12sq combined path. If bounce occurs on the tomb square, the unit is paralyzed at end of move(after the movement from The Tomb) as if it passed over it(2move paralysis). BounceMove excludes DoubleMove and vice versa.
+    ---------
+    Move End:
+    Captures,special moves and checks end players turn. i.e. first occurrence ends the move.
+    -----------
+    MidBounce mode change:Units with more than 1 type of movement(Empowered or not), can switch movement type at the Bouncing square.e.g. dragon has 12sq bishop range, spends 5sq to move up to a friendly queen,switch via midbounce into knight mode and performs a knight move(3sq cost), since knight moves aren't ranged(by line) bouncing again is not allowed(ends the move). If after MidBounce mode change the dragon stays with bishop he can use the remaining of 7sq to perform another bishop bounce until the range limit (12sq/move) ends.
+    MidBounce mode Change restrictions:
+    MidBounce mode change Ends bounce move if a mode of movement is a knight,any capture or special move(also ends double move) or landing near tomb(paralysis applies).
+
+
+    -----------------------------------------
+    --------------------------------------------
+    Special Moves:Mind Control
+
+    MindControl - if pieceA can capture PieceB without being recaptured, it can mindcontrol it instead to make any legal move(counts as move of pieceA).
+    ----------------------------
+    Kind Immunity - a non-pawn piece cannot engage a piece of its own kind(e.g. knight can do nothing to knights) with any capture/abilitymove.
+    ----------------------
+    ===========================
+    Capture mechanics:
+    1.Capture Range Reduction - ranged pieces normally have 12 squares range(1 move), but after a capture this range(single move/capture) is reduced by 2(up to 2 square minimum).
+    e.g. queens bishop and rook range are reduced by 2 squares after a capture.
+    See quadrant bonus for reduced CRR
+    CRR resets on respawn
+    ---------------------
+    Visual:
+    Current Range of piece could be shown as number(1-12,3 for knight) on the unit center(software),
+    with status effects(paralyzed) as number of green circles(paralysis move count)
+    -------------------------------
+    2.Tomb Squares - When a unit is captured, as soon as the capturer leaves the square empty(no wall or any units) it becomes a tomb containing the captured piece(s) FIFO queue which can respawn if the conditions are met.
+    Pieces which moved over(squares of path land on tomb) a Tomb square, become paralyzed for the next 2 moves(next 2 moves must be played by other pieces) and their double move ends as they pass a Tomb square.
+    ------
+    Tomb FIFO queue - first unit to get out are the first to get in(FIFO), and tomb square returns to its Tomb status(exploding square vs square with piece) as soon as the respawned piece left, the square is empty and there are more units in the tomb queue. If the tomb queue is cleared(can happen by nearby explosion clearing the tomb, though it add units to another tomb),with last unit leaving it becomes a normal square again.
+    -----
+    Tomb Square explosion: if a piece steps on a tomb square it explodes(adding the unit to the tomb FIFO queue),clearing (3x3) nearby squares(tombs created for killed units , walls disappear,kings checkmated if in range), and oldest FIFO unit is eligible for respawn move.
+    -------------------------------------
+    Special Moves:Respawn
+    Respawn - Dead units can respawn if their Tomb square (of their last square in life if pushed off-board) explodes and not threatened by any piece(cannot be captured/exploded/immobilized/influenced by enemy unit on next move) in order of their deaths(oldest first). Counts as players move(choose available respawn square).
+    respawn examples:
+    Single Capture:
+    queen captures a rook at a1,
+    as queen leaves a1 it becomes a tomb square(containing a rook).
+    now a knight jumps into a1, and it explodes(3x3 clear),but a1 is targeted by enemy bishop, so rook can't appear.When bishop leaves guarding a1.
+    Player can respawn the rook at a1, after rooks leaves a1 becomes a tomb square containing a knight,and the process repeats ad infinitum.
+    If queen was recaptured its added to tomb queue after the rook.
+    ==================================
+
+    --------------------------------------
+    Dragon special moves:
+    Dragon's Breath - capture (3x3) nearby units(Tombs/walls unharmed).
+    --------------
+    Knight Special Moves:
+    Knight's Leap - Knight can capture by leaping over(must be under one of paths of leap) pieces as if it was a normal capture(landing on empty squares),even within double move(capture ends movement, cannot capture more than one piece).
+    ---------
+    Rook Special Moves:
+    Rook Push - Rook may push nearby enemy pieces 1square in rook's direction of movement when it lands before an enemy unit,(if a piece falls off board it dies). Walls are destroyed if pushed/doublepushed.
+    All pushed units cannot recapture the rook on the next move(push paralysis,rooks cannot be pushed/immune). Can double push within double move if no capture/death occurs.
+    -----------------------
+    Quadrants - the board is composed of 4 quadrants, 6x6 each, where if a side has a majority in non-pawn piece numbers(excludes kings/pawns, includes the arriving enemy/friendly units at the moment of move)) it gains the following perks:
+    1.Enemy doublemoves cannot end inside the bonus quadrant on the end of their double move, even if they normally can. Enemy Knight Leap and Rook Push is prohibited.
+    2.Tomb Squares on the bonus quadrant can be passed over without paralysis(landing is still death).
+    3.Capture Range reduction for friendly pieces is halved(1 square range reduction), if capture is inside the bonus quadrant.
+    4.Walls inside the bonus quadrant can be leaped over by knight moves of knight-move capable units, and crossed over by bishop-move capable units if the crossing path avoids wall squares(i.e. pathsquares don't land on the wallsquares).
+
+    ------------------------------------------
+    Special moves:Rotations
+    After rotation, the (rotated)squares change color to align with rest of board.Walls and tomb squares also rotate as well as anything that occurs on the squares.Squares(2x2,3x3,4x4) which touch the edge of board can't rotate.
+
+    Rotate4 - a special move, where a side can select a 2x2 square on the board, where it has a majority in unit numbers,and rotate as a single square in any direction 1-3 times.
+    Rotate9 - a special move, where a side can select a 3x3 square on the board, where it has a majority in unit numbers,and rotate as a single square in any direction 1-3 times.
+    Rotate16 - a special move, where a side can select a 4x4 square on the board, where it has a majority in unit numbers,and rotate as a single square in any direction 1-3 times.
+    ------------------------------------------
+
+    Walling - path of movement of a piece becomes a wall for the next 2 moves(cannot be leaped over, crossed or landed on,if any side of any square of the path of movement of the piece in question touches the wallsquares the movement stops,i.e. bishop move cannot cross the wall in any way).This includes the piece starting squares(includes both moves of double move).
+    Walls prohibit movement by both sides.
+    exception:Jesters can leap over the wall, but not land on it.
+    -----------------------
+    Empower - piece which is protected by one piece gains its native movement and capture ability(Kings/pawns cannot be empowered or give empowerment). e.g. a knight protected by a rook can move and capture like a rook.
+    ------------------------
+    Guards - if a unit is protected by two or more (non-pawn) pieces it is not empowered but cannot be captured(the guarded unit can capture normally). Kings cannot be guarded.
+    ----------------------------
+    SwapShotAny- Non-pawn Pieces can also swap places with units which they can capture(threat of capture,even if unit is friendly). e.g. Knight which can capture a pawn can swap places with it(works within single move only,doublemove range is ignored). Friendly units can be swapped same way.
+    Kings cannot be SwapShotted, only use kings exchange.
+
+    -----------------------
+    -------------
+    jester Special moves:
+    jesters cannot capture units.
+    jester Power Steal: mimics movement of pieces that threaten it(can also be empowered at same time).
+    Jesters Leap: Leap walls regardless of restrictions.
+    Jesters Paralysis: paralyzes nearby units(3x3) by presence(units cannot move/use ability, but can be influenced by other units)
+    Jesters Explosion:
+    Explodes 3x3 when captured(explosion bypasses "cannot be captured"/instant checkmate), and all adjacent (3x3) squares are cleared of units/walls, tomb queues are activated.
+    Jesters are immune to Jesters immobilization(Kind Immunity).
+    ------------------------
+    Kings Special Moves:
+
+    King's Check:
+    King's check is King-initiated self-check by enemy.
+    if the king is not currently in check, and moves into check, the checking units die(creating tomb squares).
+    The King's Check cannot be within a doublemove(which doesn't allow moving into check).
+    If the king is checked by enemy, he cannot move into check (must escape checks or use king's exchange).
+    King's Exchange:
+    Can exchange place with any friendly(non-attacked) live unit in the game(kings exchange),(exchanged piece dies(creating a tomb under King new location. , so each "teleport" costs a pawn/piece to make).
+    If king is captured/checkmated/exploded the enemy wins.
+    Kings are immune to special move abilities(SwapShot/Paralysis/Mind Control/Dragons Breath/immobilization/etc), but can be Rotated within squares.
+    -----------------------
+    Pawn special Moves:
+    Pawn Range extension:pawn capturing another pawn extends range by 1(initial range:1(x2 doublemove).(CRR doesn"t work on pawn)
+    Piece Promotion: capturing a non-pawn piece promotes the pawn into the same kind of piece.(capture a knight to get a knight)
+    Last File promotion:
+    pawns at last file, promote to knight/bishop/rook/queen/dragon/jester.
+    Pawn Loss condition:
+    if a side loses all pawns it loses the game(promoted pawns count as lost, .i.e its a mistake to promote all pawns), as alternative to checkmate.
+    ---------------------
+    Draw Rules:
+    50 moves rule =not enforced(easy pawn capture/promotion).
+    3fold repetition of position, which duplicates the walls/tombsquares/paralysis/status is draw(exact position duplicate only, ranges of units and tomb queues).
+    If a side cannot move(stalemate) it loses the game(not a draw).
