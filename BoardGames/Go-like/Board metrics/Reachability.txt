@@ -1,0 +1,13 @@
+Each empty intersection minimal manhattan distance to your side 
+stones is summed and divided by number of
+empty intersection(that are reachable without 
+moving through enemy stones).
+If path(manhattan distance) can't reach your stone
+from intersection, that square is ignored from calculations.
+Formula=(S/N):
+S= Sum of manhattan distances to 
+N=Number of reachable empty intersections.
+A large ratio(high average distance to own stones) indicates
+low reachability, and lack of power projection:
+low ratio indicates good reachability and plenty of
+power over the board.
