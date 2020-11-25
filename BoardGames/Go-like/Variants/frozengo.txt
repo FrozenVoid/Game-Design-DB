@@ -1,0 +1,23 @@
+Board Size:25x25
+If not otherwise specified rules are identical to Go.
+Score:By Number of stones on the board(higher number wins)+0.5 stone for white(as compensation for first move)+handicap (decided by rating).
+Handicap stones are not placed on board.
+Capture: Surrounded(zero liberties) stones change color to capturer side. Surround same as normal go.
+Standard Move:
+drop 1 stone in any cell that allows at least 1 liberty(chain with 1 liberty(eye) is alive).
+Teleport - same as above, but a stone is removed(as selected by player:stone selected -> square destination)
+Special Moves:
+-------------------
+Diagonal Conversion: if an unconnected(single) enemy stone exists diagonally adjacent to your stone you can capture it to your color.
+SideSwap - swap with nearby enemy stones:
+if stones touch orthogonally,enemy stone[E][Y] it swaps to [Y][E]
+
+Push -
+Move stone(must be connected to friendly stone(s) at the moment of move) forward 1sq to any orthogonal direction occupied by enemy stone, pushing the enemy and following stones by the line towards the edge of board(if no gaps exists, otherwise pushes them into gap).(if stones fall off 25x25 they are removed from game).
+
+
+--------------------
+
+===============
+Rotation(square is orthogonally rotated with content):
+Square NxN(N:2-24) cells can be rotated 90deg, 180deg and 270deg if your units are the majority in the square.
