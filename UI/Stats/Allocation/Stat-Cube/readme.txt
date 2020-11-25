@@ -3,4 +3,4 @@ that balances counter-stats from multiple directions.
 It allows speed stat allocation templates where
 N stats are each balanced with N-1 stats.
 See example:
-https://frozenvoid.github.io/blob/main/UI/Stats/Allocation/statcube.html
+https://frozenvoid.github.io/UI/Stats/Allocation/statcube.html
