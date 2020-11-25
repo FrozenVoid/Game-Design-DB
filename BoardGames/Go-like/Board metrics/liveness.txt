@@ -1,0 +1,4 @@
+Liveness is the 
+percent of stones in live groups(2+ eyes) of all your stones.
+Safe play is maximizing liveness, while risky/aggressive 
+play maximizes influence, intruding all over the board.
