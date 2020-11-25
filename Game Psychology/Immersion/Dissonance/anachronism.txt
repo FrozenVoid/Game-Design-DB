@@ -1,0 +1,54 @@
+anachronism is a general term for objects out of their time period:
+in context of a game, the object presence violates the time-period setting,
+such as e.g. cars in Roman Empire settings.
+The idea of 'a car' in a Roman Empire is not impossible by itself:
+it just won't be a 'stylized 20th century factory car', but some vehicle 
+produced with Roman Empire constraints and style of design - like to resemble
+ 'horseless carriage'-type early cars with huge steam engines and unique design
+ for each car emphasizing the skill of the mechanic.
+Games which specialize with time travel and alternate history may justify 
+anachronisms in-lore, but they will still look out of place and foreign to the setting.
+
+Subtypes;
+A.Idea transplantation: idea appearing before its foundations are established.
+Usually an idea from modern setting is transplanted to an older settings,
+without establishing the foundation on which the idea is based, creating an anachronism.
+
+B.Style migration; the period doesn't match the expected historical variety of the style:
+A settings from which the style originates is either too remote in time or
+lacks substance for which it applied(e.g. musical style that requires complex orchestral
+arrangement in a setting without orchestras)
+
+C.Retro-futurism: concepts imagined for future settings are applied
+to known settings, outside of their niche genre(e.g. steampunk).
+Some elements of past styles/designs are treated as current/contemporary despite
+ looking outdated, usually justified as retro/revival: this clashes with player
+ expectation of consistency when modern and classic concepts coexist at same place:
+ e.g. cars and horse carriages equally common in technologically advanced settings.
+
+D.Pseudo-future projection:eseentially this is next generation of retro-futurism for 
+settings which masquerade as 'future society'
+but project an unrealistic carbon-copy of contemporary settings:
+unlike (obvious) retro-futurism,
+such settings clash much less with our understanding of 
+temporary nature of culture and technology:
+it would be absurd to project something based on specific trend/fad without considering
+its future transformation. Usually the 'pseudo-future anachronism' takes
+some contemporary trend and projects a future settings where its pre-dominant
+(like e.g. a dirigible-base transport system in retro-futurism, but using
+some idea/concept/product that is contemporary and familiar) and unchanging
+standard/trope(all transport is dominated by dirigibles, or computing based on iPads)
+without bothering to imagine any evolution of the subject(what if iPads are not the pinnacle
+of technology/culture/philosophy?):
+in the future this would be classified as retro-futurism, but for now its contemporary fantasy
+with 'anachronistic projection' into the future that may or may not happen.
+
+E.Post-apocalyptic retreat: this settings assumes that contemporary 
+world will magically transform into past historical setting by removing specific
+technology, like e.g. feudal Europe being reborn without electricity.
+A historian would see this as absurd regression that doesn't have basis
+in its justification, as complexities of social hierarchies and knowledge
+are an inherent advantage over ancient regimes, but a player might only
+expirience dissonance over the 'apparent past' inserted within future.
+
+
