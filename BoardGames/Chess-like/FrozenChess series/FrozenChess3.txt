@@ -1,0 +1,49 @@
+Board12x12:12 pawns+12 pieces per side:
+    PPPPPPPP PPPP`
+    RNBDJQKJDBNR
+    general Abilities:
+
+    Death Squares - squares where pieces were captured become death squares: pieces which land on them die. Pieces which moved over a death square, become paralyzed for the next 2 moves(next 2 moves must be played by other pieces) and their double move ends as they pass a death square.
+
+    Empower - piece which is protected by one piece gains its native movement and capture ability(Kings/pawns cannot be empowered or give empowerment). e.g. a knight protected by a rook can move and capture like a rook.
+
+    Guards - if a unit is protected by two or more (non-pawn) pieces it is not empowered but cannot be captured(the guarded unit can capture normally). Kings cannot be guarded.
+
+    Swap places -Instead of a move friendly pieces can swap places with each other.King cannot swap, only use kings exchange(exchanged piece dies).
+
+    Kind Immunity - a non-pawn piece cannot capture a piece of its own kind(e.g. knight vs knight,queen vs queen), even with special moves/empower.
+
+    Double move - If a pieces does't capture it can move two moves(empowered moves occur only when the unit square is empowered at the moment of movement).Knights and Bishops can capture within double move with restrictions:
+
+    Knight's Leap - Knight can capture by leaping over(must be under one of paths of leap) pieces as well as normal capture,even within double move(capture ends movement, cannot capture more than one piece).
+
+    Bishop Bounce- can capture within double move but capture ends movement(i.e.capture at either first or second move).
+
+    Rook Push - Rook may push nearby enemy pieces 1square in rook's direction of movement when it lands before an enemy unit,(if a piece falls off board it dies).
+    All pushed units cannot recapture the rook on the next move(push paralysis,rooks cannot be pushed/immune). Can double push within double move if no capture/death occurs.
+
+
+
+
+    -------------
+    Pieces movement
+    Bishop:as chess bishop.
+    Knight:as chess knight.
+    Rook: as chess rook.
+    Dragon: as chess knight or bishop.
+    Queen:move: as knight,bishop or rook.
+
+    Jester:moves as knight and any move/doublemove of guarding/attacking piece/pawn(enemy or friendly),
+    immobilizes all nearby 3x3 enemies(by presence) and all units it leaps over with knight moves(for 2 moves), immobilized pieces cannot move/use ability.
+    Cannot capture units.Explodes 3x3 when captured(explosion bypasses "cannot be captured").
+    Jesters/kings are immune to jesters immobilization.
+
+    King: movement:Cannot move/capture,Can exchange place with any friendly(non-attacked) unit in the game(kings exchange),(exchanged piece is removed from board, so each "teleport" costs a pawn/piece to make).
+    If king is captured/checkmated the enemy wins.
+
+    pawns:1 square in any direction
+    pawns at last file, promote to knight/bishop/rook/queen/dragon/jester.
+    Pawn capturing a non-pawn transforms into that piece(early promotion).if a side loses all pawns it loses the game(promoted pawns count as lost,.i.e its a mistake to promote all pawns), as alternative to checkmate.
+
+    (50 moves rule not enforced,3fold repetition is draw)
+    If a side cannot move(stalemate) it loses the game.
