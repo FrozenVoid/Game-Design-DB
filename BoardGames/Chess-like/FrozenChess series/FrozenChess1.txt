@@ -1,0 +1,47 @@
+Board12x12:12 pawns+12 pieces per side:
+    PPPPPPPP PPPP`
+    RNBDJQKJDBNR
+
+    new pieces:
+    2 dragons(placed after jesters) bishop+knight movement:can capture(dragons shot) without moving(3 times per piece) like bishop or knight.Dragon capturing(or using shot) 3 pieces or pawns promotes to nightdragon(+6 shots),gaining nightrider movement(2 knight moves as normal knight move) retains the knight move/capture ability, can capture on 1st or second move, capture ends movement.
+    Dragon shot can be only one move,1knight or 1bishop.
+    Nightdragon and dragonrider(knight promotion)first knight move can "land"(air-move) into a removed square,provided the second move lands on normal square.Dragon shot of king is checkmate.
+
+    2 jesters(placed near queen/king):movement of bishop
+    +gain movement ability of all nearby (touching squares) friendly/enemy pieces(includes pawns)
+    explodes 3x3 square where its captured(kings checkmated if exploded near).
+    Captures like bishop only.
+    Jester capturing three pieces(or pawns) promotes to joker:next capture(of any piece) explodes the joker into 2 squares up/down/right/left and 1 square diagonals,can capture like bishop or knight or any nearby(before move) 3x3piece(friendly or enemy).Capture of joker explodes like jester(3x3 only).
+
+
+
+    new abilities:
+
+    Any non-king piece instead of moving can also suicide, removing its self from the board(jesters don't explode,jokers explode 3x3).
+
+    Pawns captures diagonally 1 square forward or backward(double move doesn't apply).
+    Pawn capturing a non-pawn transforms into that piece(all upgrades/promotion/counters are reset,i.e.pawn x dragonrider=new knight,like promotion to base type).
+    Pawns can also move diagonally forward in additional to forward.
+    Pawn has 2 double-square forward/diagonal moves per game(each pawn), which can be used anytime in the game.en passant not allowed.Pawn capturing a pawn gains +1 additional double square forward/diagonal move.
+    Pawns can promote to knight,bishop,rook,dragon,jester and queen at last file.
+    Pawn can also promote to king,this will make the checkmate a king capture(until one king remains).
+    Side losing all pawns loses the game(transformed and promoted pawns not included, i.e. the last pawn promoting or transforming into a piece loses the game).promotion at (opposite)edge of board, if last square is removed(by queen) promotion occurs at the square nearest to the boards edge(vertically,if the last square is free,but is blocked by next to last, the pawn is blocked(until assisted by knight move)).
+    (50 moves rule not enforced)
+
+    Queen has 3 moves per game where the square it occupies before moving is destroyed from the board(square removal), each capture by queen gives it +1 square removal move.
+    Square removal:pieces cannot move into/over(bishop/rook move) a square removed,special abilities(dragon shot,conversion,explosion) can pass over.Knight move can leap over,but not land into(only dragonriders/nightdragons can on 1st move).King surrounded by removed squares can only use exchange to escape(but cannot be harmed by queens/rook/bishop line of fire).
+
+    non-pawns near friendly knight/nightrider/dragonrider(touching squares) gain knight/nightrider/dragonrider movement ability(1 or 2 knight moves).Any piece in knight capture range cannot move and is immobilized(except kings or equal/higher ranked knight:knight cannot imm. knigh/nightrider,nightrider cannot imm. nightriderr/dragonrider,dragonrider cannot imm./cap. dragonrider), nightrider immobilization is same as normal knight.
+    Immobilized pieces cannot move,use abilities or influence the game(except by blocking way).
+    Knight capturing a piece(non pawn) promotes to nightrider:can move two knight moves per move(instead of regular knight move)(retains the knight move/capture ability, can capture on 1st or second move, capture ends movement).
+    Nightrider capturing 3 pieces or pawns promotes to dragonrider, all immobilized figures are instantly captured on move(at range of 1knight move all pieces are removed,dragonriders exempt.Kings checkmated instantly.).
+
+    bishops can convert by capturing(3 times per piece) without moving,piece turns to bishops color(kings/pawns/bishops immune).bishop converting 3 pieces promotes to archbishop:can move 2 bishop moves per turn,+6 conversions:can convert any piece except archbishops(king converted is checkmated instantly).Conversion ends movement.
+
+
+    non-rook pieces guarded(in clear line of sight, not blocked by other pieces) by rooks cannot be captured(promoted rooks(towers) also block all unpromoted pieces special abilitities).Protection is valid only for static pieces, pieces moving into protection zone are guarded only after they finish their movement/capture(e.g. jesters explosion will kill the piece moving into safety of rook line).
+    Rook near knight/nightrider/dragonrider also protects pieces same way(by knight move range(1move only)).
+    Rook capturing 3 pieces(includes pawns) promotes to tower:can protect 2 pieces(with no block between 2) in one direction(max 8 vs 4 for rook),also protects against all special abilities of unpromoted pieces(knight,bishop,dragon,jester) used on protected pieces(includes explosion of jester(if piece is protected before explosion)) and can protect rooks,but not towers (i.e. both cannot be immune to capture or use of ability if on same line).
+
+    Castling not allowed, but king can 3 times per game(+1 per capture of any piece) exchange position with any friendly piece.King cannot suicide,move into check/removed square or capture another king(e.g. with nearby knight move).
+    Each 3 captures of non-pawn piece by king, king gains +1 vortex move,allowing him to explode all lines in queen-like directions from his position(will also kill friendly units and enemy king(checkmate)).
