@@ -1,0 +1,447 @@
+Each variant below is a modification of original chess rules:
+
+Deadly Promotion:
+a player can promote a pawn anytime(at squares before promotion line), but only if he has a promoted piece equivalent: the piece dies after promotion. example: a pawn is promoted to queen(player has a queen:required for deadly promotion), but at next move the old queen dies.(if 2 pieces exists, player chooses which one dies). Normal(last-line) promotion carries no penalty.
+
+3capture_chess:
+units can't perform capture more than 3 times(except king) per game. 
+
+sideportal: right/left side square allow movement to their corresponding horiz. locations *max 8sq.
+
+4block chess: players have 4 boards of 4 sets each,
+each can be made on any of boards but move to square which is used by own pieces on other boards is not allowed. Check has to be responded to on same board and checkmate on any board leads to loss. 
+
+1capture_chess:
+Any unit can only capture once per game(except king) . Giving check/checkmate is not considered capture.
+
+Overload_chess:
+units threatened by 2 or more enemy units cannot move/capture(except king) 
+
+Pawn_crisis_chess:
+Same as chess, but if player loses all pawns he loses the game. 
+
+movetation: QRBN convert to RBNQ after each move(one piece conversion).
+
+pawn_fear_chess:
+Threatened pawns cannot move(but can capture if threat is capturable). 
+
+pawn_fear_chess2:
+Threatened pawns cannot move at all.
+
+Bounce_chess:
+pieces can bounce off boards edge in their move. Rook and Bishop moves continue in 90deg turn 
+
+frozen_king_chess:
+Rules same as normal chess, except king cannot move(even in check).
+
+noblock_chess:
+Friendly units can't block movement, however two pieces cannot share a square at same time.
+
+blackhole_chess:
+square where capture occured becomes 3x3 blackhole
+where units staying for 2 moves die(units which idle for 2 player moves in the 3x3 square).  Blackhole remain until end of game.
+
+blackhole_chess2:
+square where capture occured becomes 3x3 blackhole
+where units staying for 2 moves die(units which idle for 2 player moves in the 3x3 square). After 5 units perish, the blackhole  evaporates.
+
+blackhole_chess3:
+square where capture occured becomes 3x3 blackhole
+where enemy units(of captured piece) staying for 2 moves die(units which idle for 2 player moves in the 3x3 square). 
+
+blackhole_chess4:
+square where capture occured becomes 3x3 blackhole
+where enemy units(of captured piece) staying for 2 moves die(units which idle for 2 player moves in the 3x3 square). After 5 units perish, the blackhole  evaporates.
+
+blackhole_chess5:
+square where capture occured becomes 3x3 blackhole
+where enemy units(of capturing piece) staying for 2 moves die(units which idle for 2 player moves in the 3x3 square). 
+
+blackhole_chess6:
+square where capture occured becomes 3x3 blackhole
+where enemy units(of capturing piece) staying for 2 moves die(units which idle for 2 player moves in the 3x3 square).  After 5 units perish, the blackhole  evaporates.
+
+swap_chess:
+Rules same as normal chess, with ability instead of moving swap any two friendly pieces/pawns. king cannot be swapped. 
+
+swap_chess2:
+Rules same as normal chess, with ability instead of moving swap any two friendly pieces/pawns. 
+
+fog_chess:
+Rules same as normal chess, however moves are invisible until the next move. Illegal moves are rejected by arbiter/software. 
+Moves are revealed at the time of enemy move response.
+
+exchange_chess:
+Rules are same as normal chess, but capturing units disappear after capture(unless the capture is a checkmate). 
+
+arrival_chess:
+same as chess, but units cannot be captured just after moving(on next turn), unless the move gives check or captures a unit. 
+
+arrival_chess2:
+same as chess, but units cannot be captured just after moving(on next turn), unless the move gives check. 
+
+powerguard_chess:
+Same as chess, but units guarding a piece gain its powers. e.g. knight guarding a rook, gains rook movement. 
+
+fork_chess:
+same as chess except units that get forked can't move(paralysis) unless the move is a capture of the forking unit.Kings cannot be paralyzed. 
+(Fork is a move that puts 2+ unit under threat of capture)
+
+betrayal_chess:
+After capture the units in 1sq range(3x3 sq) defect to capturer side.(each capture is 3x3 sq capture,king never defects) 
+
+doublemove_chess:
+Same as chess, but pieces can move two times, capture ends movement.Pawns move 1-2 squares(always as in first move).
+
+bloodlust_chess:
+rules same as chess, except if after a capture a piece can make a second capture, its allowed.(2 captures per move max). 
+
+bloodlust_chess2:
+rules same as chess, except if after a capture a piece can make  another capture, its allowed.Max 3 captures per player move.
+
+bloodlust_chess3:
+rules same as chess, except if after a capture a piece can make  another capture, its allowed.Max 4 captures per player move.
+
+arrow_chess:
+Same as Chess, but pieces can shoot an arrow to threatened piece(normal capture movement) which paralyzes them for 2 moves instead of capture.Arrows move as piece.
+
+arrow_chess2:
+Same as Chess, but pieces can shoot an arrow to threatened piece(normal capture movement) which paralyzes them for 4 moves instead of capture.Arrows move as piece.
+
+
+entanglement_chess:
+If two+ units of same kind share a line or diagonal, capturing any of them, captures all.(pawns excluded) 
+Example: if 2 rooks share a diagonal, bishop captures both instead of one.
+
+
+resurrection_chess:
+Dead units respawn after 16 moves. If their death square is occupied they respawn when its empty again. 
+
+
+breakthrough_chess:
+Same as normal chess, however another victory condition exists: first side to promote a pawn wins the game. 
+
+karmic_chess:
+same as chess, except piece making a capture demotes in rank. (kings/pawn cannot demote). Queen->Rook->Bishop->Knight->Pawn
+ 
+safety_chess:
+Rules as normal chess, with the added rule that pieces/pawns cannot move into a position where they can be captured and stalemate is a loss. 
+
+pawn_leap_chess:
+pawns can jump over units directly forward(2sq jump). 
+
+pawn_leap_chess2:
+pawns can jump over units directly forward(2sq jump). 
+Pawn Leapcapture: leap also captures the leaped over unit. 
+
+
+mindcontrol_chess:
+units that threaten pieces with capture,can make them move(must be legal move) instead of normal move(by capturer).
+Example:bishop threatening enemy knight, could make that knight move to some square in knight move reach(counts as bishop's move).
+
+pincer_chess:
+units cannot move when surrounded by both sides by enemy units. example:https://i.imgur.com/6aS0EJY.jpg
+
+
+range_decay_chess:
+Ranged units start with 8 range, and each 3 moves of such unit its range falls by 1 square, until it reaches 3 squares. 
+
+range_decay_chess2:
+Ranged units start with 8 range, and each 5 moves of such unit its range falls by 1 square, until it reaches 4 squares. 
+
+swapshot_chess:
+Same as chess, but pieces can swap position with any units that they can capture.e.g. knight threatening enemy bishop can swap places with it. 
+
+Hiddenswap_chess:
+Rules are the same as chess, except the player may invisibly swap any two pieces as a move,except king. The swap will be revealed after next move. 
+
+pawn_capture_promotion_chess:
+pawns promote to piece they capture(normal promotion is allowed). 
+
+powersteal_chess:
+Same as chess, but a unit which can capture a piece, can move like that piece.e.g. knight threatening a queen can move like a queen. 
+
+capturer_paralysis_chess:
+Rules same as chess, but after a capture the capturing piece cannot move next 2 moves. 
+
+poison_check_chess:
+Rules same as chess, but units that checked a king die on next move(checkmate is exponentially harder, king can move easily).
+
+acceleration_chess:
+piece which performed capture gain +1 move per turn(forever).e.g. single-move knight capturing pawn becomes doublemove knight 
+
+mountain_chess:
+Units closer to center have more range(knight/pawns/king/move normally). Range5 at center and range2 at edge of board:
+https://i.imgur.com/VvWOJJg.jpg?1 ranges 
+
+vacation_chess:
+capturing units return to their start square(i.e. after capture, unit appears at square where it started(if square empty), check/mate not affected). e.g. Knight capturing a pawn, appears at its starting square(if empty) or normally stays at capturing square.
+
+rest_chess:
+same as chess, but you cannot move a piece in two consecutive moves, unless its the only legal move. e.g. after a bishop move, that bishop cannot move at next move of that side. 
+
+rest_chess2:
+same as chess, but you cannot move a piece in three consecutive moves, unless its the only legal move. e.g. after a bishop move, that bishop cannot move at next 2 moves of that side. 
+
+medusa_chess:
+Instead of capturing, the capturing unit doesn't move and turns the captured unit into a statue:it cannot move, but can block movement and cannot be captured. (e.g. knight threatening a pawn on next move instead of capturing the pawn(capture not allowed), turns it into a pawn statue)
+
+spawn_capture_chess:
+Instead of capture, the capturing unit doesn't move but spawns copy of itself on the capture square(copies of kings can be captured).
+e.g. Queen threatening a pawn, instead of moving(Original queen doesn't move) to capture a pawn the pawn itself turns into a Queen of capturer side(giving him +1 extra queen instead of capturing a pawn).
+
+stack_chess:
+Units can share a square, if they are on the same side(moving into a square occupied by friendly unit). Capture of a square captures all units within. Units cannot move through units.
+
+stack_chess2:
+Units can share a square, if they are on the same side(moving into a square occupied by friendly unit). Capture of a square captures all units within. Units can move through units(as in noblock_chess).
+
+footprint_guard_chess:
+units in footprint(square from which the friendly unit moved in previous move) of a friendly living unit are immune to capture.
+e.g. knight leaving square b3 makes any friendly unit that steps in b3 protected from enemy capture(until knight doesn't target b3 by moving again).
+
+
+trail_bound_chess:
+after moving a ranged piece, enemy units cannot cross the trail(pathsquares) of the piece moved until the next move(of the piece that made the trail).e.g. bishop moving from a1 to d4 makes a1,b2,c3 a wallsquares which cannot be crossed by units(until bishop moves again, creating other wallsquares)
+
+
+trail_bound_chess2:
+after moving a ranged piece, enemy units cannot cross the trail(pathsquares) of the piece moved until the next move(until next move of wallsquare creator side).e.g. bishop moving from a1 to d4 makes a1,b2,c3 a wallsquares which cannot be crossed by units for the next enemy move.
+
+
+turncoat_promotion_chess:
+Rules same as chess, but pawns can only promote to enemy pieces captured(will appear as promoter's pieces). 
+e.g. you can only promote to Queen if you captured it before(if you need 2 queen promotions, you need to capture 2 queens).
+
+immunity_chess:
+same as chess, except pieces of same kind cannot capture each other:pawns included(pawn cannot capture pawn, queen cannot capture queen). Kings can aid checkmate as usual. 
+
+
+respawn_chess:
+same as chess;+units captured respawn at empty capture square when  square is not attacked(by enemy moves:square of death of unit).
+
+respawn_chess2:
+same as chess;+units captured respawn at capture square when  square becomes empty. Unit cannot move after respawning(must be idle for 1 move).
+
+
+moveswap_chess:
+same as chess, except a unitA can move into a position of a enemy pieceB, exchanging position with him(B) 
+( your and enemy unit just switch places, instead of capture). 
+e.g. instead of Knight capturing a pawn, it can switch squares with it. 
+
+color_alignment_capture_chess:
+Units can only capture from squares of their side color. (Bishops can capture normally) . e.g. black knight can only capture units when it starts moving from a black square.
+
+
+kingpawn_chess:
+same as chess, but pawns can move like kings(1 square in any direction, no first double move) and promote to king(in case of multiple kings, player must capture/checkmate all to win).
+
+magnetic_pawn_chess:
+same as chess, but enemy non-pawn pieces landing near(3x3) pawns cannot move. except to capture the pawn which magnetizes them(if possible).Kings are immune. e.g. bishop landing on a4 is paralyzed by pawn on b3 and cannot move(but can capture the b3 pawn with a4 to b3 move, assuming pawn doesn't capture it)
+
+
+charge_range_chess:
+A ranged piece range starts with 2 squares and grows for each turn +1 square,if it stays on the same square(idling on the same square as if charging the range variable). Each move of ranged piece resets its range to 2.e.g. bishop has range 2 and idle 5 moves of player, he can now make a range2+5=range 7 move, after which it resets to 2.
+
+dualmove_capture_penalty_chess:
+after capture of enemy unit, enemy can make two moves for his turn. (moves have to be with different pieces) .e.g. after you capture a knight, enemy can move 2 times instead of 1 normally allocated per turn(the 2 move bonus doesn't last beyond after-capture move).
+
+
+square_elimination_chess:
+same as chess, but squares from which(starting square of move) any move was made become inaccessible(can be crossed/leaped over), for any units. e.g. knight moving from d4 eliminates d4 from the board(and as valid location for movement/crossing over).
+
+square_elimination_chess2:
+same as chess, but squares from which(starting square of move) any move was made become inaccessible(for moving into), for any units. e.g. knight moving from d4 eliminates d4 from the board(and as valid location for movement but leaping/crossing the square while moving is allowed).
+
+swipe_paralysis_chess:
+same as chess, but ranged units(rook/bishop/queen) moving past enemy piece(path touching its square by side) cause it to become paralyzed for 2 moves(cannot move). 
+e.g. bishop moving from a1 to d4 paralyzes units on squares touching a1,b2,c3 but not d4 by their side.
+
+
+swipe_paralysis_chess2:
+same as chess, but ranged units(rook/bishop/queen) moving past enemy piece(path touching its square by side) cause it to become paralyzed for 2 moves(cannot move), including square of arrival. 
+e.g. bishop moving from a1 to d4 paralyzes units on squares touching a1,b2,c3 and d4 by their side.
+
+rankcapture_chess:
+Units can only capture units of higher or equal rank(king considered lowest rank for purpose of capture). queen->rook->bishop->knight->pawn->king 
+e.g. queen can capture only queens, rook :rooks+queens,bishop:rooks+queens+bishops,etc 
+Kings can aid check/checkmate but cannot capture units.
+
+
+rankcapture_chess2:
+Units can only capture units of higher or equal rank(king considered lowest rank for purpose of capture). queen->rook->bishop->knight->pawn->king 
+e.g. queen can capture only queens, rook :rooks+queens,bishop:rooks+queens+bishops,etc 
+Kings can aid check/checkmate and capture any unit.
+
+limited_promotion_chess:
+Pawns can promote only to piece captured by enemy.
+e.g. if you lose a queen, you can promote to queen(once per each lost queen).
+
+
+immortal_king_chess:
+Same as chess,but king cannot be captured and ignores check. Win by capturing all enemy units(except king). If player has only a king left he loses the game. King captures normally(only non-king units).
+(King is extremely powerful piece in the game, but has low range:allowing units to flee it)
+
+
+paralysis_chess:
+Rules same as normal chess, except pieces which can be captured cannot move(threatened pieces except king). i.e. if under line of fire of a rook, a pawn cannot move. Moving into paralysis is allowed. stalemate counts as loss.
+
+
+doppelganger_chess:
+When a piece move a double of the piece appears on the move starting square(until the piece moves again or gets captured). The double(Doppelgänger) cannot move or be captured but can give check and block movement.  
+
+
+range_paralysis_chess:
+same as chess, but pieces which are threatened by other units can only move the least squares they can. e.g.bishop threatened by knight cannot move more than 1 square away.Knight is immune, as well as king. 
+
+
+
+ range_paralysis_chess2:
+same as chess, but pieces which are threatened by other units can only move the minimum squares they can. e.g.bishop threatened by knight cannot move more than 2 squares away.Knight is immune, as well as king. 
+
+
+equality_chess:
+Rules same a normal chess, but capturing side must remove an equal rank unit for every capture. E.g. capturing a knight , must also remove one of own knights. 
+
+equality_chess2:
+Rules same a normal chess, but capturing side must remove an equal rank unit for every capture. E.g. capturing a knight , must also remove one of own knights.  Both king and queen needs to be checkmated or captured to win.
+
+diagonal_atomic_chess:
+same as chess, except when a pieces is captured it explodes, killing both pieces and any units on the squares diagonal to the explosion square. i.e. bishop capturing a pawn on e4, explodes and pieces on f5,d5,f3,d3 die(as well as e4 units). 
+
+
+capture_promotion_chess:
+Rules same as chess except a piece capturing another can (by choice of player) become them. e.g. pawn capturing a queen can become a queen. and queen capturing a pawn can optionally become a pawn(if player decides).
+
+capture_transform_chess:
+Rules same as chess except a piece capturing another becomes it.
+e.g. queen capturing a pawn transforms into a pawn. Pawn capturing a knight becomes a knight.
+
+color_restricted_capture_chess:
+same as chess, but pieces standing on white squares can only capture units on white squares and black-square pieces can only capture on black squares. Knights can capture normally. 
+
+
+footprint_pursuit_paralysis_chess:
+same as chess, but a piece become paralyzed if enemy piece moves to the square it occupied in previous move. Paralysis lasts 2 moves, during which it cannot move/capture. 
+e.g. bishop moving from d4 to a1 becomes paralyzed when enemy piece moves to occupy d4(bishop cannot leave a1 for 2 moves, then its immune to d4 paralysis).
+
+capture_trap_chess:
+same as chess, but piece that captured a unit create a trap square on the position of capture, where they become trapped and can escape only by capturing an enemy unit(thus moving into another trap square). Unit that move into a trap square become immobile, and can escape as above. 
+e.g. bishop capturing a pawn at d3 becomes stuck at d3 until it can capture something. Next unit moving into d3 is also stuck.
+
+move_trap_chess:
+same as chess, except any square where non-pawn pieces have stepped to becomes a trap, where any piece landing to becomes stuck(except king) until its captured by enemy: then the trap disappears.
+e.g. bishop has moved from a1 to c3 to b4 to c5, the squares a1,c3,b4 become traps for the rest of the game.
+Traps can only harm enemy units. 
+
+
+
+capture_range_reduction_chess:
+same as chess, but as ranged unit captures its range is reduced by one square.
+e.g.bishop with initial range of 8 squares, capturing a single pawn reduces its own range to 7 squares(up to 2 square min).
+Knight and king immune.
+
+cascade_chess:
+after a move of sideA, all non-pawn pieces threatened by sideA, are converted to SideA, and then the process repeats until all possible units have converted to sideA(i.e. nothing in their capture range). Captures of non-pawn pieces are not allowed:only the cascade conversion process and capture of pawns are allowed.
+ King conversion wins the game. Stalemate counts as loss. 
+e.g. after you move knight to d3, enemy rook at b1 become converted(in knight threat square) to your side, and itself converts king at a1(since its in rook threatened square,winning the game)
+
+
+footprint_teleswap_chess:
+same as chess, except that a piece moving into a footprint(square on which the piece was before moving)of enemy piece, swaps position with it(current position of enemy piece and starting position position of swapping piece). Footprint is defined as the single square from which the enemy piece moved to its current position,if the piece in its starting position footprint does not exist.
+e.g. enemy move bishop from d4 to a1, and you move knight from c2 to d4, (footprint teleswap) bishop appears at c2(where knight started) and knight at a1(where bishop landed).
+
+
+
+
+
+trapswap_chess:
+same as chess, 
+except any square where non-pawn pieces have stepped to becomes a trap square,
+ where any enemy piece landing to becomes stuck(except kings).
+ e.g. bishop has moved from a1 to c3 to b4 to c5,
+ the squares a1,c3,b4 become traps for the rest of the game.c5 will become a trap when bishop leaves it. 
+Trap squares can only trap enemy units of the trap square creator: for friendly units they have no effect. 
+You can swap positions of any two friendly pieces in the game, including those in traps as a special move.
+
+unchess:
+The rules are the same as in normal chess,except:
+1.which side makes the first capture loses.
+2.which side gives checkmate loses.
+3.side which is stalemated or has no valid moves loses.
+Instead of limited forced-capture-game of anti-chess, the game becomes a complex race to reduce enemy mobility and force him to make a capture/checkmate in least amount of time.
+However side which would want to win by moving king into enemy territory,would easily lose because king in check could be forced to capture an undefended figure.
+Side which wouldn't develop pawns would be severely reduced in mobility,(e.g. side which would try to move figures back-and-forth).
+King must be protected, since a check could be forcing capture of attacking figure(loses the game) or reducing mobility(by limiting number of moves).
+
+
+
+
+
+
+unchess2:
+The rules are the same as in normal chess,except:
+1.which side makes the first capture loses.
+2.which side gives first check/checkmate loses.
+3.side which is stalemated or has no valid moves loses.
+4.pieces cannot retreat back to their last "footprint"(original) square from 
+which they moved to the current position(status of square doesn't change for the rest of the game, until the piece moves to another square create the next "footprint").(if no legal moves exist and this is the only move, the side loses)
+Instead of limited forced-capture-game of anti-chess,
+ the game becomes a complex race to reduce enemy 
+mobility and force him to make a capture/checkmate 
+in least amount of time.
+However side which would want to win by moving king 
+into enemy territory,would easily lose because king in 
+check could be forced to capture an undefended figure.
+Side which wouldn't develop pawns would be severely 
+reduced in mobility,(e.g. side which would try to move
+ figures back-and-forth).
+King must be protected, since a check could be forcing 
+capture of attacking figure(loses the game) or reducing 
+mobility(by limiting number of moves).
+
+rotate4_chess:
+same as chess, except instead of moving a side can rotate a 4square square on the board, where it occupies the majority of cells(3:1,2:1,1:0) 1-3 rotations in any side. The underlying cells don't change color only the units are rotated.
+
+rotate9_chess:
+same as rotate4_chess, with added 3x3 square rotations.
+
+rotate16_chess:
+same as rotate9_chess, with added 4x4 square rotations.
+
+
+minesweeper_chess:
+Rules same as normal chess, except a player has a choice where instead of moving, he can plant a mine on a square any of his pieces occupies. The enemy will be informed [Player X has placed a mine]. The mine is hidden from the other player and cannot harm friendly units. Any enemy units passing over the mined square or landing on the mine explode, removing the mine and the enemy unit from the game. There can be only 5 mines per player at the same time on the board.
+
+
+
+king's check chess:
+same as chess, except units checking the king during the king move die(moving into check -> enemy check-givers die).
+1.King can move into check(provided he is not in check),
+ causing all units that check him to die. 
+2.King can be checked normally and cannot just rest for next move. 
+i.e. King can move into check(#1) and by that kill checking units,
+ but has to escape enemy-initiated checks
+(if checked by enemy cannot move into check).
+King can be captured or checkmated to win.
+
+
+shadow_chess:
+2 chess boards,1 empty shadow board linked to the main board. 
+Pieces captured on mainboard transfer to shadowboard 
+when the other board arrival square becomes vacant(same square position). When a piece performs a capture on the shadow board it queues for arrival on the mainboard as above(at capture square).Captured shadowboard piece removed from game. movement on shadowboard is performed within the same moves as on mainboard,with suffix /shadow(to mark move as occurring on the shadowboard). Rules of chess are same for both boards(e.g. promotion),but pieces on the shadowboard cannot give check or influence the mainboard.
+
+Extended16 Chess:
+Board 16x16
+RCZU NNBQ KBNN UZCR
+PPPP PPPP   PPPP PPPP
+This a variant that preserves most rules of chess with minimal innovations.
+New pieces 
+C=Chancellor, combines moves of Rook and Knight
+Z=Zealot, Combines moves of Bishop and Knight
+U=Unicorn, Moves any number of same Knight moves in same direction(same knight move shape repeatedd) until edge of board. Diagram: https://postimg.cc/Wtn6rXCX
+There is an extra pair of Knights for each side.
+and additionally any Knight may transform into captured non-pawn piece they capture(e.g. Knight capturing a Queen transforms into a Queen) on player's decision(Knight Capture Promotion).
+Additionally, bishops gain reflection: i.e. they can 
+reflect off the edge of board once.(Reflected Move Diagram https://postimg.cc/yg82KkZH )
+En passant rule is enforced and is more frequent, pawns may double-move until the middle of the board.
