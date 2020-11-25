@@ -1,0 +1,82 @@
+Board12x12:12 pawns+12 pieces per side:
+    PPPPPPPP PPPP`
+    RNBDJQKJDBNR
+    general rules:
+
+    Quadrants - the board is composed of 4 quadrants, 6x6 each, where if a side has a majority in non-pawn piece numbers(excludes kings/pawns, includes the arriving enemy/friendly units at the moment of move)) it gains the following perks:
+    1.Enemy doublemoves cannot end inside the bonus quadrant on the end of their double move, even if they normally can. Enemy Knight leapcapture and Rook Push is prohibited.
+    2.Death Squares on the bonus quadrant can be passed over without paralysis(landing is still death).
+    3.Capture Range reduction for friendly pieces is halved(1 square range reduction), if capture is inside the bonus quadrant.
+    4.Walls inside the bonus quadrant can be leaped over by knight moves of knight-move capable units, and crossed over by bishop-move capable units if the crossing path avoids wall squares(i.e. pathsquares don't land on the wallsquares).
+
+
+    Rotation:
+    After rotation, the (rotated)squares change color to align with rest of board.Walls and death squares also rotate as well as anything that occurs on the squares.Squares(2x2,3x3,4x4) which touch the edge of board can't rotate.
+
+    Rotate4 - a special move, where a side can select a 2x2 square on the board, where it has a majority in unit numbers,and rotate as a single square in any direction 1-3 times.
+    Rotate9 - a special move, where a side can select a 3x3 square on the board, where it has a majority in unit numbers,and rotate as a single square in any direction 1-3 times.
+    Rotate16 - a special move, where a side can select a 4x4 square on the board, where it has a majority in unit numbers,and rotate as a single square in any direction 1-3 times.
+
+
+
+    Capture range reduction - ranged pieces normally have 12 squares range(1 move), but after a capture this range is reduced by 2(up to 2 square minimum).
+    e.g. queens bishop and rook range are reduced by 2 squares after a capture.
+
+    Walling - path of movement of a piece becomes a wall for the next 2 moves(cannot be leaped over, crossed or landed on,if any side of any square of the path of movement of the piece in question touches the wallsquares the movement stops,i.e. bishop move cannot cross the wall in any way).This includes the piece starting squares(includes both moves of double move).Walls prohibit movement by both sides.
+    exception:Jesters can leap over the wall, but not land on it.
+
+    Death Squares - squares where pieces were captured become death squares: pieces which land on them die and the death square is removed(Death Square Sacrifice). Pieces which moved over a death square, become paralyzed for the next 2 moves(next 2 moves must be played by other pieces) and their double move ends as they pass a death square.
+    Death Square activates only if it becomes empty of units(i.e. recapture doesn't kill).
+
+    Empower - piece which is protected by one piece gains its native movement and capture ability(Kings/pawns cannot be empowered or give empowerment). e.g. a knight protected by a rook can move and capture like a rook.
+
+    Guards - if a unit is protected by two or more (non-pawn) pieces it is not empowered but cannot be captured(the guarded unit can capture normally). Kings cannot be guarded.
+
+
+    SwapShotAny- Non-pawn Pieces can also swap places with units which they can capture(threat of capture,even if unit is friendly).e.g. Knight which can capture a pawn can swap places with it(works within single move only,doublemove range is ignored).Friendly units can be swapped same way.
+    Kings cannot be SwapShotted, only use kings exchange.
+
+    Kind Immunity - a non-pawn piece cannot engage a piece of its own kind(e.g. knight can do nothing to knights)
+
+
+
+    Double move - If a pieces does't capture it can move two moves(empowered moves occur only when the unit square is empowered at the moment of movement).
+    Double move stop - after a doublemove, the piece cannot move at next move(resting), except if only legal move is to move that piece(stalemate), then it can move a single move(i.e.no consecutive double move).
+
+    Knights and Bishops can capture within double move with restrictions:
+
+    Knight's Leap - Knight can capture by leaping over(must be under one of paths of leap) pieces as well as normal capture,even within double move(capture ends movement, cannot capture more than one piece).
+
+    Bishop Bounce- can capture within double move but capture ends movement(i.e.capture at either first or second move).
+
+    Rook Push - Rook may push nearby enemy pieces 1square in rook's direction of movement when it lands before an enemy unit,(if a piece falls off board it dies).
+    All pushed units cannot recapture the rook on the next move(push paralysis,rooks cannot be pushed/immune). Can double push within double move if no capture/death occurs.
+
+
+
+
+    -------------
+    Pieces movement
+    Bishop:as chess bishop.
+    Knight:as chess knight.
+    Rook: as chess rook.
+    Dragon: as chess knight or bishop.
+    Queen:move: as knight,bishop or rook.
+
+    Jester:moves as knight and any move/doublemove of piece/pawn attacking it,
+    immobilizes all nearby 3x3 enemies(by presence) and all units it leaps over with knight moves(for 2 moves), immobilized pieces cannot move/use ability.
+    Cannot capture units.
+    jesters explosion:
+    Explodes 3x3 when captured(explosion bypasses "cannot be captured"/instant checkmate), and all adjacent (3x3) squares are cleared of units/walls/deathsquares.
+    Jesters/kings are immune to jesters immobilization, but not explosion.
+
+    King: movement:Cannot move/capture,Can exchange place with any friendly(non-attacked) unit in the game(kings exchange),(exchanged piece is removed from board, so each "teleport" costs a pawn/piece to make).
+    If king is captured/checkmated the enemy wins.
+
+    pawns:1 square in any direction
+    pawns at last file, promote to knight/bishop/rook/queen/dragon/jester.
+    Pawn capturing a non-pawn transforms into that piece(early promotion).if a side loses all pawns it loses the game(promoted pawns count as lost,.i.e its a mistake to promote all pawns), as alternative to checkmate.
+
+    50 moves rule =not enforced(easy pawn capture/promotion).
+    3fold repetition of position, which duplicates the walls/deathsquares/paralysis/status is draw(exact position duplicate only).
+    If a side cannot move(stalemate) it loses the game.
