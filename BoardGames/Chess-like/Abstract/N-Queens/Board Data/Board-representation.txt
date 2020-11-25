@@ -1,0 +1,14 @@
+https://en.wikipedia.org/wiki/Eight_queens_puzzle
+N queens board can be represented as 1D array of 
+Queens's Rows.
+ Each cell address[i] is the Column and its value is the Row.
+ Since there needs to be N queens per NxN board
+ (1 queen per Column) the problem reduces to
+ determining the Row number for each array cell.
+Diagonals can be checked by substracting/adding 
+the "height" difference of two cells addresses
+(making their rows of equal "height" so they 
+could be checked at once(equalize diagonals right/left and check.).
+Checking  Row collision is simply finding equal row numbers.
+example: 
+https://github.com/FrozenVoid/C-techniques/blob/master/random-nqueens.c
