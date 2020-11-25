@@ -1,0 +1,14 @@
+simple variations on rules:
+
+
+live_go:
+Same as normal Go, but stones may move 1 cell diagonally or orthogonally(instead of drop move). 
+
+spawn_go:
+After first 5 stones of a player are on board, next stones can only be placed near existing friendly stones(adjacent diagonally/orthogonally). 
+
+jump_go:
+In addition to go rules: a stone may jump over an adjacent enemy stone to capture it(as in checkers but restricted to one stone vertically/horizontally). 
+
+conversion_go:
+Stones are not removed but are converted to capturing player color.
