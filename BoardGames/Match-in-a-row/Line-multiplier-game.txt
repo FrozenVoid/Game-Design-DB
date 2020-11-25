@@ -1,0 +1,31 @@
+Type: match in a row.
+Board: 25x25 cells, initially set with random numbers 1 to 9
+Players:2
+Turns: each turn has 60 seconds to setup all lines.
+before first turn all initial sequences are scored,
+removed and added to second players score  
+until the board contains no 3+ sequences - as a balancing mechanism.
+
+At the end of turn, all sequences of 3+ numbers in row/column 
+are removed and their score added to player score, 
+then empty cells are filled with other random numbers.
+
+Score:3+ same numbers in row or column such as 3,3,3 score as multiplication of their values=3*3*3=27 points
+Win condition: 100K score or when no valid sequences found for 2 turns(then biggest score wins).
+
+Moves: 1.swap any cell with adjacente orthogonal cell to make 3in a row number sequence.
+2. If there isn't a match(3+ in a row/column), the move is cancelled. 
+3.each turn can have as many valid moves as player can handle.
+
+
+
+
+example:  
+_2_3_
+_3_2_2 
+_x_3_
+by swaping top 2 with middle 3, the 2-2-2 chain is destroyed for score(2*2*2=8).
+Alternatively left 3 is swapped with center 2 to score 3*3*3=27 points(better)
+
+Special case: instead of 1*1*1=1, the 1's are added instead of multiplied.
+so 3 1's in a row gives 3 score, not 1(1*1*1)
