@@ -1,0 +1,10 @@
+Audio spookiness and atmosphere that keeps the player listening;
+1.Muted or faint sounds:screams, animal noises, scratching, random taps on metal/wood,whispers, breathing noises near player.
+2.Audio combined with lightning; 'ghost lights','glowing objects','glowing shadows' with various audio effects(e.g. laughter,screams,screching).
+3.something that isn't there; sounds of movement just beyond edge of vision,
+background sounds of invisible movements above/below player,'ghost steps',insisible water streams, invisible fire.
+4.positional audio; Audio sources positioned behind or above player.
+5.Echoes: repeating, distorted echoes.
+6.Music: faint sounds of chanting, nonsense in ancient language(avoid using
+ Latin as it become a cliche).
+
