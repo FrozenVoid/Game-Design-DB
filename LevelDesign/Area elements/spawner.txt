@@ -1,0 +1,3 @@
+A spawner object is a focus point for loading mobile enemies.
+A spawner object is usually invisible or set to look
+as background element of the level.
