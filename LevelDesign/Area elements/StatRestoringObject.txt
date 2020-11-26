@@ -1,0 +1,2 @@
+A stat restoring object usually restores player
+stats or removes debuffs, e.g. a fountain that heals to 100%.
