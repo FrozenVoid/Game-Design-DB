@@ -1,0 +1,7 @@
+Main balance stats:Power,Range,Defense 
+Which combat roles to assign:
+Power+Defense=Melee monsters(Hit hard, Hard to Kill(at  range),lack range, Speed=amplifies power)
+Range=Generic Ranged Monsters(easy to kill, hard to avoid, better AI amplifies power(retreat/hit-and-run))
+Range+Defense=Destroyable Traps, Static attackers/towers/turrets.(Long range threat,hard to kill, predictable or slow)
+Power+Range=Unique monsters(Hit hard, have range)
+Power+Range+Defense=Boss Monsters(Hard to kill,Long-Ranged,Hit hard)
