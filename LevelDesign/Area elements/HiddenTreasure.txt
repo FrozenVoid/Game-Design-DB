@@ -1,0 +1,2 @@
+An object which contains valuables, hidden by level geometry/pathing 
+or through being contained by a container.
