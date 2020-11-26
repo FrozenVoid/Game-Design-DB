@@ -1,0 +1,10 @@
+Synopsis:
+Players running out of inventory space, with non-stackable consumables, junk items and vendor trash.
+Players begin to notice game flaws in item organization and focus on inventory management instead of gameplay itself(immersion breaking mode switching). Limited inventory space leads to player's
+creating arbitrary values for items based on their space requirement,
+rather than their attributes.
+The 'mode-switching' interruption in managing every new item,
+swapping/dropping items and backtracking to reorganize items collection
+is a major structural flaw as constraints of storage per-characters
+can be easily increase far above visual limits of one-page inventory
+with minimal space cost.
