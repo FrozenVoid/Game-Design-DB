@@ -1,0 +1,6 @@
+Badly integrated cash-shop/micro-transactions:
+ nothing reminds players more about the unreality of the game than having to pay for something or observe an external meta-game mechanic(items bought from outside the game) in action. 
+If a player can't achieve something without real money, he will promptly judge the game as part of exploitative mechanic unrelated to immersion(which is fair, given that the game demands out-of-game transaction) and a form of bad-faith cheating exploiting player's "achievement-hunting" psychology.
+The content behind the 'paywall' breaks the suspension of disbelief
+as gameworld is revealed to be dependent on 'real world'(represented
+as cash shop and micro-transactions).
