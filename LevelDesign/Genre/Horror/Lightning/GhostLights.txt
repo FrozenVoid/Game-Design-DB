@@ -1,0 +1,10 @@
+Ghost lights is a generic category for distant and faint
+source of light appearing 'mysterious' and evading investigation.
+The most common type is the "Will o' the wisp light" but any 
+light source will do if it follows the rules;
+1.Disappears if approached.
+2.Slow and steady movement, no sharp change in pattern.
+3.Provides faint, muted colors.
+optionally, various sounds can be added to simulate a presence
+of entity/spirit represented by the light.
+https://en.wikipedia.org/wiki/Will-o%27-the-wisp
