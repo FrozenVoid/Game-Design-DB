@@ -11,7 +11,7 @@ should not be an 'animal species' mimicing humans, like the skinwalkers ).
 
 More: https://en.wikipedia.org/wiki/Vampire
 Reccomended reference for archetype of a vampire:
-https://b-ok.cc/book/1199604/0387a6
+The Vampire Book: The Encyclopedia of the Undead by J. Gordon Melton 
 
 Alternative to vampires:
 To avoid vampire cliches(or Twilight series references),
