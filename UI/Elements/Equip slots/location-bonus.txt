@@ -1,0 +1,6 @@
+specific location bonus is a equipment system
+which adds bonus based on item slot location.
+e.g. ring equipped on thumb boost ring's Fire attributes by 30%
+ ring equipped on pinky boosts the ring's Water-related attributes by 25%.
+the speficic set of available bonuses can be 
+displayed on drop down tooltips when equipping the item.
