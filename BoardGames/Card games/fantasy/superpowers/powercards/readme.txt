@@ -1,13 +1,10 @@
 game process: players pick 7 cards each(unlimited duplicates)
 and compare their builds in abstract metrics like
-efficiency/power/prestige/quality.
-Examples of builds:
-Most efficient build is likely immortality+time+conjuration+shaping+influence+knowledge+return(though it fairly complex to use).
-The safest passive build is health+invulnerability+immortality+plenty+luck+protection+ether.
+efficiency/power/prestige/quality,the cards are soul-bound and continue with all reincarnations.
 
-
-card powers are mainly taken from submissions in
+ers are mainly taken from submissions in
 https://old.reddit.com/r/makeyourchoice/ 
+
 
 1.card of health-> perfect health&youth, immunity to disease and infection
 
