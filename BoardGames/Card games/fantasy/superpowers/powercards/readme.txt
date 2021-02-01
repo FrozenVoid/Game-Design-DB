@@ -2,8 +2,11 @@ game process: players pick 7 cards each(unlimited duplicates)
 and compare their builds in abstract metrics like
 efficiency/power/prestige/quality,the cards are soul-bound and continue with all reincarnations.
 
-ers are mainly taken from submissions in
-https://old.reddit.com/r/makeyourchoice/ 
+powers are mainly taken from submissions in
+https://old.reddit.com/r/makeyourchoice/
+bulk is from;
+https://old.reddit.com/r/makeyourchoice/comments/ij2461/table_of_powers_expanded/
+
 
 
 1.card of health-> perfect health&youth, immunity to disease and infection
