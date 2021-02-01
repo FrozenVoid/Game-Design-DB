@@ -1,0 +1,16 @@
+when two builds clash it might be neccessary to
+explain the relative power of cards:
+1.if two cards conflict with similar scope
+the more specific scope of influence wins;
+e.g. luck(chance-based events) wins vs influence(all events)
+
+2.protective power of cards is resolved to greatest scope of
+protection vs damage,
+invulnerability (physical body) loses vs death(non-specific death).
+
+3.information based powers are resolved
+as more powerful/fastest with most specific scope(unless
+the scope is more complete version of another);
+so data card(instant data overlay) wins vs knowledge(generic focus on power)
+but data card(instant data overlay) loses vs prediction(future view) as
+prediction can get data from the future, while data is current)
