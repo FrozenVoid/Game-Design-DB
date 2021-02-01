@@ -445,3 +445,6 @@ and additionally any Knight may transform into captured non-pawn piece they capt
 Additionally, bishops gain reflection: i.e. they can 
 reflect off the edge of board once.(Reflected Move Diagram https://postimg.cc/yg82KkZH )
 En passant rule is enforced and is more frequent, pawns may double-move until the middle of the board.
+
+checkswap chess:
+a check that isn't checkmate, swap sides(black player gains white pieces and vice versa).
