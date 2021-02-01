@@ -1,6 +1,10 @@
-game process: players pick 7 cards each(unlimited duplicates)
-and compare their builds in abstract metrics like
+what is this game type: fantasy roleplaying, pick character 
+with cards and explain his goals/flaws/strength in a fantasy scenario e.g. "if i had a power card i would use it like X but if i had an opponent with card Y i would use a time card".
+game process: players pick 7 cards each(unlimited duplicates) in their own fantasy scenario
+and compare/battle/roleplay their builds in abstract metrics like
 efficiency/power/prestige/quality,the cards are soul-bound and continue with all reincarnations.
+
+
 
 powers are mainly taken from submissions in
 https://old.reddit.com/r/makeyourchoice/
