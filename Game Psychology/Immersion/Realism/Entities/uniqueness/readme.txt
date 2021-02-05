@@ -15,4 +15,4 @@ A more character-like set of variables like stamina/hp/mana/energy can
 be used to model more complex behavior, where it would alter
 entity variables(e.g. speed).
 7.Adaptation; can the AI script change tactics based on entity
-current variables(hp/energy), alter skill use to match opponent?
+current variables(hp/energy), alter skill use to match opponent(e.g. alter selected skill based on distance to player)?
