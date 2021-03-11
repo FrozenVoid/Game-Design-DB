@@ -1,0 +1,20 @@
+Usually a game uses different enemy levels for areas
+connected in the overworld layer - it prevents travel by 
+low-level players for most of the game world.
+Depth level system operates by making all enemies on
+the same depth around the same level(as used in dungeon crawlers);
+example;
+
+Overworld; level 1 enemies
+depth +1(e.g. cave); level 2-4 enemies
+depth +2;level 5-7 enemies
+depth +3;level 8-10 enemies
+depth +4;level 11-15 enemies
+
+Advantages:
+Exponentially increases amount of space to travel and explore
+for low-level characters.
+Possibility to separate servers for each depth,
+as inter-level transition for players.
+Removes most level balance issues by separating
+high-level threats from low-level players with depth.
