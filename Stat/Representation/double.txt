@@ -1,0 +1,9 @@
+Stats can be stored as floating point double (64-bit),
+instead of tracking 'integer points' with a limited range.
+Calculations of percentages and modifiers are much easier too,
+as well as display rounded to xx.yy% or xx.yyy as required.
+Using integers makes sense only for tracking sequenced quantities
+such as levels of something(x+1).
+
+
+
