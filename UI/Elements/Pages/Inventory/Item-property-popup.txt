@@ -1,0 +1,9 @@
+Item property popups allow editing or examing item properties,
+by click the item property lines in tooltip/page of selected item;
+examples:
+1.item personalization(e.g. click to name this item)
+2.inscriptions(e.g. add magic word to item(similar to insertables))
+3.insertables(e.g. remove/replace/add insertable object)
+4.text message sub-objects(e.g. adding descriptions or messages)
+5.material sheet(examine materials to which item can be disassembled)
+6.item worth stats(e.g. marketplace average/vendor price).
