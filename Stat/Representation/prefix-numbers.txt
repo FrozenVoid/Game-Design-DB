@@ -1,0 +1,7 @@
+the prefix system improves visual comprehensions of 
+numbers without burdening the player with long strings of digits.
+The following prefix scaling compresses numbers to xx.yyy format
+< 10000 : normal numbers 9202.201
+10000-10M: K(10^3) numbers, 92.201K=92201
+10M-10G: M(10^6) numbers, 92.201M=92201000
+10G-10T: G(10^9) numbers,92.201G=92201000000
