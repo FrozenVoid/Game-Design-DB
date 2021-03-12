@@ -1,0 +1,25 @@
+A game storyline repeating is common with games
+having a flat, linear storyline forcing players
+to repeat all quests/tasks/challenges/bosses each time to
+advance a new character: this creates a strong anti-pathy
+for repeating elements, making the completion of tasks
+similar to a mandatory chore, which ruins immersion.
+
+solutions:
+A.non-linear storylines: with a hefty design investment
+its possible to create localized/personalized paths
+with multiple-choice splits storyline.
+it doesn't solve the immersion problem(as content still repeats)
+, but provides variety in player choice.
+B.Optional tasks/quests: games can opt out of forcing
+the player to follow the storyline, instead allowing free open-world
+exploration and opt-in quests(usually localized to area/NPC).
+
+C.No storyline/player-driven storyline:
+turning the concept on its head, the players actions are 
+instead defined as the 'storyline' with the game documenting
+his progress without forcing a quest/task system:
+few games implement this idea well, instead migrating
+quest/tasks into "achievement" mechanics - however 
+a quest/task system can be eliminated completely in favor
+of 'static world' approach which scale better for multiplayer.
