@@ -1,0 +1,9 @@
+A pie chart indicator can be used to 
+showcase critical states(hp/mana/rage):
+multiple pie chart of different colors can
+be embedded in each other(each segment representing 0-100% state) :
+example:
+inner orange core: pie chart of rage meter.
+outer blue pie chart segment: mana
+second red circle segment : hitpoints.
+(segments look like doughnut pie chart enveloping the core)
