@@ -1,0 +1,11 @@
+A non-stacking percentage bonus applies each attribute
+separately as if modifiers were multiplied independently.
+Example(stacking,additive): 
+4 items each with +5% fire resistance grant 20%(4*5) resistance.
+Example(non-stacking,multiplicative):
+4 items each with +5% fire resistance grant
+100-0.95^4=18.5% fire resistance,each reducing fire by 5%
+
+the second system advantages:
+1.Scales better for smaller modifiers(1% applies to current step)
+2.restricts scale for big modifiers(two 50% items grant 75%)
