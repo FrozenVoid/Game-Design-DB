@@ -1,0 +1,2 @@
+modifier that applies a negative attribute to character;
+e.g.'-5 life regen'-> "5 life drain/minute"
