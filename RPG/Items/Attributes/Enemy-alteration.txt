@@ -1,0 +1,2 @@
+Enemy alteration attribute changes enemy/target stats
+on item use e.g. "-40% to enemy fire resistance" 
