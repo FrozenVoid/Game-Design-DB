@@ -9,3 +9,5 @@ Example(non-stacking,multiplicative):
 the second system advantages:
 1.Scales better for smaller modifiers(1% applies to current step)
 2.restricts scale for big modifiers(two 50% items grant 75%)
+3.increases value of bigger modifiers:
+e.g. three +25% bonuses result in 57% vs 75% modifier(equivalent to three 33% bonuses)
