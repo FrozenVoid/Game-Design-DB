@@ -1,0 +1,2 @@
+Item generates specific resource on use,
+e.g. "gain +10 gold for each hit"
