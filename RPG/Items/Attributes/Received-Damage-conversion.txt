@@ -1,0 +1,6 @@
+ item with incoming damage conversion:
+Damage type is changed partially e.g. 50% of physical damage
+converted to fire damage(before hit).
+when character is hit with 100 phys dmg 
+and 0%physical and 50% fire resistance
+he receives 50 phys damage and 25 fire(50% of 50 converted).
