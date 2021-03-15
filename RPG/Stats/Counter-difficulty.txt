@@ -1,0 +1,3 @@
+a counter-difficulty stat is a permanent stat
+upgrade on-death to offset difficulty of the game:
+e.g. +1hp max per death.
