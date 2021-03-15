@@ -1,0 +1,3 @@
+Weather modifier alters stat dependent on
+in-game weather(e.g. sunlight,rain,etc),
+with specific min-max values for each weather state.
