@@ -1,0 +1,6 @@
+A synergy attribute alters an item stat dependent
+on some other stat/attribute that character has currently.
+examples:
++n% fire damage dependent on character's Fireball level.
+adds +n damage per each dexterity point 
+reflects n damage per hit(inversely dependent on remaining hp%)
