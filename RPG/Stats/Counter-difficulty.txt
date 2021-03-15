@@ -1,3 +1,6 @@
 a counter-difficulty stat is a permanent stat
 upgrade on-death to offset difficulty of the game:
 e.g. +1hp max per death.
+method: statX is fully depleted, max statX+1, player 
+eventually stops running out of stat despite bad gameplay.
+Usually capped N per day/statX.
