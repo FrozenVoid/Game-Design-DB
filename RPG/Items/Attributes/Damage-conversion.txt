@@ -1,0 +1,2 @@
+Damage conversion modifiers adds some stat from damage dealt.
+e.g. "4% of damage dealt goes to mana".
