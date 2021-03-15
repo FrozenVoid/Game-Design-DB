@@ -1,0 +1,5 @@
+A location modifier alters the attribute
+dependent on character location.
+e.g. 'Cannot be used underwater' or '30% more effect in sand'
+item can also be restricted to used in specific content
+"Can only be used while flying".
