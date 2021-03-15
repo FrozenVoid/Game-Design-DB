@@ -1,0 +1,3 @@
+A targeting modifier restricts/encourages the item use
+against specific group e.g. 'Cannot be used against fish' 
+or "extra +100 defense vs Undead"
