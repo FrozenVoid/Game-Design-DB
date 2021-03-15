@@ -1,0 +1,8 @@
+An increase by 10-15%(x1.1-x1.15) is a sweet spot
+for level gaps, allowing fast early leveling
+but gradually increasing the level gap
+(doubling each 7 levels for x1.1 or each 5 levels for x1.15).
+vs current systems:
+current level progression system provide much less
+levels per exp curve, leaving player dissatisfied with progression
+speed.
