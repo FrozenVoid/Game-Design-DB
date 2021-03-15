@@ -1,0 +1,3 @@
+A resource charged attribute requires "feeding" the item
+some resources to powerup the attribute/stat to its full potential,
+usually the use of item depletes the charges.
