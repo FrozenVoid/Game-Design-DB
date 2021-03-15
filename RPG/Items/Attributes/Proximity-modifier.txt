@@ -1,0 +1,5 @@
+A proximity modifier alters a stat dependent on
+item distance to specific map feature:
+a "feature" could as abstract as " 10%-100% more statx when near water"
+and apply to any water body, or contain reference to
+some map location e.g. "most powerful when near the statue of x".
