@@ -7,3 +7,8 @@ space menu selectors takes, hover the savings are irrelevant when
 the only menu is the hamburger menu.
 More on the design failure:
 https://en.wikipedia.org/wiki/Hamburger_button#Criticisms
+
+how to fix: Use text labels and actual menu bars.
+A single 'Menu' word is x1000 more intuitive and reachable.
+Avoid abstract icons and anything hinging on user's intepretation of graphical symbols(e.g. quickbars/action icons) as these require memorization and familiarity.
+Text is always more accesible, less ambigious and less confusing than a graphical icon.
