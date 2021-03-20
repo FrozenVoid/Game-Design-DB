@@ -1,0 +1,9 @@
+Hamburger menu is a poorly designed permanent fixture
+that opens a popup menu by pressing a button;
+the button usually contain 3 dots or lines, which doesn't
+indicate the user anything without familiarity with the concept.
+Hamburger menu evolved from 'compact-layout' designs to reduce
+space menu selectors takes, hover the savings are irrelevant when
+the only menu is the hamburger menu.
+More on the design failure:
+https://en.wikipedia.org/wiki/Hamburger_button#Criticisms
