@@ -1,0 +1,3 @@
+Enchantment limit dictates how many enchants/crafts can
+exist on the item. Some attributes might add to the limit
+or introduce a final modifier prohibiting further enchantment(corruption attribute).
