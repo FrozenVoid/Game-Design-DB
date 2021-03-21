@@ -1,0 +1,5 @@
+A player-origin waypoint is like a permanent invisible portal
+into a location. Players starts with an empty list of waypoints
+(character-specific) that is filled by adding a location to the list
+with some skill/item/interface activation, which also grants
+access to previous waypoints(allowing to erase them or use them)
