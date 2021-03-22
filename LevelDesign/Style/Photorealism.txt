@@ -40,10 +40,33 @@ an abstract/simplified/anime style.
 
 Methods
 1. 3d scanned materials/objects
+As basis for entire set of game objects, natural artefacts
+and objects are scanned to generated 3d models:
+e.g. a sword is scanned, removing the need for artists
+to designa a sword object.
+
 2. physically-based rendering
+At most rudimentary level, graphics that claim to be realistic
+will require PBR methods and material design.
 3. raytracing and photon mapping
+High-end photorealism(hyperrealism) with a substantially
+higher hardware requirements.
 4. 3d sound propagation
+Required for realistic sound interactions of objects.
+
 5. Material physics and physical events
+As with PBR, photorealism is mure without a proper physics engine. Destructible objects and liquid simulation are 
+becoming norm in high-end photorealism.
+
 6. Motion-capture animations
+Natural motion requires a realistic basis, which
+involves capturing a 3D model movement of something organic.
+
 7. Procedural generation
+Content can be generated from ready-made parts within
+specific parameters en masse, to populate huge virtual worlds
+without storing every object in memory.
+
 8. Entity-component system
+Large-scale object interactions and modularity in design.
+https://en.wikipedia.org/wiki/Entity_component_system
