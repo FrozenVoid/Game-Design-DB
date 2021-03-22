@@ -1,0 +1,49 @@
+Photorealism is design mimicking a physical system:
+The goal is to create an expirience closest to reality
+with minimal hardware requirements, though
+such designs are always heavy on memory due detail.
+Photorealism is associated with AAA studio products
+and isn't common within indie gaming, since effort
+to create realistic object assets outstrips most indie budgets(
+even considering procedural generation).
+
+Misconceptions:
+Photorealism does not automatically provide
+ immersion and in fact any deviations from reality
+ will be judged more harshly due 'suspension of disbelief'
+ encountering 'uncanny valley' effects(something that is almost
+ real but not quite). 
+
+Photorealism doesn't guarantee
+ high aesthethic value either, as anything 'photo-realistic' will
+ have a high requirement for beauty in detail to be aesthethically
+ pleasing with minor details disrupting perception of an object.
+ 
+Photorealism doesn't provide a consistent, unique 'design style' due
+ vast variety of objects that can be considered photo-realistic,
+ giving all 'photorealistic games' the style of 'second-hand reality'
+ distinguished by flaws in rendering of game engine(e.g. "Unity engine realism")
+ 
+Photorealism doesn't compensate for gameplay and game mechanics,
+neither is mislabeling something as 'art/movie game' magically
+makes it art or a movie. Photorealism isn't a requirement for
+modern games: in fact most modern games don't bother with any realism. 
+
+Photorealism doesn't automatically make the game consistent or 
+'true to life', anything the games does is dependent on design
+that only becoming realistic and consistent under specific conditions:
+otherwise deviations from reality will easily become apparent
+glitches, clipping, blinking/teleporting/corrupted objects are common artefacts
+of bad designs. A glitch is much more jarring in photorealism versus
+an abstract/simplified/anime style. 
+
+
+Methods
+1. 3d scanned materials/objects
+2. physically-based rendering
+3. raytracing and photon mapping
+4. 3d sound propagation
+5. Material physics and physical events
+6. Motion-capture animations
+7. Procedural generation
+8. Entity-component system
