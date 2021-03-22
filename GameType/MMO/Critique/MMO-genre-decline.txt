@@ -1,0 +1,30 @@
+MMOs today have lost the competition to more player-friendly
+genres and game types, with good reasons:
+1.MMOs surviving due heavy-handed monetization are a 
+sign of maladaptive patterns: in particular "MMO whales",
+dictating expirience from a minority of 'paying users' to
+influence the genre in favor of whale-friendly, rather 
+than average-user-friendly MMO.
+
+2.Players don't see the value in social features of MMOs
+with market competing with social networks and websites
+having vastly leaner interaction model(not requiring a game
+or having specific hardware). 
+
+3.Player eager to compete, have alternative games which
+don't require "grinding expirience" or "farming items",
+with MOBA/Arena shooters/FPS evolving to surpass PvP expirience
+of MMOs.
+
+4.Casual players migrated to mobile/web games with multiplayer
+features, with MMO bloated install sizes and high-hardware requirements
+alienating casual/new players from "trying a game".
+
+5.A general evolution in gaming where player-friendly features
+evolved outside of MMOs 'time-gating' mechanics towards 'skill-based competition':
+expirience grind and item-farming of MMOs no longer have the same appeal,
+outside of nostalgia gamers.
+
+6.Skill-based online games have attracted most player interested
+in clever mechanics in MMOs(along with #3), as complex 3D engines
+and network latency has not improved much.
