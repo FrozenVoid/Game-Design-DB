@@ -1,0 +1,4 @@
+A local quest is a quest that is confined to a 
+single location and doesn't require interactions outside the level(e.g. talking to
+NPCs outside the level).
+If the quest is bound by instance borders, its an instance quest.
