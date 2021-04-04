@@ -244,20 +244,21 @@ FrozenChess 13.0
     -----------------------------
     Fusion/De-Fusion -
     Two+ friendly units(except King)(A and B) can fuse into unit AB which has the capabilities of both(can use AB as either unitA or UnitB(for move/capture/ability):
-    Enemy can select which of the two units in the AB fused-unit he wants to affect/capture and it affects the entire fused AB unit(e.g. to bypass immunity or secondary effect).
+    Enemy can select which of the two units in the AB fused-unit he wants to affect/capture and it affects the entire fused AB unit(e.g. to bypass immunity or secondary effect, capturing AB by capturing B instead of capturing A).
     Fuse: move A into square occupied by B.
     When Captured the Units automatically de-fuse in the tomb, and occupy separate places in Tomb Queues(last unit to fuse-in is added first).The multi-Move awards are reset on de-fuse(from all units in fused unit).
-
-    https://i.imgur.com/uULx5cb.png
 
     De-fuse: Select(A or B) from AB square
     and move it away(the other units remains at AB square).
     Limit of Units in fused unit:unlimited(e.g. A&B&C&D combine into ABCD unit)
 
     Fusion Absorb: Fused unit can absorb all nearby(3x3) paralyzed enemy units in one move. Units are converted to your side and fused into main fusion unit.(Rook=Fusion Unit,Knight/Bishop are paralyzed and absorbed)
-    http://postimg.org/image/e0nl3ssl3/
+e.g. a Fused(Rook+pawn) unit at b3 can absorb a paralyzed Bishop at
+b2 to add to its own fused Unit creating(Rook+Bishop+pawn).
+
     --------
-    Morph - Any unit which is not threatened by enemy units(not in capture area for single move), can transform into another unit (with exception of Kings/pawns which cannot use Morph or be transformed into). The new unit will be in paralysis for 18 moves(bypasses paralysis immunity)..
+    Morph - Any unit which is not threatened by enemy units(not in capture area for single move), can transform into another unit (with exception of Kings/pawns which cannot use Morph or be transformed into). The new unit will be in paralysis for 18 turns of player(bypasses paralysis immunity)..effectivelly putting it in stasis where
+    it can captured before its morph completes.
     Paralyzed,fused,dead,trapped units cannot morph(only normal state units).
     Morph resets all unit stats to default(as if new unit was created in its place).
 
@@ -268,17 +269,17 @@ FrozenChess 13.0
     and capture ability(Kings/pawns cannot
     be empowered or give empowerment).
     e.g. a knight protected by a rook
-    can move and capture like a rook.
-    https://i.imgur.com/LihmqRL.png
-    Only applies if the empowering unit is not threatened by enemy.
+    can move and capture like a rook for one move.
+    Only applies if the empowering unit is not threatened by enemy, isn't in paralysis/spell effect.
     ------------------------
     Guards - if a unit is protected by
     two or more (non-pawn) pieces it is
     not empowered but cannot be captured
     (can capture normally when guarded).
     Kings cannot be guarded.
-    https://i.imgur.com/vSoUmLM.png
-    only applies if the guarding units are not threatened by enemy.
+   e.g. a pawn protected by Knight and Bishop
+   cannot be captured at its square.
+    only applies if the guarding units are not threatened by enemy and not in paralysis.
     ----------------------------
     SwapShotAny - units(except king) can also swap
     places with units(except king) which they can capture
@@ -291,22 +292,26 @@ FrozenChess 13.0
     --------------------------
     Mirror Portal:
     each square on board has a mirror square(mirroring:half-board rotated into another half) a non-pawn piece can teleport at will as special move.
-    Teleport(x,y) to Square(16-x,16-y)
+    Teleport(x,y) to Square(16-y,16-x)
     Escape to a square which is a mirror location (as if the white side board rotated 180deg and inserted in the black side) if the mirror square is empty or tomb.
-    Colors signify portal squares connection on 8x8 board:
-    https://i.imgur.com/xmUCUmD.png
+   e.g. a b3 square on 8x8 board is mirror of g6(8-3)(8-b).
     ===================
     Conversion:Convert unit to your side without moving.
-    Conversion is valid only to squares where unit can move(units which capture differently from moving cannot convert).
-    Conversion is avalable only for ranged unit diagonal moves(such as Bishop/Queen/Dragon) and works at range of movement.
+    Conversion is valid only to squares where unit can move(units which capture differently from moving cannot convert) and entire path cannot be threatened by
+    enemy units 1move capture range(including the converted
+    unit itself and the convertor origin square).
+    Conversion is avalable only for ranged unit diagonal moves(such as Bishop/Queen/Dragon) and works at range of movement(not multi-move).
     If a piece can capture another non-guarded/non-protected enemy piece,
     and if the capturing unit is not in double/multi move:
     The enemy unit can be converted insted of capturemove.
     Conversion:After conversion capturer is
     in paralysis for N/2 moves(where N is distance to converted unit,converted piece isn't affected).
-    Conversion(example:red=results):
-
-    http://postimg.org/image/jusk4nyxp/
+    Conversion example:
+A bishop at h7 instead of capturing a knight at d3 converts
+it at cost of 5/2=2 turn paralysis at h7.
+Conversion is always preferable to capturing but
+not always available: the virtual move path must be safe
+at all squares.
 
     -------------------------
     Spawn - Any unit(except kings) can spawn
@@ -314,8 +319,9 @@ FrozenChess 13.0
     Both the original unit and the spawn square need not to be threatened by enemy units(even if unit is immortal).
     After spawn both units(the original and copy are paralyzed(bypasses paralysis immunity)) for 40 moves for non-pawn units and 15 for pawns.
     Restrictions: Spawn is restricted for immortal units, max 8 units can exist at same time(e.g. 8 frogs).
-    Spawn locations(red=threatened,cannot spawn)
-    https://i.imgur.com/iLxlK2j.png
+ Example: knight at b3 spawns a Knight a b2,
+ both knight enter 40 turn ubreakable paralysis(bypasses any immunity/counter).
+ 
     ---------------
     Capture/Move Range Extension upgrade:Units which can be capture range reduced(CRR applies to them), have the ability to grow base range(16sq diag/ortho).
     For each move the unit doesn't move it get +(1/20)sq base range upgrade(current range is floor(base Range-CRRsq).i.e. Fractional range like 7+3/20 is 7 squares so 20 idle non-moves required to increase by 1 sq.
@@ -369,41 +375,51 @@ FrozenChess 13.0
     ==========PAWN==========
     Pawn:as chess pawn+can leap forward
     (over a unit directly above) 1 sq.
-    https://i.imgur.com/lqKMOnE.png
+    example; pawn at b2 can leap to b4 or capture at a3,b3.
     Pawn special Moves:
 
     Piece Promotion: capturing a non-pawn
     piece promotes the pawn into the
     same kind of piece.
     (capture a knight to get a knight)
-    https://i.imgur.com/ja9tyjY.png
+    Example; pawn capturing a knight at d4,turns 
+    into a knight at d4(new unit of same type).
 
     Last File promotion:
     pawns at last file, promote to any pieces
-    except king and pawn.
+    except king and pawn(as in chess).
 
     Pawn Acceleration:After capture the pawn may make an extra move(any move, incl. double move).
+    E.g. the pawn capturing a knight can make
+    a extra move with the knight at its next move(once).
 
     Pincer:unit whose orthogonal sides are
-    occupied with pawn are paralyzed until
+    occupied with pawns are paralyzed until
     pawns leave or die.
-    https://i.imgur.com/k29xAQp.png
+    example: a knight at d4 is paralysed
+    by enemy pawns at c4 and e4.
 
 
     Pawn Fuse Stacked Move:
-    If fused units contains only pawns(upto 7,see Pawn Fusion Bomb), they gain extra moves per turn,equivalent to number of pawns.
+    If fused units contains only pawns(upto 7,see Pawn Fusion Bomb), they gain extra moves per turn,equivalent to number of pawns(e.g. 4 stacked pawns move 4 pawn moves in 1 move).
     i.e. N fused pawns can move N times together.Does not stack with Pawn Acceleration(ignored if Fused).
-
+  
 
     Pawn Fusion Bomb:fuse 7 pawns to explode 5x5 at fused unit square.
-    https://i.imgur.com/I5RUGxM.png
+    example: a 6-fused pawn at d4 is fused with another
+    pawn, it explodes in 5x5 square centered on d4.
 
-    Pawn Rotation:Pawns can change their direction of "Forward"(Aim Direction) to one of 4 orthogonal directions as special move.
+    Pawn Rotation:Pawns can change their direction of "Forward"(Aim Direction) to one of 4 orthogonal directions as special move.The "last file" promotion side doesn't
+    change with direction.
+    Example: to move aside, a pawn at d3 rotates its
+    forward direction to right and moves in next move(d3 e3).
+    
 
     =========BISHOP============
     Bishop:Moves:as chess bishop(diagonals)
     or 1sq orthogonally. Moves::
-    https://i.imgur.com/dMOM8vu.png
+    Example: a bishop at d4 can move diagonally
+    or to c4,e4,d5,d3.
     Capture:Diagonals only.
     Ability:Conversion(Diagonal)
 
@@ -412,102 +428,114 @@ FrozenChess 13.0
 
     Cannot capture or be captured.
     Cannot land on tombs/walls.
+    Serves to block or disrupt enemy movement.
     moves:2-3 diag,3ortho
-    (yellow:moving leap):
-    https://i.imgur.com/qlzDSLd.png
+    example: a Frog at d4 can leap diagonally
+    to f6,g7,b6,a7,b2,a1,f2,g1,
+    and leap orthogonally to d1,d7,a4,g4,
+ 
 
     Long Jump: Jumps to a square near(3x3) another(Enemy or Friendly) Frog
-    from anywhere on board.
-    Jump zones in blue,jumper Frog in yellow:
-    https://i.imgur.com/zg63T45.png
+    from anywhere on board.This is a tactical
+    move of a frog, which should be used instead of
+    its normal move.
+   Example: from jumps from b2 to a7 next to a8 knight.
+   
 
-    DoubleSpawn:can Spawn 2 frogs(max 8 frogs on board at same time) instead of 1.
-
+    DoubleSpawn:can Spawn 2 frogs(max 8 frogs on board at same time) instead of 1 using Spawn ability.
+    
     Mass Jump:
     when de-fusing a frog-only fused unit the Frogs in the fused unit can move individually in the same move.(i.e. each Frog gets a move during one turn).
+    e.g. A fused 3 frog unit defuses with
+    3 independent frog moves at same turn(long jumps/moves).
+    
 
     Slime Explosion:Frog explodes(dies),sending slime at units in nearby (3x3) squares
     which gets paralyzed for 11 moves(slime doesn't kill).
+This special ability is useful at max frog capacity(8)
+as its uses wastes a valuable blocker unit.
+
+
 
     =====KNIGHT==============
     Knight:as chess knight+optionally 1sq
     forward diagonally:
-    https://i.imgur.com/0ZRJSDW.png
+    Example: at d4 any knight move or
+    to c3,c5,e3,e5.
 
     Knight Special Moves:
     Knight's Leap - Knight can capture by
-    leaping over(both squares captured)
+    leaping over(both squares captured at once)
     pieces as if it was a normal capture
     (can capture along with normal capture),
     even within double move(capture ends movement, cannot capture more than 3 pieces per turn).
     Single move can capture 3 pieces(1 normal,2 leap).
-    Leaped over units(orange=leapcaptured,red=captured):
-    https://i.imgur.com/falp3A4.png
+    Example a knight at d4 capturing a bishop at e6
+    also captures a pawn at d5, and rook at e5,
+    as both are in knight-leap move-paths(L and its mirror).
 
     Knight's March: Can move 4 moves in a turn if no capture occurs.
-    Knight Range(red1,Yellow2,Blue3 moves)
-    https://i.imgur.com/yADQp0C.png
+    Movement is restricted to one of 4 cardinal directions,
+    but the path can vary(e.g.movement is up, varying left/right).
+  
 
-    Knightmare:pawns in capture range can't
-    use special moves/ability/capture(can only move 1sq forward).
+    Knightmare:pawns in 1move capture range can't
+    use special moves/ability/capture(can only move 1sq forward and cannot change direction/fuse/etc). The ability is passive and remains under paralysis.
 
     ==NIGHTRIDER===
-    Moves as knight diagonally(repeated knight moves along diagonals:cannor change direction in single move), captures as moves.
-    Range is never reduced due capture(can move up to edge of board).(red capture square, )
-
-    Ability:
-    Knight's Leap - can capture by
-    leaping over(both squares captured)
-    pieces as if it was a normal capture
-    (can capture along with normal capture),
-    even within double move(capture ends movement, cannot capture more than 3 pieces per turn).
-    Single move can capture 3 pieces(1 normal,2 leap).
-    Leaped over units(orange=leapcaptured,red=captured):
-
-    blue=Leaped,red=capture/move,arrow-direction
-    https://i.imgur.com/ZZFLmHY.png
-
+    Moves as knight diagonally(repeated knight moves along diagonals:cannor change direction in single move), captures as moves. 
+    Range is never reduced due capture(can move up to edge of board). Lacks knight abilities.
+    
 
 
 
 
     ====CROSSBOWMAN=====
     Cannot capture:
-    Ability: Poison Arrow x2
+    Ability: Poison Arrow x2(paralysis)
     Projectile power:
     paralysis for floor(16/range)+3 moves.
 
-    Movement(blue sq);
+    Movement;
+    orthogonally 1-5 squares, diagonally 1sq.
+    
     Shoots 2 arrow in one diagonal direction(2 parallel green arrows)
-    Shooting range(green arrows,16sq max range from circle)
-    https://i.imgur.com/BjDkCZc.png
+  Poison Arrow x2 paralysis shots:   
+    Example: a crowbowman at a1 shoots
+    from a2-g8 and b1-h7 diagonals hiting the first
+     units in the diagonals paths. 
 
 
     ==========CANNON===========
-    Cannon:Doesn't move by itself:
+    Cannon:Doesn't move by itself(can be moved by abilities/other units):
     Capture forward only(3 squares in rook direction,
     3sq in bishop direction),can attack walls.
     Cannon Blast ability:Skips every second square,
     can only aim forward(max range 6sq).
-    square Explodes(3x3,destroys walls/units)
-    (red=blast center,grey-explosion area)
-    https://i.imgur.com/FVBoETO.png
+    square Explodes(3x3 centered on CB square,destroys walls/units)
+    Example: cannot at d1 can capture at d4,a1,g1,
+    can aim CB at squares d3,d5,d7,etc.
+    Direction of aim can changed as special move,
+    Cannon rotation, as in Pawn rotation.
 
     Ability:WallBlast 1sq orthogonal range.
     Destroys all wallsquares connected to attacked wallsquare orhogonally:
-    Example(red=WallBlast range,black=wall,purple=spread of wallblast):
-    https://i.imgur.com/40KfmsQ.png
+    example; a cannon at a1 Wallblasts a wall at a2,
+    which leads to any wall square orthogonally 
+    connected to it to Wallblast itself, until the 
+  wall's end.(this encourages diagonal wall placement) 
 
 
     ===ASSASSIN======
     Bonus stat:De-shadowing paralysis penalty is divided by 3.
     Range of Move/capture is 1chess knight move or 3 squares orthogonally.
-    https://i.imgur.com/mfrtjsy.png
+    e.g. a d4 assassin can move/capture to d1,d7,a4,g4
+    or as chess knight move to c6,b5,b3,c2,e2,f3,f5,e6.
 
     Ability: Assassin's Run
     After capture, can perform another capture, until limit of 3 per move.
     After last(2nd/3rd) capture transforms into shadow form(only if minimum 2 captures made) and move ends.
-    https://i.imgur.com/3FM6kat.png
+    
 
     Ability:WallClimb/WallJump
     Assassins can enter/exit wall squares if they stand orthogonally adjacent to them as special move.The exit move must land on empty non-threatened square.
@@ -518,24 +546,40 @@ FrozenChess 13.0
     If the Assassin stays in a square adjacent to a wall for 2 moves, and there is empty,non-threatened square on the other side, he can create a Tunnel, which makes the wall passable through the tunnel square
     for the player's side.Player piece on Tunnel entrance moving forward, exits from the other side of wall
     Tunnel exists as long as the wall.
-    Scheme(knight=assasin,Blue squares(enter/exit),yellow=tunnel,rook=other pieces):
-    https://i.imgur.com/IIZ4RY7.png
+    Example; assasing at d4 before wall at d5
+    makes tunnel from d4-d6, allowing orthogonal
+    movement units from tunnel owner's side to move through.
+    
 
     Special:Bomb(3x3)
-    Leave a bomb on the Square of presence, if the 3x3 squares around are empty of units.The bomb explodes 3x3, when the 3x3 square is entered by enemy units, destroying any units/wall/tombs. Bombs are visible to both players.
+    Leave a bomb on the Square of presence(as part of new move), if the 3x3 squares around are empty of units.The bomb explodes 3x3, when the 3x3 square is entered by enemy units, destroying any units/wall/tombs. Bombs are visible to both players.
     Only one bomb per assassin at same time can exist.
     Example:
-    https://i.imgur.com/rV5nH4M.png
+    bomb left at d4 explodes(3x3sq) as enemy bishop enters
+    d5 square.
 
 
     Ability: Retain Empowered Move
-    Can move, but not capture as the last unit that empowered the Assassin.(retain empower moves for non-capture moves).
+    Can move, but not capture as the last unit that empowered the Assassin.(retain empower moves for non-capture moves). Restricted to last unit.
 
-    Special Move :Slip square created at any square in movement range(unit landing on it moves forward N/3 sq in direction of move(where N is initial move distance(start to Slip square)). Only one Slip Square per assassin can exist.
+    Special Move :Slip square created at any square in movement range(unit landing on it moves forward N/3 sq in direction of move(where N is initial move distance(start to Slip square)). Only one Slip Square per assassin can exist,
+    and requires the square to be non-threatened by enemy
+    moves(not in 1move range).
+        
+    e.g. a Slip square at d4 forces a bishop
+    arriving from b2-d4 to make 3/1 =1extra sq move
+    landing on e5 instead.Slip squares work for both
+    sides units. Movement cannot continue if the path is
+    occupied by other units/walls as its continuation
+    of normal movement in same direction(moving into a trap is allowed).
+    units not moving orthogonally/diagonally are immune
+    to Slip squares entirely.
+    
     =========DRAGON===========
-    Dragon:As bishop or knight or 2sq orthogonal leap.
-    Pic:
-    https://i.imgur.com/yowJcIm.png
+    Dragon:As bishop or knight or 2sq orthogonal leap(
+    e.g. from d4 to a4,g4,d1,d7).
+    
+    
     Dragon special moves:
     Conversion:Diagonal(See conversion section).
 
