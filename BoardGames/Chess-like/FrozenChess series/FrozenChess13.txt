@@ -170,17 +170,21 @@ FrozenChess 13.0
     enter a 16+4=20 move loop.
 
 
-    Box/Unbox: Special move by changing any unit into a Box(a safe transport unit containing the unit).
-    Unbox removes unit from Box mode at cost of paralysis of N/3(where N is amount of squares travelled in Box form). Boxes cannot move, but can be pushed/teleswapped/pulled/moved by external means(including moves by enemy).
-    Box(containing Rook) being pulled by bishop:
-    http://postimg.org/image/ywqthz78d/
-
-    Syzygy: A non-pawn unitA moving into mirror portal square of enemy unitB of same kind(A and B of same type) locks both units in place as if they are both paralyzed. Units A/B cannot be selected/used while in this state.
+    Box/Unbox: Special move by changing any unit into a Box(a safe transport unit containing the player unit).
+    Unbox(only by owning player) removes unit from Box mode at cost of paralysis of N/3(where N is amount of squares travelled in Box form). Boxes cannot move, but can be pushed/teleswapped/pulled/moved by external means(including moves by enemy).
+    Box can be thought of as safe container that 
+   cannot be captured, and can be used to block paths
+   or landing squares, as well as moving units into
+   specific position for tactical advantage.
+ 
+    
+    
+    Syzygy: A non-pawn unitA moving into mirror portal(board square where board is mirrored 
+    x,y->Len-y,Len-x) square of enemy unitB of same kind(A and B of same type) locks both units in place as if they are both paralyzed. Units A/B cannot be selected/used while in this state.
     Syzygy is removed when one of units is rotated/teleswapped/swapshotted/pulled/pushed or moved by external means.
     Rotate calculations are performed on unitA/B as if they were paralyzed units.
-    example on 8x8 board:(red arrow=path to syzygy square,green circle=mirror portal of white knight,green arrow=syzygy move)
-    http://postimg.org/image/q822kt10d/
-
+    example on 8x8 board: 
+    A Rook moving into b3, paralyzes Rook on g6(8-3,8-b). 
 
     Paralysis:
     Freezes unit in its place as if it has become a statue of unit.
@@ -195,18 +199,20 @@ FrozenChess 13.0
     (e.g. knight can do nothing to knights)
     with any capture/abilitymove.
     Example:
-    https://i.imgur.com/Nvptqqq.png
-    Exceptions:pawns,kings(can aid checkmate) and immortal units(frogs).
+   a knight at b3 cannot capture a knight at d4.
+    Exceptions:pawns,kings(can aid checkmate) and immortal units(frogs) can affect each other(but not capture if non-pawn unit).
     ------
     Nullmove:
     A player can perform a Null move, which adds to move count instead of normal move. If two players Nullmove in sequence(two consecutive Nullmoves) game is declared Drawn.
     ----
-    Shift - Special move: move a line orthogonally on board where only your units exist, wrapping over the edge of board. Orange=shift direction, green arrows=new placement of units.
-    If any enemy units exist on the Shift line, Shift cannot be performed.
-    http://postimg.org/image/uzowzjcrh/
+    Shift - Special move: move a line orthogonally on board where only your units exist, wrapping over the edge of board. Squares don't change color, only units are shifted
+    as 'line unit movement'.
+    If any enemy units exist on the Shift line, Shift cannot be performed. Minimum of 2 units per line.
+  example: only you have units on 4th line(one bishop and 1 pawn) and g line(1 knight and 2 pawn), so you can shift these units along the 4th or g line, optionally wrapping over the horizontal/vertical sides.
+  
     ---
     Shellshock:
-    units passing through threatened squares(1normalmove enemy range) have reduced range at next move.
+    units passing through threatened squares(1normalmove enemy range,e.g. in direct 1-move capture range) have reduced range at next move.
     range(diagonal/orthogonal rider units)is decreased by 1(normal diag/ortho rider)/2(other moves)/3(explosive/tomb) per each square threatened at next move(e.g. if you pass 5 sq threatened(1sq threatened by rider,1sq by explosion,3sq by other moves), nextmove range is reduced by1+3+6=10(temporary for 1 move)).
     Minimal range is 3 sq beyond which shellshock doesn't reduce range.
     Shellshock disappears after next turn or is replaced by new shellshock modifier(if the unit moves at next turn).
@@ -219,12 +225,18 @@ FrozenChess 13.0
     as multiple sequential captures,
     CRR reduces as if the capture was one.
     Example:
-    https://i.imgur.com/wIjXFve.png
+   A bishop at c5 capturing a rook at e7,
+   also captures rook at h7(connected by 7th line),
+   a rook at g5(connected by h7-g5 diagonal)
+   and a rook at e2(connected by e-line).
     ----------------------------
     Bind - allied units can be bound to unit group that touches them diagonally or orthogonally.
     Moving one of the bound units moves all of units connected with Bind - if the destination squares are vacant:otherwise move is illegal.
-    Example(red arrow==Bind):
-    http://postimg.org/image/sceavqcxf/
+  Example: a knight at b3 touches a bishop at c4,
+  allowing a bind move, to create a b3-c4 group;
+  at next player turn the group can be move
+  by either knight or bishop,if the destination squares
+  e.g. f7,g8 are vacant(bishop move to g8 drags knight to f7) or c5,d6(knight from b3 to c5 drags bishop to d6). 
 
     Unbind:to unbind simply move a unit away from group/bind units.
     Bind/Unbind count as special move and ends multimove.
