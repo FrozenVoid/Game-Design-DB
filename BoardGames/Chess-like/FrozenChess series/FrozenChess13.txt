@@ -154,15 +154,20 @@ FrozenChess 13.0
     Earthquake ability:Exploding(3x3 kill zone cannot contain enemy units) any non-pawn/king unit to reset all terrain levels to 0.
 
 
-    Flood ability move:non-pawn unit can flood adjacent empty negative-level squares(all units stepping into flood squares are paralyzed until flood ends.).
+    Flood ability move:non-pawn unit can flood adjacent (3x3 box over cell)empty negative-level squares(all units stepping into flood squares are paralyzed until flood ends.).
     Flooded squares drain in 10 moves.
-    (blue boxes=flood squares by rook,bishop will be paralyzed when it moves over the circled square)
-    example:http://postimg.org/image/xty30nqh1/
+-example: unit at d4 can cast flood to c4,d5,e5,c4,e4,c3,d3,e3 (one square per cast).
 
-    Loop: a preset Circular path can be declared as move for a unit(similar to Monad), which it would do each move(before player's turn,one move of loop per turn). Units in Loop cannot be controlled by player,but can be affected by any enemy move. Loop path must end at start square of loop.
-    Loops are entered like a movelist of Monad. Loops will repeat forever until stop on capture/paralysis or loop path blocked/illegal to move into.
-    Example: loop of knight moves:
-    http://postimg.org/image/5mzz9b3v5/
+    Loop: a preset Circular path can be declared as move for a unit(similar to Monad), which it would do each move(before player's turn,one move of loop per turn). Units in Loop cannot be controlled by player,but can be affected by any enemy move. Loop path must end at start square of loop. Loops can be thought as adding anothe Thread to the game(separate movelist to player controlled side), which is indepedently executed for the unit:
+    the enemy knows the squares of entire loop and can prepare its own counters, even sacrificing own units into
+    counter-loops to move and capture the looped unit.
+    Loops are entered like a movelist of Monad. Loops will repeat forever until stop on capture/paralysis or loop path blocked/illegal to move into. Units resume movement 
+    when path clears, but once in Loop the unit is forfeit
+    form player control forever(transferred to Loop domain).
+    A limit of 16 maximum moves in a loop 
+    with +2 per capture by unit exists:
+    e.g. a knight that captured 2 pawns can
+    enter a 16+4=20 move loop.
 
 
     Box/Unbox: Special move by changing any unit into a Box(a safe transport unit containing the unit).
