@@ -809,9 +809,12 @@ as its uses wastes a valuable blocker unit.
     Templar:as Rook or diagonally 2 squares
     and optionally 1 square diagonally to side.
     T-like capture area.
-    described in this image:
-    https://i.imgur.com/b8gp86t.png
-    Cannot lose non-rook range with CRR.
+    e.g. a Templar at d4 can move 
+    as Rook, or to f6,a6,a2,f2 and e7,g5,e1,g3,c1,a3,
+    a5,c7(edges of T),the diagonal/T move is counted 
+    as leap of knight.
+    Cannot lose non-rook T range with CRR.
+    
     special ability:
 
     Templar's Shield:
@@ -824,26 +827,27 @@ as its uses wastes a valuable blocker unit.
     Range of Shield is 1 normal move without bounce.
 
     If a templar stands on inactive
-    Tomb(after capture) the shield is not
+    Tomb(after capture move of Templar) the shield is not
     engaged(to allow recapture of templar).
-    pic(green sq: cannot capture templar, red=can capture):
+    
 
-    https://i.imgur.com/34jAlHE.png
+   
 
     Blizzard:
     Cost: 20 moves paralysis.
-    Cast Range as rook movement range.
-    Area around center of Blizzard is paralyzed for 4 turns.Affects friendly&enemy units(except kings).
-    https://i.imgur.com/Lo0ijl1.png
+    Cast Range as T-shape movement range(non-rook).
+    Area(5x5) around center of Blizzard is paralyzed for 4 turns.Affects friendly&enemy units(except kings and the 
+    casting Templar itself).
+    
 
     Avalanche::
     Cost: 10 moves paralysis.
     Cast Range as rook movement range(bypasses units).
-    All units at line of sight of rook range are pushed to edge of board or until they leave the Templar rook range.
-    https://i.imgur.com/kNJBeQ6.png
-
-
-    Immunity to Push.
+    All units at line of sight of rook range are pushed to edge of board or first obstacle.
+    e.g. a templar at d8, will push enemy units
+    at d7,d5,d4,d2 into d4,d3,d2,d1.
+   
+    Immunity to Push.(passive, in non-box, non-paralysed form.)
 
     =======ADVANCED MOVES===========
     Special Abilities of units are unavailable during advanced movement: exception is attack ability(like conversion/paralysis/capturemove) during multimove, which when used ends multimove.
@@ -869,8 +873,8 @@ as its uses wastes a valuable blocker unit.
     Range of movement is limited by
     16 squares singlemove or 32 sq
     with doublemove(less if CRR is in effect).
-    Pic:
-    https://i.imgur.com/2rKIrcg.png
+    e.g. a Bishop at c4, can move c4-a2-b1-g6
+    as its path is <16 squares.
 
     Orthogonal Bounce
     Rook-type movement
@@ -880,18 +884,22 @@ as its uses wastes a valuable blocker unit.
     Range of movement is limited by
     16 squares singlemove or 32 sq
     with doublemove(less if CRR is in effect).
-    Pic:
-    https://i.imgur.com/fIeR5C3.png
+    e.g. a rook moving d1-a1 can move d1-a1-a8
+    due bounce(<16sq path) off the a1 edge of board.
+   
 
 
     ======SPECIAL MOVES & OTHER MECHANICS============
     ---------------------------------
     Special Moves:Mind Control
-    MindControl - if pieceA can capture
-    PieceB with orthogonal-direct-line move without being recaptured(PieceB not protected)
+    MindControl - if pieceA(non-pawn) can capture
+    PieceB with orthogonal-direct-line(rook move) without being recaptured(PieceB not protected)
     and both stand on squares of same color,
     it can mindcontrol it instead to make
     any legal move(counts as move of pieceA player).
+e.g.a rook at d4 can capture a d2 queen, but instead
+he MCs queen to move d2-g2, triggering an explosion which kills it.
+
 
     --------------------
     Special Moves:Pull
@@ -909,17 +917,22 @@ as its uses wastes a valuable blocker unit.
     unit is in paralysis for floor(N/3)
     moves for N squares moved.
     The pulled unit is not affected
-    (unless the pull destination is a trap/tomb/etc).
-    Pic:
-    https://i.imgur.com/i4ra94V.png
+    (unless the pull destination is a trap/tomb/etc,
+    which is treated as PieceB moved into it).
+    A pull cannot move pulled unit further if the path
+    is occupied by any units/walls, treating the pull
+    as normal movement of PieceB obstructed at first
+    blocking obstactale.
+    
 
-    Pull-through:
+    Pull-through(special pull):
     Units can be pulled even if the there blocking units on the pull path,(the Pulled Unit cannot moves through them, but the force of pull can )
     Example(WKnight pulled by Bishop until it hit a blocking BKnight),Units can be pulled into cannons too.
     After a Pull-through:the (puller)
     unit is in paralysis for floor((2*N)/3)
     moves for N squares moved.
-    https://i.imgur.com/QTifR9Z.png
+    e.g. a Rook at d2 can Pull through a queen at d7to d5.
+    despite a pawn at d4, which would stop a normal pull.
 
 
 
@@ -929,9 +942,14 @@ as its uses wastes a valuable blocker unit.
     if it stands orthogonally adjacent in 3x3 square.
     Multiple units/wallsquares can't be pushed.
     Can't push off-board.
+    e.g. knight at d4 can push a rook at c5 3sq diagonally
+    (as knight range is 3sq) towards a7(d4-c5-a7 direction).
+    UnitB push range cannot exceed the UnitA move range
+   without UnitB presence(i.e. UnitA move range limit)
+     
+     
 
-    Push movement(yellow=new pushed unit/wallsquare location,blue=pusher new location):
-    https://i.imgur.com/BQgXody.png
+    
 
     Pushing Walls: wallsquare is moved in orthogonal direction(as if it was an unit) and unit stands in its former place. Unit is paralyzed for 5 moves after wall push.
 
@@ -1079,8 +1097,9 @@ as its uses wastes a valuable blocker unit.
     walls disappear,kings checkmated if in range),
     and oldest FIFO unit is
     eligible for respawn move.
-    Explosion:
-    https://i.imgur.com/ZIesFYJ.png
+    Explosion example:d4 explosion affects
+     c5-d5-e5,c4,e4,c3-d3-e3 squares.
+    
 
 
     -------------------------
@@ -1119,8 +1138,8 @@ as its uses wastes a valuable blocker unit.
     and the process repeats ad infinitum.
     (If queen was recaptured its added to
     tomb queue after the rook.)
-    Illustrated
-    https://i.imgur.com/6AwJvf9.png
+    
+    
 
     ======ROTATE=============
     Special moves:Rotations
@@ -1177,7 +1196,8 @@ as its uses wastes a valuable blocker unit.
 
     Duration of wall existence:
     Until the waller(wall creator) creates a new wall.
-    Then the old wall dissolves.
+    Then the old wall dissolves(1 wall per unit).
+    A unit that is in tomb(captured) retains its wall.
     Some pieces can attack the wallsquare
     (siege-units only:Rook,Cannon)
 
@@ -1188,10 +1208,13 @@ as its uses wastes a valuable blocker unit.
     (no intermediate move may land on wallsquare).
     Exception:
     Assassins entering Wallsquares,move only on Wallsquares.
+    
     linear walls:
-    https://i.imgur.com/Kqo9uSA.png
-    leap wall:
-    https://i.imgur.com/U0UEyPy.png
+   e.g. rook moving d2-d8 creates d2-d7 wall.
+   biship moving a1-h8, creates a1-g7 wall.
+   
+    leap wall:1sq (origin square of moved piece, e.g. knight)
+  
 
 
 
