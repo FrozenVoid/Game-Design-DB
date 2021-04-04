@@ -586,7 +586,8 @@ as its uses wastes a valuable blocker unit.
     Dragon's Fire - capture (3x3) nearby units
     (Tombs/walls unharmed) when arriving on a empty square.
     CRR & multimove award applies for all units captured.
-    https://i.imgur.com/6lmOVy3.png
+    example: Dragon arriving at d4(empty), capture
+    units at d5,d3,c3,c4,c5,e3,e4,e5.
 
     Dragon's Egg:Dragon can Lay a single Egg(each dragon can have one Egg on board) in empty, non-threatened square 1sq away from itself(3x3 box).
     The Egg doesn't move and evolves into Dragon after 60 moves(Growth).
@@ -612,7 +613,7 @@ as its uses wastes a valuable blocker unit.
     Rook Special Moves:
     Stun - when landing on a square,all nearby(3x3)
     enemy units are paralyzed for 2 moves.
-    https://i.imgur.com/9t4d27d.png
+    e.g. landing on d4, paralyzesunits at d5,d3,c3,c4,c5,e3,e4,e5.
 
     Siege - Enemy Units in rooks capture range(one move),
     cannot doublemove/multimove.
@@ -621,39 +622,40 @@ as its uses wastes a valuable blocker unit.
     at Aim Direction(thrown units destroy wallsquares
     and other units) until it meets edge of board or obstacle wall/unit which is destroyed in explosion (3x3).
     THe unit which is used as ammo also dies in explosion.(new tombs).
-    https://i.imgur.com/m796744.png
+    e.g. a Rook at d2 launches d3 pawn forward to d7
+    where it explodes(3x3) meeting a wall.
 
     Tower:Units which are empowering
     (by singlemove range) a Rook,
     get Empowered(rook move) back.
-    https://i.imgur.com/wPATXSl.png
+    e.g. a knight empowering a Rook gets rook moves.
 
 
     Swipe Paralysis:
     units along the movepath are in paralysis for 1 move(next turn).
     Green=movement, purple=swipe paralysis.
-    https://i.imgur.com/8xk4hDV.png
+    e.g. rook moving d2-d7, swipes c2-c7/e2-e7 lines.
 
     ===========QUEEN============
 
     Queen:as chess rook,bishop or knight(Amazon):
-    https://i.imgur.com/U1lNRqD.png
+    
     Queen ability:
-
-    Conversion:Diagonal(See conversion section).
+    Conversion:Diagonal bishop move(See conversion section).
 
     Queen's Gaze: Pawns in 1sq radius(3x3)
     are paralyzed(automatic,doesn't prevent
-    capture by pawn with multimove).
+    capture by pawn with multimove),cannot use abilities.
 
     Queen's Poison:Units that captured a queen
     become paralysed for 6 moves.
 
-    Queen's Shadow:At the origin square of move an uncontrolled double of queen is created instead of Wallsquare. It cannot capture/use ability, but can threaten pieces and give check.
-    Example(Yellow=queen,blue=double,black threatened by double,red=threatened by queen):
-    https://i.imgur.com/CtG5Z0V.png
+    Queen's Shadow:At the origin square of move an uncontrolled double of queen is created instead of Wallsquare. It cannot capture/use ability, but can threaten pieces and give check(only as checkthreat, not checkmate).
+    The QS disappears on next queen move.
 
-    Queens Illusion(special move):convert last Queen's Shadow to Illusion, queen-movement type unit that cannot attack or use any ability.Not counted as unit in rotate calculations , can be attacked or affected by all abilities(cannot use any ability,except moving:cannot move into occupied/tomb/trap squares).Paralysis/Nearby(3x3)Explosion/Attack removes the Illusion unit from the game.
+    Queens Illusion(special move):convert last Queen's Shadow to Illusion, queen-movement type unit that cannot attack or use any ability.Not counted as unit in rotate calculations , can be attacked or affected by all abilities(cannot use any ability,except moving:cannot move into occupied/tomb/trap squares  however it will be affected by any traps/effects of its normal movement).Paralysis/Nearby(3x3)Explosion/Attack removes the Illusion unit from the game. 
+    Number of QI's cannot exceed the number of player queens. While Illusion is weaker than QShadow, it can be tactically used in some circumstances much more effectively
+    as QShadow can't move.
 
     =================KING==========
     King:moves as chess king(1sq).
@@ -681,47 +683,58 @@ as its uses wastes a valuable blocker unit.
     King's Portal:if Queen exists King may teleport to square near Queen(3x3) at any time.May not teleport into check or threatened squares.
 
     Royal Guards:units near king(3x3) cannot
-    be paralyzed.
+    be paralyzed.(Passive, doesn't remove existing paralysis).
 
     If king is captured/checkmated/exploded
-    the enemy wins.
+    the enemy wins: it cannot be placed in a tomb.
     Kings are immune to all special
-    moves/abilities except Rotate,Explosion and Teleswap(MindControl of Chancellor by enemy).
+    moves/abilities except Rotate,Explosion and Teleswap(MindControl of Chancellor by enemy and Teleswap).
+    Explosion win is much more easily achieved vs checkmate,
+    due King's Check and numerous transport options.
 
 
 
     =========JESTER=============
     Moves:
-    2sq diagogonaly+optionally 1sq diagonally and optionally 1 sq orthogonally forward(to diagonal direction)..
-    described in this image:
-    https://i.imgur.com/NfAVWDb.png
+    2sq diagogonaly+optionally 1sq diagonally and optionally 1 sq orthogonally forward(to diagonal direction)
+    the move is a leap, skipping units as knight.
+    e.g. jester at d5 can move to f7,f8,f3,f2,g3,g4,g6,g7
+    e2,e8,c2,c8,b2,b3,b7,b8,a3,a4,a6,a7.
+    
+    
     Cannot lose Range with CRR.
     jester Special moves:
     jesters cannot capture units.
 
     jester Power Steal: mimics movement of pieces
     that threaten it
-    (can also be empowered at same time).
+    (can also be empowered at same time,though
+    it cannot capture units).
 
     Jesters Traps:when jesters leaves a square
     during a move, it becomes a trap which
     paralyzes an enemy unit for 4 moves
     (and then dissolves) if stepped on.
     After there are 5 traps on board,
-    no more will appear(per each jester,
-    10 per 2 jesters,etc).
-    Purple=trap, Orange trapped unit(when enters trap)
-    https://i.imgur.com/hO6JZ4Y.png
-
+    no more will appear(x5 per each jester,
+    10 per 2 jesters,).
+    Traps are automatically created with each
+    move,if 5 traps already exist the oldest is erased.
+    Own units are immune. 
+    
+    
     Jesters Paralysis: paralyzes nearby units(3x3)
     by presence(units cannot move/use ability,
-    but can be influenced by other units)
+    but can be influenced by other units).
+    Paralysis ends when jesters moves out of range
+    or captured(entombed)/paralysed.
 
     Jesters Explosion:
     Explodes 3x3 when captured(explosion bypasses
     "cannot be captured"/instant checkmate),
     and all adjacent (3x3) squares are cleared
     of units/walls, tomb queues are activated.
+    Note:
     Jesters are immune to Jesters Paralysis
     (Kind Immunity) and can move into
     Jesters trapsquares without harm.
@@ -729,38 +742,45 @@ as its uses wastes a valuable blocker unit.
     Walltrap: same range as move.
     Surround enemy in 3x3 wall
     (wall dissolves on next jester move),
-    if the units is alone:otherwise fills
-    empty (3x3) squares with wall:
-    https://i.imgur.com/DenGS9n.png
+    Only effective vs lone unit in center of
+    3x3. Jester doesn't move at walltrap move
+    and next move cancels it.
+    
 
     Detonate:
     Explodes self-as if it was captured,3x3 explosion.
     Available when the jester stays on same place for 10 moves.
-    https://i.imgur.com/qdXIIkS.png
-
+    
     Distract:
     A jester can Cast(normal move range) distract on a square.
     The affected square(limited to 1 per Jester)
     Will affect movement of line pieces though it(Diagonals/orthogonals enemy/friendly),
     after passing they will bounce on the Square into the direction of Distract,
     Distract Direction:Jester can choose one of 8 directions for the Distract square,which would be followed by Distracted Piece(if the direction is unavailable, closest direction to movement path is selected,the first clockwise direction from the point of view of Distracted Player Piece Side is selected).
-    example(yellow=movement through Distract,black=distract direction,blue=jesters square)):
-    https://i.imgur.com/ljIXZXF.png
+    example:
+    e.g. a vertical(d-line) distract cast on d4, forces
+    units moving through d4 move towards d8 direction
+    in same amount of squares as their previous path.
+    (if the unit distracted is a bishop, the next clockwise
+    diagonal(d4-h8) is its new direction of movement).
 
     Decoherence:at cost of 5 move paralysis can De-Fuse a fused unit(pieces spread to nearby squares (5x5) clockwise from side casting at move range.
-    pic:https://i.imgur.com/7U8cJFF.png
+    cast range is normal move range.
 
 
     Spin: The units on 3x3 squares around jester can be rotated clockwise to arbitrary position(7 possible spins).
-    Unlike rotate The units positions change sequentially from the top one by one.(yellow=new spin locations)
-    https://i.imgur.com/ecWUHyF.png
+    Unlike rotate The units positions change sequentially from the top one by one.
+    e.g. a jester at d4 can rotate all units at
+    d5,d3,c3,c4,c5,e3,e4,e5.
 
     ==========CHANCELLOR=======
     Chancellor:
     1sq in any direction and if the direction
     is orthogonal to center square, 2sq diagonally.
     :described in this picture(center from queen)
-    https://i.imgur.com/PmCMOPx.png
+    e.g. Chancellor at d4 can move to 
+    d5,d3,c3,c4,c5,e3,e4,e5 and b2,b6,f2,f6.
+    
     Cannot lose range with CRR.
     Move and capture identical(can capture at
     all red circles in image).
@@ -769,7 +789,8 @@ as its uses wastes a valuable blocker unit.
     friendly piece on the board, even the king.
 
     Paralyse - Any enemy units in knight range are paralyzed as long as chancellor is alive and not paralyzed..
-    https://i.imgur.com/ao6DoAs.png.
+    Range: knight move. Paralysis requires presence
+    of unparalysed Chancellor.
 
     Quickening: Cast(move range) at square
     to alter the time flow in that square.
