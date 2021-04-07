@@ -1,0 +1,1134 @@
+FrozenChess 14.0
+    Board Dimensions: 16x16(32 pawns+32 pieces)
+    ----BOARD------------
+
+        Code:
+             
+
+
+        RJAOTDCQKCDTOAJR
+        RLFNFXBJJBXFNFLR
+        PPPPPPPPPPPPPPPP
+        PPPPPPPPPPPPPPPP
+
+
+        (black side)
+        (white side)
+
+
+        pppppppppppppppp
+        pppppppppppppppp
+        rlfnfxbjjbxfnflr
+        rjaotdcqkcdtoajr
+
+
+
+    ----------------
+    (where R=Rook(x4^),
+    D=Dragon(x2^),J=Jester(x4^),C=Chancellor(x2^),T=Templar(x2^),
+    Q=Queen(x1^),K=King(x1^),
+    ,P=pawn(x32^),F=Frog(x4^),N=Nightrider(x2^),
+    A=Assassin(x2^),X=Crossbowman(x2^),O=Cannon(x2^),B=Bishop(x2^),L=Knight(x2^))
+
+
+    --changed from v13--
+    Tomb System removed: instead a Dead Square appears
+    at capture place after capturer leaves it(Dead Squares
+    cannot be moved in or through by any means effectively
+    removing them from the board;Dragonflight is excepted).
+    Capture range reduction, Shellshock and
+    range extensions removed.
+    Terrain levels & Earthquake/Flood removed.
+    Nullmove removed to simplify stalemates.
+    Add Mirror Portal paralysis penalty.
+    Pawn Accceleration removed.
+    Pawn Rotations replaced by free omnidirectional movement.
+    Egg Fusion removed. 
+    Fusion Absorb removed.
+    Fusion restriction on non-pawn/non-King units.
+    Rook's Tower passive removed.
+    Frog's Mass Jump and Double Spawn removed.
+    Frog's Long Jump has now a paralysis penalty.
+    
+    --changes from v12--
+
+    New Terrain levels mechanic:units can raise/lower terrain on which they stand: can only move to lower/equal elevation.(level is -63 +63)
+    Movement cannot climb in terrain level:
+    (if unit path is above a lowered square(one lowered square only) the unit can bypass it and any unit inside it).
+
+
+    New Earthquake ability: resets terrain levels by exploding any of your non-pawn unit(except king).
+
+    New Flood ability:flood all adjacent empty negative level ground squares(all units stepping into them ae paralyzed).
+
+
+    New Box mechanic:unit can be Boxed(immune to damage,cannot move) and Box can be pushed/teleswapped/pulled/opened.
+
+    New Egg Fusion ability: fused eggs(any allied egg can be fused to another on the board) grow as N eggs would grow in single turn(similar to quickening:60 turns become 20 with 3x egg) and produce 1 dragon.
+
+
+    New Syzygy ability:a non-pawn unit which moves into a mirrorportal square of enemy unit of same kind:locks both units in-place(until rotated/teleswapped/swapshotted).
+
+    New Shift mechanic:if you control(all units in line are yours) a line you can shift it N spaces down/up left/right.(cannot contain any enemy units in tombs or enemy shadows)
+
+    New Fusion Absorb mechanic:fused unit can absorb all nearby 3x3 paralyzed enemies.
+
+    New Bind mechanic:bind nearby unit to unit group/other unit, move/teleport moves center+bound units.(works as multi-unit transport).
+
+    New Loop mechanic:unit can enter Loops of moves.
+
+    Bishops and Knights are back.
+
+    Conversion is restricted to diagonal move-type,penalty increased to N/2.
+
+    Mind Control is restricted to orthogonal move-type.
+
+    Assassin:Slip square ability(unit landing on it move forward N/3 sq in direction of move(where N is initial move distance))
+
+    Queen:Special move Queen's Illusion(set Last Queen's Shadow to becomes an autonomous unit that can move as queen, but not capture or use any ability).
+
+
+
+    --changes from v11--
+    Simplified some mechanics,units and abilities.
+    Desciptions of units roles removed.
+    Mechanics:
+    Corrupted squares: removed(all permadeath removed).
+    SuddenDeath:Simplified sudden death stages to "300moves rule"(most material points per rotate16x16 wins)
+    Monads:simplified stop/move conditions:monads stop at first illegal move,death/paralysis of monad or completion. Monad sequence limited to one turn(multi-move).
+    Mirror Portal: is now a generic ability for all non-pawn units.
+    Swapshot: cannot be used on guarded enemy units anymore.
+    Rotate Calculations: new piece material values for unit groups.
+    Conversion:now a generic ability.
+    Multimove:reset on death.
+
+    Units:
+    Templar:Tornado replaced by Blizzard(simple area paralysis)
+    Templar:Avalanche - simplified to 1 move push to edge.
+    Rook:Siege extends to nullify multimove too(doublemove+multimove nullified).
+    Assassin:clarified bomb visibility.
+    Cannon:simplified - doesn't need ammo unit to shoot.
+    Cannon:wallBlast - spread orthogonally only.
+    Dragon's Egg:doesn't die permanently but switches sides in tomb if captured. Reduced max eggs laid to 7 per dragon.
+    Chancellor:Paralyse is now automatic.
+
+    Removed units:
+    Trebuchet:replaced by Nightrider(knight diagonal mover),walls can be pushed anyway+cannon don't require ammo.
+    Ship: replaced by Crossbowman(NEW),transport abilities are redudant due fusion/de-fusion.
+    Onager:onager abilities transfers to rook,onagers removed from game.
+    Knights:removed,abilitity transfer to nightrider.
+    Bishops:removed.
+    Lancers:removed,ability transfer to Rooks.
+    Ballista:removed, ability transfer to Crossbowman shot.
+
+
+
+
+
+
+
+
+    ====================================================
+    Key mechanics
+    ===============
+
+    Loop: a preset Circular path can be declared as move for a unit(similar to Monad), which it would do each move(before player's turn,one move of loop per turn). Units in Loop cannot be controlled by player,but can be affected by any enemy move. Loop path must end at start square of loop. Loops can be thought as adding anothe Thread to the game(separate movelist to player controlled side), which is indepedently executed for the unit:
+    the enemy knows the squares of entire loop and can prepare its own counters, even sacrificing own units into
+    counter-loops to move and capture the looped unit.
+    Loops are entered like a movelist of Monad. Loops will repeat forever until stop on capture/paralysis or loop path blocked/illegal to move into. Units resume movement 
+    when path clears, but once in Loop the unit is forfeit
+    form player control forever(transferred to Loop domain).
+    A limit of 16 maximum moves in a loop 
+    with +2 per capture by unit exists:
+    e.g. a knight that captured 2 pawns can
+    enter a 16+4=20 move loop.
+
+
+    Box/Unbox: Special move by changing any unit into a Box(a safe transport unit containing the player unit).
+    Unbox(only by owning player) removes unit from Box mode at cost of paralysis of N/3(where N is amount of squares travelled in Box form). Boxes cannot move, but can be pushed/teleswapped/pulled/moved by external means(including moves by enemy).
+    Box can be thought of as safe container that 
+   cannot be captured, and can be used to block paths
+   or landing squares, as well as moving units into
+   specific position for tactical advantage.
+ 
+    
+    
+    Syzygy: A non-pawn unitA moving into mirror portal(board square where board is mirrored 
+    x,y->Len-y,Len-x) square of enemy unitB of same kind(A and B of same type) locks both units in place as if they are both paralyzed. Units A/B cannot be selected/used while in this state.
+    Syzygy is removed when one of units is rotated/teleswapped/swapshotted/pulled/pushed or moved by external means. 
+    Units that are Guarded or in start position are not affected. 
+    Rotate calculations are performed on unitA/B as if they were paralyzed units.
+    example on 8x8 board: 
+    A Rook moving into b3, paralyzes Rook on g6(8-3,8-b). 
+
+    Paralysis mode(ability/effect of actions):
+    Freezes unit in its place as if it has become 
+    a statue of unit.
+    Units can't move/capture/use
+    abilities while paralyzed for N moves
+    (i.e. if they could moves in players turn,
+    they wait until N player turns pass).
+
+    Paralysis Transfer:Any unitA(non-paralyzed(able-to-be paralyzed),not threatened by enemy units) protecting unitB(paralyzed) can take 4 paralysis moves from UnitB as special move.(reduce paralysis penalty by X, by making itself paralyzed for X moves).After being paralyzed unitA(From UnitB) no longer protects and unable to do another paralysis transfer. If UnitB has less than 4 paralysis(moves), UnitA still gets +4 paralysis penalty.
+    -------
+    Kind Immunity - a non-pawn piece cannot
+    engage a piece of its own kind
+    (e.g. knight can do nothing to knights)
+    with any capture/abilitymove.
+    Example:
+   a knight at b3 cannot capture a knight at d4.
+    Exceptions:pawns,kings(can aid checkmate) and immortal units(frogs) can affect each other(but not capture if non-pawn unit).
+
+    ----
+    Shift - Special move: move a line orthogonally on board where only your units exist, wrapping over the edge of board. Squares don't change color, only units are shifted
+    as 'line unit movement'.
+    If any enemy units exist on the Shift line, Shift cannot be performed. Minimum of 2 units per line.
+  example: only you have units on 4th line(one bishop and 1 pawn) and g line(1 knight and 2 pawn), so you can shift these units along the 4th or g line, optionally wrapping over the horizontal/vertical sides.
+  
+
+    -------
+    Entanglement - Capturing Units of same kind
+    (excluding pawns)
+    which share a line or diagonal,captures them all.
+    Capture multimove award is counted
+    as multiple sequential captures,
+    CRR reduces as if the capture was one.
+    Example:
+   A bishop at c5 capturing a rook at e7,
+   also captures rook at h7(connected by 7th line),
+   a rook at g5(connected by h7-g5 diagonal)
+   and a rook at e2(connected by e-line).
+    ----------------------------
+    Bind - allied units can be bound to unit group that touches them diagonally or orthogonally.
+    Moving one of the bound units moves all of units connected with Bind - if the destination squares are vacant:otherwise move is illegal.
+  Example: a knight at b3 touches a bishop at c4,
+  allowing a bind move, to create a b3-c4 group;
+  at next player turn the group can be move
+  by either knight or bishop,if the destination squares
+  e.g. f7,g8 are vacant(bishop move to g8 drags knight to f7) or c5,d6(knight from b3 to c5 drags bishop to d6). 
+
+    Unbind:to unbind simply move a unit away from group/bind units.
+    Bind/Unbind count as special move and ends multimove.
+
+    -----------------------------
+    Fusion/De-Fusion -
+    Two+ friendly units(except King and pawns)
+    (A and B) can fuse into unit AB which has the
+    capabilities of both(can use AB as either unitA
+    or UnitB(for move/capture/ability):
+    Enemy can select which of the two units 
+    in the AB fused-unit he wants to affect/capture
+    and it affects the entire fused AB unit
+    (e.g. to bypass immunity or secondary effect,
+    capturing AB by capturing B instead of capturing A).
+    Fuse: move A into square occupied by B.
+    The multi-Move awards are reset on de-fuse
+    (from all units in fused unit).
+
+    De-fuse: Select(A or B) from AB square
+    and move it away(the other units remains at AB square).
+    Limit of Units in fused unit:
+    unlimited(e.g. A&B&C&D combine into ABCD unit)
+  
+
+    --------
+    Morph - Any unit which is not threatened by enemy units(not in capture area for single move), can transform into another unit (with exception of Kings/pawns which cannot use Morph or be transformed into). The new unit will be in paralysis for 18 turns of player(bypasses paralysis immunity)..effectivelly putting it in stasis where
+    it can captured before its morph completes.
+    Paralyzed,fused,dead,trapped units cannot morph(only normal state units).
+    Morph resets all unit stats to default(as if new unit was created in its place).
+
+    Restrictions: Morph is restricted for immortal units, max 16 immortal units can exist at same time(e.g. 16frogs).
+    -----------------------
+    Empower - piece which is protected by
+    one piece(except Kings/Pawns)) gains its native movement
+    and capture ability(Kings/pawns cannot
+    be empowered or give empowerment).
+    e.g. a knight protected by a rook
+    can move and capture like a rook for one move.
+    Only applies if the empowering unit is not threatened by enemy, isn't in paralysis/spell effect.
+    ------------------------
+    Guards - if a unit is protected by
+    two or more (non-pawn) pieces it is
+    not empowered but cannot be captured
+    (can capture normally when guarded).
+    Kings cannot be guarded.
+   e.g. a pawn protected by Knight and Bishop
+   cannot be captured at its square.
+    only applies if the guarding units are not threatened by enemy and not in paralysis.
+    ----------------------------
+    SwapShotAny - units(except king) can also swap
+    places with units(except king) which they can capture
+    (threat of capture,even if unit is friendly).
+    e.g. Knight which can capture a pawn can
+    swap places with it
+    (works within single move only,
+    doublemove/multimove range is ignored).
+    SwapShot doesn't work on guarded enemy units.
+    --------------------------
+    Mirror Portal:
+    each square on board has a mirror square(mirroring:half-board rotated into another half) a non-pawn piece can teleport at will as special move.
+    Teleport(x,y) to Square(16-y,16-x)
+    Escape to a square which is a mirror location 
+    (as if the white side board rotated 180deg and
+    inserted in the black side) if the mirror
+    square is empty or tomb.
+   e.g. a b3 square on 8x8 board is mirror 
+   of g6(8-3)(8-b).
+    Mirror portal carries a Paralysis penalty
+    of N/2 turns, where N is distance between mirror squares.
+   
+    ===================
+    Conversion:Convert unit to your side without moving.
+    Conversion is valid only to squares where unit can move(units which capture differently from moving cannot convert) and entire path cannot be threatened by
+    enemy units 1move capture range(including the converted
+    unit itself and the convertor origin square).
+    Conversion is avalable only for ranged unit diagonal moves(such as Bishop/Queen/Dragon) and works at range of movement(not multi-move).
+    If a piece can capture another non-guarded/non-protected enemy piece,
+    and if the capturing unit is not in double/multi move:
+    The enemy unit can be converted insted of capturemove.
+    Conversion:After conversion capturer is
+    in paralysis for N/2 moves(where N is distance to converted unit,converted piece isn't affected).
+    Conversion example:
+A bishop at h7 instead of capturing a knight at d3 converts
+it at cost of 5/2=2 turn paralysis at h7.
+Conversion is always preferable to capturing but
+not always available: the virtual move path must be safe
+at all squares.
+
+    -------------------------
+    Spawn - Any unit(except kings) can spawn
+    a copy of itself(new unit of same type) in an empty nearby (3x3) square.
+    Both the original unit and the spawn square need not to be threatened by enemy units(even if unit is immortal).
+    After spawn both units(the original and copy are paralyzed(bypasses paralysis immunity)) for 40 moves for non-pawn units and 15 for pawns.
+    Restrictions: Spawn is restricted for immortal units, max 8 units can exist at same time(e.g. 8 frogs).
+ Example: knight at b3 spawns a Knight a b2,
+ both knight enter 40 turn ubreakable paralysis(bypasses any immunity/counter).
+ 
+    ======UNIT TYPE==================
+    Siege Units:Units that can attack walls:
+    Cannon
+
+    Leapers:
+    Units can leap over units and walls/tombs.
+    Queen(Knightmove),Dragon(knightmove),
+    Chancellor,Jester,Frog,Assassin,Pawn(2sq forward),Crossbowman(2sq diag),Nightrider(knight move diagonally).
+    Every other unit doesn't leap.
+
+    Riders(7):
+    Units that can move in
+    one direction to maximum range:
+    Crossbowman,Rook,Queen,Dragon,Templar,Nightrider,Bishop.
+
+
+    Immobile(1):
+    Cannot move by itself:
+    Cannon.
+
+    Immortal(1);
+    units that cannot be captured.
+    Frog.
+
+    No_Capture;Cannot Capture Units:
+    Jesters(except self-explosion),Frog,Crossbowman
+
+    High-value Units:
+    Rook(siege/tower),
+    Crossbowman(range shot),
+    Templar(shield/Blizzard),
+    Dragon(Dragon's Fire/Eggs),
+    Jester(paralysis/explodes),
+    Chancellor(teleswap)
+    Queen(capture range).
+
+    Capture Range Reduction units:
+    These units lose their
+    (Diagonal/orthogonal) range after captures:
+    Rook(ortho),Queen(Diag/ortho),
+    Templar(ortho),Dragon(diag),Bishop(diag).
+
+    -==Units and their moves==
+    ==========PAWN==========
+    Pawn: move 1-2sq in any direction
+    2sq movement is a leap in any orthogonal direction.
+    Capture 1sq diagonally in any direction
+    or as in 2sq leap the square which is leaped.
+    Example move:
+    d4 to c4,b4,e4,f4,d2,d3,d5,d6,c3,e3,c5,e5
+    Example capture leaps- destination(captured);
+    d4 to b4(c4),f4(e4),d6(d5),d2(d3).
+    Example capture diag:
+    d4 to c3,e3,c5,e5
+
+    Pawn special Moves:
+
+    Piece Promotion: capturing a non-pawn
+    piece promotes the pawn into the
+    same kind of piece.
+    (capture a knight to get a knight)
+    Example; pawn capturing a knight at d4,turns 
+    into a knight at d4(new unit of same type).
+
+    Last File promotion:
+    pawns at last file, promote to any pieces
+    except king and pawn(as in chess).
+
+    Pincer:unit whose orthogonal sides are
+    occupied with pawns are paralyzed until
+    pawns leave or die.
+    example: a knight at d4 is paralysed
+    by enemy pawns at c4 and e4.
+
+
+    Pawn Fuse Stacked Move:
+    If fused units contains only pawns(upto 7,see Pawn Fusion Bomb), they gain extra moves per turn,equivalent to number of pawns(e.g. 4 stacked pawns move 4 pawn moves in 1 move).
+    i.e. N fused pawns can move N times together.Does not stack with Pawn Acceleration(ignored if Fused).
+  
+
+    Pawn Fusion Bomb:fuse 7 pawns to explode 5x5 at fused unit square.
+    example: a 6-fused pawn at d4 is fused with another
+    pawn, it explodes in 5x5 square centered on d4.
+
+    =========BISHOP============
+    Bishop:Moves:as chess bishop(diagonals)
+    or 1sq orthogonally. Moves::
+    Example: a bishop at d4 can move diagonally
+    or to c4,e4,d5,d3.
+    Capture:Diagonals only.
+    Ability:Conversion(Diagonal)
+
+
+    =========FROG=============
+
+    Cannot capture or be captured.
+    Cannot land on tombs/walls.
+    Serves to block or disrupt enemy movement.
+    moves:2-3 diag,3ortho
+    example: a Frog at d4 can leap diagonally
+    to f6,g7,b6,a7,b2,a1,f2,g1,
+    and leap orthogonally to d1,d7,a4,g4,
+ 
+
+    Long Jump: Jumps to a square near(3x3) another(Enemy or Friendly) Frog
+    from anywhere on board.This is a tactical
+    move of a frog, which should be used instead of
+    its normal move.
+    Long Jump adds paralysis of N/2 where N is distance in squares.
+   Example: from jumps from b2 to a7 next to a8 knight.
+   
+    Slime Explosion:Frog explodes(dies),sending slime at units in nearby (3x3) squares
+    which gets paralyzed for 11 moves(slime doesn't kill).
+This special ability is useful at max frog capacity(8)
+as its uses wastes a valuable blocker unit.
+
+
+
+    =====KNIGHT==============
+    Knight:as chess knight+optionally 1sq
+    forward diagonally:
+    Example: at d4 any knight move or
+    to c3,c5,e3,e5.
+
+    Knight Special Moves:
+    Knight's Leap - Knight can capture by
+    leaping over(both squares captured at once)
+    pieces as if it was a normal capture
+    (can capture along with normal capture),
+    even within double move(capture ends movement, cannot capture more than 3 pieces per turn).
+    Single move can capture 3 pieces(1 normal,2 leap).
+    Example a knight at d4 capturing a bishop at e6
+    also captures a pawn at d5, and rook at e5,
+    as both are in knight-leap move-paths(L and its mirror).
+
+    Knight's March: Can move 4 moves in a turn if no capture occurs.
+    Movement is restricted to one of 4 cardinal directions,
+    but the path can vary(e.g.movement is up, varying left/right).
+  
+
+    Knightmare:pawns in 1move capture range can't
+    use special moves/ability/capture(can only move 1sq forward and cannot change direction/fuse/etc). The ability is passive and remains under paralysis.
+
+    ==NIGHTRIDER===
+    Moves as knight diagonally(repeated knight moves
+    along diagonals:cannor change direction in single move)
+    , captures as moves. 
+    Range is never reduced due capture
+    (can move up to edge of board).
+    Lacks knight abilities.
+    
+
+    ====CROSSBOWMAN=====
+    Cannot capture:
+    Ability: Poison Arrow x2(paralysis)
+    Projectile power:
+    paralysis for floor(16/range)+3 moves.
+
+    Movement;
+    orthogonally 1-5 squares, diagonally 1sq.
+    
+    Shoots 2 arrow in one diagonal direction(2 parallel green arrows)
+  Poison Arrow x2 paralysis shots:   
+    Example: a crowbowman at a1 shoots
+    from a2-g8 and b1-h7 diagonals hiting the first
+     units in the diagonals paths. 
+
+
+    ==========CANNON===========
+    Cannon:Doesn't move by itself(can be moved by abilities/other units):
+    Capture forward only(3 squares in rook direction,
+    3sq in bishop direction),can attack walls.
+    Cannon Blast ability:Skips every second square,
+    can only aim forward(max range 6sq).
+    square Explodes(3x3 centered on CB square,destroys walls/units)
+    Example: cannot at d1 can capture at d4,a1,g1,
+    can aim CB at squares d3,d5,d7,etc.
+    Direction of aim can changed as special move,
+    Cannon rotation, as in Pawn rotation.
+
+    Ability:WallBlast 1sq orthogonal range.
+    Destroys all wallsquares connected to attacked wallsquare orhogonally:
+    example; a cannon at a1 Wallblasts a wall at a2,
+    which leads to any wall square orthogonally 
+    connected to it to Wallblast itself, until the 
+  wall's end.(this encourages diagonal wall placement) 
+
+
+    ===ASSASSIN======
+    Bonus stat:De-shadowing paralysis penalty is divided by 3.
+    Range of Move/capture is 1chess knight move or 3 squares orthogonally.
+    e.g. a d4 assassin can move/capture to d1,d7,a4,g4
+    or as chess knight move to c6,b5,b3,c2,e2,f3,f5,e6.
+
+    Ability: Assassin's Run
+    After capture, can perform another capture, until limit of 3 per move.
+    After last(2nd/3rd) capture transforms into shadow form(only if minimum 2 captures made) and move ends.
+    
+
+    Ability:WallClimb/WallJump
+    Assassins can enter/exit wall squares if they stand orthogonally adjacent to them as special move.The exit move must land on empty non-threatened square.
+    Movement on the wall is restricted to the wall squares, until WallJump is performed and unit leaves wall.
+    WallJump is moving orthogonally 1sq away from the wallsquare to empty adjacent square.
+
+    Ability:Wall Tunnel construct.
+    If the Assassin stays in a square adjacent to a wall for 2 moves, and there is empty,non-threatened square on the other side, he can create a Tunnel, which makes the wall passable through the tunnel square
+    for the player's side.Player piece on Tunnel entrance moving forward, exits from the other side of wall
+    Tunnel exists as long as the wall.
+    Example; assasing at d4 before wall at d5
+    makes tunnel from d4-d6, allowing orthogonal
+    movement units from tunnel owner's side to move through.
+    
+
+    Special:Bomb(3x3)
+    Leave a bomb on the Square of presence(as part of new move), if the 3x3 squares around are empty of units.The bomb explodes 3x3, when the 3x3 square is entered by enemy units, destroying any units/wall/tombs. Bombs are visible to both players.
+    Only one bomb per assassin at same time can exist.
+    Example:
+    bomb left at d4 explodes(3x3sq) as enemy bishop
+    enters    d5 square.
+
+
+    Ability: Retain Empowered Move
+    Can move, but not capture as the last unit that empowered the Assassin.(retain empower moves for non-capture moves). Restricted to last unit.
+
+    Special Move :Slip square created at any square in movement range(unit landing on it moves forward N/3 sq in direction of move(where N is initial move distance(start to Slip square)). Only one Slip Square per assassin can exist,
+    and requires the square to be non-threatened by enemy
+    moves(not in 1move range).
+        
+    e.g. a Slip square at d4 forces a bishop
+    arriving from b2-d4 to make 3/1 =1extra sq move
+    landing on e5 instead.Slip squares work for both
+    sides units. Movement cannot continue if the path is
+    occupied by other units/walls as its continuation
+    of normal movement in same direction(moving into a trap is allowed).
+    units not moving orthogonally/diagonally are immune
+    to Slip squares entirely.
+    
+    =========DRAGON===========
+    Dragon:As bishop or knight or 2sq orthogonal leap(
+    e.g. from d4 to a4,g4,d1,d7).
+    
+
+    
+    Dragon special moves:
+    Dragonflight - can leap over dead squares(2sq ortho).
+        
+    Conversion:Diagonal(See conversion section).
+
+    Dragon's Fire - capture (3x3) nearby units
+    (walls unharmed) when arriving on a empty square.
+    CRR & multimove award applies for all units captured.
+    example: Dragon arriving at d4(empty), capture
+    units at d5,d3,c3,c4,c5,e3,e4,e5.
+
+    Dragon's Egg:Dragon can Lay a single Egg(each dragon can have one Egg on board) in empty, non-threatened square 1sq away from itself(3x3 box).
+    The Egg doesn't move and evolves into Dragon after 60 moves(Growth).
+    Eggs which are threatened with capture stop their Growth.
+    Eggs which are paralyzed reset their growth timer to 0(60 moves).
+    Captured Eggs switch sides to capturer side (dead eggs switch side in tomb) and are bound to dragon of players choice(works as if it laid the egg:cannot lay another until the current dies/evolves into dragon).
+    Eggs cannot use any ability/move,but can be affected by ability.
+    If the dragon that laid the egg dies, the Egg growth is stalled until it respawns.
+    Capture MM Awards/CRR for Eggs is same as Pawns.
+    Maximum number of Eggs laid per Dragon is 7 after which the Dragon cannot lay more eggs(captured&bound eggs don't count toward limit), but can still Spawn dragons.
+    Quickening doubles rate of Growth.
+
+     
+
+    ===========ROOK=============
+    Rook:as chess rook(orthogonal)
+    Rook Special Moves:
+    Stun - when landing on a square,all nearby(3x3)
+    enemy units are paralyzed for 2 moves.
+    e.g. landing on d4, paralyzesunits at d5,d3,c3,c4,c5,e3,e4,e5.
+
+    Siege - Enemy Units in rooks capture range(one move),
+    cannot doublemove/multimove.
+
+    Launch:Throws unit(enemy/friendly) directly forward
+    at Aim Direction(thrown units destroy wallsquares
+    and other units) until it meets edge of board or obstacle wall/unit which is destroyed in explosion (3x3).
+    THe unit which is used as ammo also dies in explosion.(new tombs).
+    e.g. a Rook at d2 launches d3 pawn forward to d7
+    where it explodes(3x3) meeting a wall.
+
+
+    Swipe Paralysis:
+    units along the movepath are in paralysis for 1 move(next turn).
+    Green=movement, purple=swipe paralysis.
+    e.g. rook moving d2-d7, swipes c2-c7/e2-e7 lines.
+
+    ===========QUEEN============
+
+    Queen:as chess rook,bishop or knight(Amazon):
+    
+    Queen ability:
+    Conversion:Diagonal bishop move(See conversion section).
+
+    Queen's Gaze: Pawns in 1sq radius(3x3)
+    are paralyzed(automatic,doesn't prevent
+    capture by pawn with multimove),cannot use abilities.
+
+    Queen's Poison:Units that captured a queen
+    become paralysed for 6 moves.
+
+    Queen's Shadow:At the origin square of move an uncontrolled double of queen is created instead of Wallsquare. It cannot capture/use ability, but can threaten pieces and give check(only as checkthreat, not checkmate).
+    The QS disappears on next queen move.
+
+    Queens Illusion(special move):convert last Queen's Shadow to Illusion, queen-movement type unit that cannot attack or use any ability.Not counted as unit in rotate calculations , can be attacked or affected by all abilities(cannot use any ability,except moving:cannot move into occupied/tomb/trap squares  however it will be affected by any traps/effects of its normal movement).Paralysis/Nearby(3x3)Explosion/Attack removes the Illusion unit from the game. 
+    Number of QI's cannot exceed the number of player queens. While Illusion is weaker than QShadow, it can be tactically used in some circumstances much more effectively
+    as QShadow can't move.
+
+    =================KING==========
+    King:moves as chess king(1sq).
+    Kings Special Moves:
+    King's Check:
+    King's check is King-initiated self-check by enemy.
+    if the king is not currently in check,
+    and moves into check, the checking units die
+    (creating tomb squares).
+    The King's Check cannot be within a
+    doublemove(which doesn't allow moving into check)
+    or multimove.
+    If the king is checked by enemy,
+    he cannot move into check
+    (must escape checks or use king's exchange).
+
+
+    King's Exchange:
+    Can exchange place with any friendly
+    (non-attacked) live unit in the game,
+    (exchanged piece dies(creating a tomb under
+    King new location. , so each "teleport"
+    costs a pawn/piece to make).
+
+    King's Portal:if Queen exists King may teleport to square near Queen(3x3) at any time.May not teleport into check or threatened squares.
+
+    Royal Guards:units near king(3x3) cannot
+    be paralyzed.(Passive, doesn't remove existing paralysis).
+
+    If king is captured/checkmated/exploded
+    the enemy wins: it cannot be placed in a tomb.
+    Kings are immune to all special
+    moves/abilities except Rotate,Explosion and Teleswap(MindControl of Chancellor by enemy and Teleswap).
+    Explosion win is much more easily achieved vs checkmate,
+    due King's Check and numerous transport options.
+
+
+
+    =========JESTER=============
+    Moves:
+    2sq diagogonaly+optionally 1sq diagonally and optionally 1 sq orthogonally forward(to diagonal direction)
+    the move is a leap, skipping units as knight.
+    e.g. jester at d5 can move to f7,f8,f3,f2,g3,g4,g6,g7
+    e2,e8,c2,c8,b2,b3,b7,b8,a3,a4,a6,a7.
+    
+    
+    Cannot lose Range with CRR.
+    jester Special moves:
+    jesters cannot capture units.
+
+    jester Power Steal: mimics movement of pieces
+    that threaten it
+    (can also be empowered at same time,though
+    it cannot capture units).
+
+    Jesters Traps:when jesters leaves a square
+    during a move, it becomes a trap which
+    paralyzes an enemy unit for 4 moves
+    (and then dissolves) if stepped on.
+    After there are 5 traps on board,
+    no more will appear(x5 per each jester,
+    10 per 2 jesters,).
+    Traps are automatically created with each
+    move,if 5 traps already exist the oldest is erased.
+    Own units are immune. 
+    
+    
+    Jesters Paralysis: paralyzes nearby units(3x3)
+    by presence(units cannot move/use ability,
+    but can be influenced by other units).
+    Paralysis ends when jesters moves out of range
+    or captured(entombed)/paralysed.
+
+    Jesters Explosion:
+    Explodes 3x3 when captured(explosion bypasses
+    "cannot be captured"/instant checkmate),
+    and all adjacent (3x3) squares are cleared
+    of units/walls.
+    Note:
+    Jesters are immune to Jesters Paralysis
+    (Kind Immunity) and can move into
+    Jesters trapsquares without harm.
+
+    Walltrap: same range as move.
+    Surround enemy in 3x3 wall
+    (wall dissolves on next jester move),
+    Only effective vs lone unit in center of
+    3x3. Jester doesn't move at walltrap move
+    and next move cancels it.
+    
+
+    Detonate:
+    Explodes self-as if it was captured,3x3 explosion.
+    Available when the jester stays on same place for 10 moves.
+    
+    Distract:
+    A jester can Cast(normal move range) distract on a square.
+    The affected square(limited to 1 per Jester)
+    Will affect movement of line pieces though it(Diagonals/orthogonals enemy/friendly),
+    after passing they will bounce on the Square into the direction of Distract,
+    Distract Direction:Jester can choose one of 8 directions for the Distract square,which would be followed by Distracted Piece(if the direction is unavailable, closest direction to movement path is selected,the first clockwise direction from the point of view of Distracted Player Piece Side is selected).
+    example:
+    e.g. a vertical(d-line) distract cast on d4, forces
+    units moving through d4 move towards d8 direction
+    in same amount of squares as their previous path.
+    (if the unit distracted is a bishop, the next clockwise
+    diagonal(d4-h8) is its new direction of movement).
+
+    Decoherence:at cost of 5 move paralysis 
+    can De-Fuse a fused unit(pieces spread to
+    nearby squares (5x5) clockwise from side
+    casting at move range.
+    cast range is normal move range.
+
+
+    Spin: The units on 3x3 squares around jester 
+    can be rotated clockwise to arbitrary position
+    (7 possible spins).
+    Unlike rotate The units positions change 
+    sequentially from the top one by one.
+    e.g. a jester at d4 can rotate all units at
+    d5,d3,c3,c4,c5,e3,e4,e5.
+
+    ==========CHANCELLOR=======
+    Chancellor:
+    1sq in any direction and if the direction
+    is orthogonal to center square, 2sq diagonally.
+    :described in this picture(center from queen)
+    e.g. Chancellor at d4 can move to 
+    d5,d3,c3,c4,c5,e3,e4,e5 and b2,b6,f2,f6.
+    
+    Move and capture identical(can capture at
+    all red circles in image).
+    
+    Special moves:
+    Teleswap - Can swap places with any
+    friendly piece on the board, even the king.
+
+    Paralyse - Any enemy units in knight range 
+    are paralyzed as long as chancellor is alive
+    and not paralyzed..
+    Range: knight move. Paralysis requires presence
+    of unparalysed Chancellor.
+
+    Quickening: Cast(move range) at square
+    to alter the time flow in that square.
+    THe square will have x2 faster flow of time,
+    i.e. paralysis wears off twice faster,
+    dragons egg grows twice faster,etc.
+    Quickening lasts 64(normal,global player moves)
+    moves per square(cumulative with multiple casts,+64),
+    and cost 5 paralysis moves for chancellor.
+
+
+    Immunity to SwapShot from enemy.
+    Immunity to Jesters presence(Jesters paralysis).
+
+    =========TEMPLAR==============
+    Templar:as Rook or diagonally 2 squares
+    and optionally 1 square diagonally to side.
+    T-like capture area.
+    e.g. a Templar at d4 can move 
+    as Rook, or to f6,a6,a2,f2 and e7,g5,e1,g3,c1,a3,
+    a5,c7(edges of T),the diagonal/T move is counted 
+    as leap of knight.
+    
+    special ability:
+
+    Templar's Shield:
+    Units cannot capture The Templar if they
+    are in his capture range
+    (if a templar can capture your unit
+    at the square from where
+    you attempt to capture it,
+    it cannot capture the templar).
+    Range of Shield is 1 normal move without bounce.
+
+    
+
+   
+
+    Blizzard:
+    Cost: 20 moves paralysis.
+    Cast Range as T-shape movement range(non-rook).
+    Area(5x5) around center of Blizzard is paralyzed for 4 turns.Affects friendly&enemy units(except kings and the 
+    casting Templar itself).
+    
+
+    Avalanche::
+    Cost: 10 moves paralysis.
+    Cast Range as rook movement range(bypasses units).
+    All units at line of sight of rook range are pushed to edge of board or first obstacle.
+    e.g. a templar at d8, will push enemy units
+    at d7,d5,d4,d2 into d4,d3,d2,d1.
+   
+    Immunity to Push.(passive, in non-box, non-paralysed form.)
+
+    =======ADVANCED MOVES===========
+    Special Abilities of units are unavailable during advanced movement: exception is attack ability(like conversion/paralysis/capturemove) during multimove, which when used ends multimove.
+
+    Advanced movement:
+    Double Move - A unit can do 2 moves per
+    turn if they are not captures or
+    special moves(i.e.normal moves from A to B).
+
+    Checks/Checkmates are counted as normal moves.
+
+    MultiMove- rewarded for unit captures:
+    Multimove nullifies DoubleMove ability
+    (as it is an upgraded form) for a piece
+    that gets MultiMove..
+    It allows N unrestricted moves/specialmoves
+    per turn for the unit that possesses the ability.
+
+    Diagonal Bounce - chess Bishop-type movement
+    can reflect
+    off edges of board, other units and walls
+    (course changes on collision).
+    Range of movement is limited by
+    16 squares singlemove or 32 sq
+    with doublemove.
+    e.g. a Bishop at c4, can move c4-a2-b1-g6
+    as its path is <16 squares.
+
+    Orthogonal Bounce
+    Rook-type movement
+    (Rook,Queen,Templar,Crossbowman) can reflect
+    off edges of board, other units and walls
+    (course changes on collision) at 90deg angle.
+    Range of movement is limited by
+    16 squares singlemove or 32 sq
+    with doublemove.
+    e.g. a rook moving d1-a1 can move d1-a1-a8
+    due bounce(<16sq path) off the a1 edge of board.
+   
+
+
+    ======SPECIAL MOVES & OTHER MECHANICS============
+    ---------------------------------
+    Special Moves:Mind Control
+    MindControl - if pieceA(non-pawn) can capture
+    PieceB with orthogonal-direct-line(rook move) without being recaptured(PieceB not protected)
+    and both stand on squares of same color,
+    it can mindcontrol it instead to make
+    any legal move(counts as move of pieceA player).
+e.g.a rook at d4 can capture a d2 queen, but instead
+he MCs queen to move d2-g2, triggering an explosion which kills it.
+
+
+    --------------------
+    Special Moves:Pull
+    if pieceA can capture PieceB with a
+    rook-like or bishop-like move:
+    PieceA can pull PieceB towards himself
+    for N squares.(upto capture range)
+    Units that are pulled:any enemy/friendly
+    units except:king,units under
+    Guards(2+ protectors),
+    units inside jesters trapsquares,
+    units of same kind(Kind immunity).
+    Pull can move units into a Trapsquare.
+    After a Pull move:the (puller)
+    unit is in paralysis for floor(N/3)
+    moves for N squares moved.
+    The pulled unit is not affected
+    (unless the pull destination is a trap,
+    which is treated as PieceB moved into it).
+    A pull cannot move pulled unit further if the path
+    is occupied by any units/walls, treating the pull
+    as normal movement of PieceB obstructed at first
+    blocking obstactale.
+    
+
+    Pull-through(special pull):
+    Units can be pulled even if the there blocking units on the pull path,(the Pulled Unit cannot moves through them, but the force of pull can )
+    Example(WKnight pulled by Bishop until it hit a blocking BKnight),Units can be pulled into cannons too.
+    After a Pull-through:the (puller)
+    unit is in paralysis for floor((2*N)/3)
+    moves for N squares moved.
+    e.g. a Rook at d2 can Pull through a queen at d7to d5.
+    despite a pawn at d4, which would stop a normal pull.
+
+
+
+    ------------------
+    Special Move:Pushing.
+    UnitA can push UnitB in direction of push.
+    if it stands orthogonally adjacent in 3x3 square.
+    Multiple units/wallsquares can't be pushed.
+    Can't push off-board.
+    e.g. knight at d4 can push a rook at c5 3sq diagonally
+    (as knight range is 3sq) towards a7(d4-c5-a7 direction).
+    UnitB push range cannot exceed the UnitA move range
+   without UnitB presence(i.e. UnitA move range limit)
+     
+     
+
+    
+
+    Pushing Walls: wallsquare is moved in 
+    orthogonal direction(as if it was an unit) 
+    and unit stands in its former place. 
+    Unit is paralyzed for 5 moves after wall push.
+
+    =======SHADOW FORM============
+    --------------------
+    Special Moves: Shadowing/De-Shadowing.
+    A non-pawn unit(except King) can turn
+    into a Shadow piece(Knight ->ShadowKnight),
+    a special piece type that:
+    1.Can only capture/affect other shadow pieces
+    but can affect them see below:Shadowstrike.
+    2.can move in shadow form,
+    but every square travelled adds to
+    De-Shadow Paralysis penalty.
+    3. doesn't block movement(ethereal:
+    square can be occupied/moved through by
+    other normal pieces and shadows).
+    However cannot move through walls,normal units,
+    and dead squares.
+    4.is affected by Walls
+    (but can't create new walls).
+    5.Cannot use unit-specific
+    abilities(special moves bound to unit) 
+    in shadowform which affect the normal units or the board.
+
+    ShadowPiece can return to Normal state
+    when its square is not attacked or
+    occupied(by normal units,dead squares,walls,traps).
+    A minimum delay between turning into
+    ShadowPiece and returning back
+    to normal is 5 moves.
+
+    De-Shadow Paralysis penalty:
+    for N squares travelled in Shadow form,
+    the De-shadowed piece is in paralysis for
+    floor(N/2) moves(knight move=3sq).
+
+    De-Shadowing move:if conditions are
+    satisfied(no threats, empty square),
+    player can deshadow the Shadow Piece
+    as a special move.
+
+    Shadowstrike: if a normal enemy UnitA is:
+    1.unprotected by any unit
+    2.on same color square as shadow
+    3.is capturable
+    shadow unit can shoot at it(via capture move) a shot which converts UnitA to shadowUnitA
+    at cost of 10 move paralysis
+    (of the Shadowstriker unit).
+    ---------Shadow Monads----------
+    Monads: Shadowed pieces may enter Monad state which they cannot leave by themself.
+    States of Monad:
+    Inactive:paralyzed, but cannot be captured.
+    Activated:performs multimove sequence in 1 turn and stops(at sequence end).
+    Monad state:
+    1.Player first enters a sequence of 1 to 16 moves, which will be performed in shadow-form(future moves).
+    Moves can include De-shadowing and any special ability(Paralysis applies normally for use of De-shadow/ability). The sequence is a prearranged multi-move than would be performed if Monad is activated.
+    2.Piece Enters an inactive Monad state, where it cannot move/use ability/capture and cannot be affected by the game mechanics except rotate.
+    3.Activation:when monad is activated, the player Loses control of the piece,
+    as it performs the multi-move sequence until the moves
+    become illegal,piece dies/paralyzed or sequence completes. The player regains control of piece at next turn(monad activation->monad multi-move->
+    next player turn(regains control)
+
+    6.At all times the Monad sequence of moves is visible to enemy players and cannot change once created.Moves of monad are independent of player and occur after enemy moves.
+    -=--------------
+    Monad Activation:
+    Monad(as all shadow units) can share squares with any piece.
+    by Shadowform:enemy piece at square of Monad, enters shadow form.
+    by Shadowstrike:enemy piece at square of Monad, is shadowstriken.
+    by push:enemy shadow piece is pushed into square of Monad.
+    by pull:enemy shadow piece is pulled into square of Monad.
+    by other method:enemy shadow piece becomes present at square of Monad(by portals/teleswap/swapshot/etc).
+    Shadow units which existed at square of Monad before its
+    creation don't affect it, until they move away: moving away activates the monad(leaving square of Monad).
+
+    ---------------
+
+
+    Note:The game mechanic allows one to deliver
+    de-shadowed checkmate, or de-shadow with
+    Guards(who can also de-shadow earlier),
+    so De-Shadow paralysis is required counterbalance.
+    Monad represent a tactical configuration threat 
+    which must be countered.
+
+    ----------------------------
+    ====CAPTURE==============
+    Capture mechanics:
+    Capture Multimove Award:If a non-pawn
+    piece captures 3 non-pawns or
+    10 pawns(separate counters for each)
+    it gets +1 move(multimove ability upgrade),
+    repeated for each series of captures
+    (+1 extra move per 3or10).
+    
+    -------------------------
+   Dead Squares:
+   After any unit has been captured,
+   A Dead Square appears at the place 
+   instead of Black/White square,
+   once the capturer piece leaves(or not present).
+   Dead Squares cannot moved into or
+   through(except Dragonflight(Dragon passive/non-shadow form),
+   effectively removing them from the chess board.
+  
+
+
+   
+
+    
+    
+
+    ======ROTATE=============
+    Special moves:Rotations
+    An abstract square(NxN cells) composed
+    of board cells can be rotated in
+    90deg,180deg and 270deg turn,
+    if the player controls the majority
+    of units in the square:
+    ----------------------
+    majority material points determination:
+    values of units are summed and if they're
+    larger than enemy you can rotate the square.
+    For 300move rule - NxN square is entire board.
+    Basic Values of units in points:
+    Pawn = 1
+    Nightrider,Frog=5
+    Crossbowman,Jester,Cannon = 8
+    Assassin,Queen,Chancellor=10
+    Dragon,Templar,Rook=12
+    King =25
+
+    Paralysis exception:units that 
+    paralyzed are not counted.
+
+    All shadow units are counted as floor
+    (basicvalue/3)+1 and don't gain Rank bonus.
+
+    Color Force bonus:
+    All units on square of side color(e.g.black on black)
+    multiply basicvalue by2 (basicvalue*2)
+
+    Rank Bonus:half-distance from edge of board
+    (own starting side to enemy starting side)
+    in squares is added to unit basic value:
+    basicvalue+(distance/2:max 8 for 16th file)
+
+    Fuse Bonus:adds number of fused units in unit 
+    to global square bonus.
+
+    ----------------------
+
+    After rotation, the (rotated)squares change
+    color to align with rest of board.
+    Walls and dead squares also rotate
+    as well as anything that occurs on the squares.
+    Squares(NxN) which touch the edge of board
+    can't rotate.
+    Size of squares that can be rotated:
+    from 2x2 to 8x8 cells;
+
+    =======WALLING============
+    Game mechanic: Walls
+    PathSquares->WallSquares:
+    Unit movement paths become walls:
+    When units finish a movement, all squares
+    where it was moving(including start squares)
+    become wallsquares
+    (cannot be landed on or moved through).
+
+    Duration of wall existence:
+    Until the waller(wall creator) creates a new wall.
+    Then the old wall dissolves(1 wall per unit).
+    Some pieces can attack the wallsquare
+    (siege-units only:Rook,Cannon)
+
+    Movement near walls:
+    if a pathsquare lands on wallsquare,
+    the movement cannot proceed.
+    Leaping over the wall is allowed
+    (no intermediate move may land on wallsquare).
+    Exception:
+    Assassins entering Wallsquares,move only on Wallsquares.
+    
+    linear walls:
+   e.g. rook moving d2-d8 creates d2-d7 wall.
+   biship moving a1-h8, creates a1-g7 wall.
+   
+    leap wall:1sq (origin square of moved piece, e.g. knight)
+  
+
+
+
+
+    ---------------------
+    Victory:
+    1.if enemy king is checkmated or captured.
+    2.enemy stalemate.
+
+    ---------------
+    Draw Rules:
+    Draw can be obtained by two consecutibe Nullmoves from both players.
+    50 moves rule =not enforced
+    (easy pawn capture/promotion).
+    3fold repetition of position,
+    which duplicates the walls/
+    paralysis/status is draw
+    (exact position duplicate only).
+    If a side cannot move(stalemate,rare in FC)
+    it loses the game(not a draw).
+
+    Long Games - 300 moves rule(optional):
+    After move 300:
+    the side with material advantage
+    (Rotate Calculations for entire board)
+    automatically wins(if Rotate calculation 
+    points are larger than enemy by 1 or more).
