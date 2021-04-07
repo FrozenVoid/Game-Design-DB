@@ -1,4 +1,4 @@
-FrozenChess 14.0
+FrozenChess 14.0 beta(further changes will be added)
     Board Dimensions: 16x16(32 pawns+32 pieces)
     ----BOARD------------
 
@@ -43,12 +43,15 @@ FrozenChess 14.0
     Add Mirror Portal paralysis penalty.
     Pawn Accceleration removed.
     Pawn Rotations replaced by free omnidirectional movement.
+    Pawn Fuse Stacked Move removed.
     Egg Fusion removed. 
     Fusion Absorb removed.
     Fusion restriction on non-pawn/non-King units.
     Rook's Tower passive removed.
     Frog's Mass Jump and Double Spawn removed.
     Frog's Long Jump has now a paralysis penalty.
+    Bounces can now use any obstacle square(occupied/dead/wall/unit) to "bounce off" as if it was edge of board.
+    restricted Spawn and Morph maximum 16/8 units of type.
     
     --changes from v12--
 
@@ -200,7 +203,8 @@ FrozenChess 14.0
    and a rook at e2(connected by e-line).
     ----------------------------
     Bind - allied units can be bound to unit group that touches them diagonally or orthogonally.
-    Moving one of the bound units moves all of units connected with Bind - if the destination squares are vacant:otherwise move is illegal.
+    Moving one of the bound units moves all of units connected with Bind - if the destination squares are vacant:otherwise move is illegal(unlike Fusion it moves
+   Occupied squares A-> Empty Squares B).
   Example: a knight at b3 touches a bishop at c4,
   allowing a bind move, to create a b3-c4 group;
   at next player turn the group can be move
@@ -236,7 +240,7 @@ FrozenChess 14.0
     it can captured before its morph completes.
     Paralyzed,fused,dead,trapped units cannot morph(only normal state units).
     Morph resets all unit stats to default(as if new unit was created in its place).
-
+     Max units of same type 16 mortal/8 Immortal;
     Restrictions: Morph is restricted for immortal units, max 16 immortal units can exist at same time(e.g. 16frogs).
     -----------------------
     Empower - piece which is protected by
@@ -300,7 +304,7 @@ at all squares.
     a copy of itself(new unit of same type) in an empty nearby (3x3) square.
     Both the original unit and the spawn square need not to be threatened by enemy units(even if unit is immortal).
     After spawn both units(the original and copy are paralyzed(bypasses paralysis immunity)) for 40 moves for non-pawn units and 15 for pawns.
-    Restrictions: Spawn is restricted for immortal units, max 8 units can exist at same time(e.g. 8 frogs).
+    Restrictions: 16 units of same type max, and 8 for immortal unit type(e.g. Frog).
  Example: knight at b3 spawns a Knight a b2,
  both knight enter 40 turn ubreakable paralysis(bypasses any immunity/counter).
  
@@ -311,13 +315,13 @@ at all squares.
     Leapers:
     Units can leap over units and walls/tombs.
     Queen(Knightmove),Dragon(knightmove),
-    Chancellor,Jester,Frog,Assassin,Pawn(2sq forward),Crossbowman(2sq diag),Nightrider(knight move diagonally).
+    Chancellor,Jester,Frog,Assassin,Pawn(2sq ortho),Crossbowman(2sq diag),Nightrider(knight move diagonally).
     Every other unit doesn't leap.
 
     Riders(7):
     Units that can move in
     one direction to maximum range:
-    Crossbowman,Rook,Queen,Dragon,Templar,Nightrider,Bishop.
+    Rook,Queen,Dragon,Templar,Nightrider,Bishop.
 
 
     Immobile(1):
@@ -339,12 +343,6 @@ at all squares.
     Jester(paralysis/explodes),
     Chancellor(teleswap)
     Queen(capture range).
-
-    Capture Range Reduction units:
-    These units lose their
-    (Diagonal/orthogonal) range after captures:
-    Rook(ortho),Queen(Diag/ortho),
-    Templar(ortho),Dragon(diag),Bishop(diag).
 
     -==Units and their moves==
     ==========PAWN==========
@@ -378,11 +376,6 @@ at all squares.
     example: a knight at d4 is paralysed
     by enemy pawns at c4 and e4.
 
-
-    Pawn Fuse Stacked Move:
-    If fused units contains only pawns(upto 7,see Pawn Fusion Bomb), they gain extra moves per turn,equivalent to number of pawns(e.g. 4 stacked pawns move 4 pawn moves in 1 move).
-    i.e. N fused pawns can move N times together.Does not stack with Pawn Acceleration(ignored if Fused).
-  
 
     Pawn Fusion Bomb:fuse 7 pawns to explode 5x5 at fused unit square.
     example: a 6-fused pawn at d4 is fused with another
@@ -622,7 +615,7 @@ as its uses wastes a valuable blocker unit.
     King's check is King-initiated self-check by enemy.
     if the king is not currently in check,
     and moves into check, the checking units die
-    (creating tomb squares).
+    (creating dead squares).
     The King's Check cannot be within a
     doublemove(which doesn't allow moving into check)
     or multimove.
@@ -634,9 +627,8 @@ as its uses wastes a valuable blocker unit.
     King's Exchange:
     Can exchange place with any friendly
     (non-attacked) live unit in the game,
-    (exchanged piece dies(creating a tomb under
-    King new location. , so each "teleport"
-    costs a pawn/piece to make).
+    (exchanged piece dies(creating a dead square under
+    King new location after it moves away.))
 
     King's Portal:if Queen exists King may teleport to square near Queen(3x3) at any time.May not teleport into check or threatened squares.
 
@@ -644,7 +636,7 @@ as its uses wastes a valuable blocker unit.
     be paralyzed.(Passive, doesn't remove existing paralysis).
 
     If king is captured/checkmated/exploded
-    the enemy wins: it cannot be placed in a tomb.
+    the enemy wins.
     Kings are immune to all special
     moves/abilities except Rotate,Explosion and Teleswap(MindControl of Chancellor by enemy and Teleswap).
     Explosion win is much more easily achieved vs checkmate,
@@ -754,7 +746,7 @@ as its uses wastes a valuable blocker unit.
 
     Paralyse - Any enemy units in knight range 
     are paralyzed as long as chancellor is alive
-    and not paralyzed..
+    and not paralyzed.
     Range: knight move. Paralysis requires presence
     of unparalysed Chancellor.
 
@@ -830,7 +822,7 @@ as its uses wastes a valuable blocker unit.
 
     Diagonal Bounce - chess Bishop-type movement
     can reflect
-    off edges of board, other units and walls
+    off edges of board,dead squares, other units and walls
     (course changes on collision).
     Range of movement is limited by
     16 squares singlemove or 32 sq
@@ -841,7 +833,7 @@ as its uses wastes a valuable blocker unit.
     Orthogonal Bounce
     Rook-type movement
     (Rook,Queen,Templar,Crossbowman) can reflect
-    off edges of board, other units and walls
+    off edges of board,dead squares, other units and walls
     (course changes on collision) at 90deg angle.
     Range of movement is limited by
     16 squares singlemove or 32 sq
@@ -934,7 +926,7 @@ he MCs queen to move d2-g2, triggering an explosion which kills it.
     other normal pieces and shadows).
     However cannot move through walls,normal units,
     and dead squares.
-    4.is affected by Walls
+    4.is limited by Walls and dead squares.
     (but can't create new walls).
     5.Cannot use unit-specific
     abilities(special moves bound to unit) 
