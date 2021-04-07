@@ -181,7 +181,8 @@ FrozenChess 13.0
     
     Syzygy: A non-pawn unitA moving into mirror portal(board square where board is mirrored 
     x,y->Len-y,Len-x) square of enemy unitB of same kind(A and B of same type) locks both units in place as if they are both paralyzed. Units A/B cannot be selected/used while in this state.
-    Syzygy is removed when one of units is rotated/teleswapped/swapshotted/pulled/pushed or moved by external means.
+    Syzygy is removed when one of units is rotated/teleswapped/swapshotted/pulled/pushed or moved by external means. 
+    Units that are Guarded or in start position are not affected. 
     Rotate calculations are performed on unitA/B as if they were paralyzed units.
     example on 8x8 board: 
     A Rook moving into b3, paralyzes Rook on g6(8-3,8-b). 
