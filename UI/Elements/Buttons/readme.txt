@@ -15,3 +15,7 @@ need some confirmation dialog to avoid misclicks and user errors.
 
 A user should not perform extra actions to ensure that key functionality works(available by default, key action ensures its requirements are met )
 Example: Start/Stop button on video. Located at edge of screen, using the Triangle/Two-Blocks symbols that are universal for the format.
+
+
+Button margins: Key buttons should have a safety margin to
+reduce misclicks.
