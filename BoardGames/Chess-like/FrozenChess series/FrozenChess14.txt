@@ -1,6 +1,7 @@
 FrozenChess 14.0 beta(further changes will be added)
     Board Dimensions: 16x16(32 pawns+32 pieces)
     ----BOARD------------
+Planned:hexagonal grid board planned with 9-12 side squares.
 
         Code:
              
@@ -52,6 +53,7 @@ FrozenChess 14.0 beta(further changes will be added)
     Frog's Long Jump has now a paralysis penalty.
     Bounces can now use any obstacle square(occupied/dead/wall/unit) to "bounce off" as if it was edge of board.
     restricted Spawn and Morph maximum 16/8 units of type.
+    Rotation restricted to occupied lines/diagonals.
     
     --changes from v12--
 
@@ -1025,7 +1027,10 @@ he MCs queen to move d2-g2, triggering an explosion which kills it.
     of board cells can be rotated in
     90deg,180deg and 270deg turn,
     if the player controls the majority
-    of units in the square:
+    of units in the square and the units occupy
+    boundaries of at least one axis of rotation(i.e.
+    the rotated square edges cannot be longer than
+    max diagonal/line occupied:e.g. units at d2 and d3 cannot rotate squares with d4, only d2-d3-e3-e3 or d2-d3-c4-c2).
     ----------------------
     majority material points determination:
     values of units are summed and if they're
