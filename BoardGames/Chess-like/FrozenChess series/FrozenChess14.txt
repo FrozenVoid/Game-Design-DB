@@ -1,7 +1,6 @@
 FrozenChess 14.0 beta(further changes will be added)
     Board Dimensions: 16x16(32 pawns+32 pieces)
     ----BOARD------------
-Planned:hexagonal grid board planned with 9-12 side squares.
 
         Code:
              
