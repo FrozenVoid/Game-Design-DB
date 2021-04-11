@@ -61,6 +61,7 @@ FrozenChess 14.0 beta(further changes will be added)
     Templar removed: immunity to push transfer to rooks, abilities
     to Chancellor(x4).
     To reduce complexity of movelists: Loops, Multimove and Monads have been removed.
+    shadow pieces can now use abilities(effects restricted to shadow units)
     
     
     --changes from v12--
@@ -813,10 +814,8 @@ he MCs queen to move d2-g2, triggering an explosion which kills it.
     and dead squares.
     4.is limited by Walls and dead squares.
     (but can't create new walls).
-    5.Cannot use unit-specific
-    abilities(special moves bound to unit) 
-    in shadowform which affect the normal units or the board.
-
+    5.Special moves/abilities can only affect other shadow-mode units.
+    
     ShadowPiece can return to Normal state
     when its square is not attacked or
     occupied(by normal units,dead squares,walls,traps).
@@ -838,7 +837,7 @@ he MCs queen to move d2-g2, triggering an explosion which kills it.
     1.unprotected by any unit
     2.on same color square as shadow
     3.is capturable
-    shadow unit can shoot at it(via capture move) a shot which converts UnitA to shadowUnitA
+    shadow unit can shoot at it(via capture move) a shot which converts UnitA to shadowUnitA(forcing shadowing of unit)
     at cost of 10 move paralysis
     (of the Shadowstriker unit).
   
@@ -860,7 +859,7 @@ he MCs queen to move d2-g2, triggering an explosion which kills it.
    instead of Black/White square,
    once the capturer piece leaves(or not present).
    Dead Squares cannot moved into or
-   through(except Dragonflight(Dragon passive/non-shadow form),
+   through(except Dragonflight(Dragon passive),
    effectively removing them from the chess board.
   
 
@@ -880,6 +879,8 @@ he MCs queen to move d2-g2, triggering an explosion which kills it.
     boundaries of at least one axis of rotation(i.e.
     the rotated square edges cannot be longer than
     max diagonal/line occupied:e.g. units at d2 and d3 cannot rotate squares with d4, only d2-d3-e3-e3 or d2-d3-c4-c2).
+    extremes of rotated object bounds have to be occupied by
+    own pieces(as above).
     ----------------------
     majority material points determination:
     values of units are summed and if they're
