@@ -46,6 +46,7 @@ FrozenChess 14.0 beta(further changes will be added)
     Pawn Rotations replaced by free omnidirectional movement.
     Pawn Fuse Stacked Move removed.
     Pawn Fusion bomb removed.
+    Pawn promotion: 8 units of type limit
     Egg Fusion removed. 
     Fusion Absorb removed.
     Fusion restriction on non-pawn/non-King units.
@@ -327,10 +328,14 @@ at all squares.
     (capture a knight to get a knight)
     Example; pawn capturing a knight at d4,turns 
     into a knight at d4(new unit of same type).
+    Max:8 units of same type(i.e. no promotion if 8 units
+    of same type already exists)
 
     Last File promotion:
     pawns at last file, promote to any pieces
     except king and pawn(as in chess).
+     Max:8 units of same type(i.e. restricted to pieces with 7 or less
+     units on board)
 
     Pincer:unit whose orthogonal sides are
     occupied with pawns are paralyzed until
