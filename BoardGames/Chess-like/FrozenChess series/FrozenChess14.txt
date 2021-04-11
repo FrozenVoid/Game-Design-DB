@@ -32,7 +32,7 @@ FrozenChess 14.0 beta(further changes will be added)
 
 
     --changed from v13--
-    Overall: Major simplifications, less unit types.
+    Overall: Major simplifications,balance, less unit types.
     Tomb System removed: instead a Dead Square appears
     at capture place after capturer leaves it(Dead Squares
     cannot be moved in or through by any means effectively
@@ -62,7 +62,8 @@ FrozenChess 14.0 beta(further changes will be added)
     to Chancellor(x4).
     To reduce complexity of movelists: Loops, Multimove and Monads have been removed.
     shadow pieces can now use abilities(effects restricted to shadow units)
-    
+    Spawn and Dragon's egg limited to unit type x4 max.
+    Morph restricted to 8 units of same type max.
     
     --changes from v12--
 
@@ -236,8 +237,8 @@ FrozenChess 14.0 beta(further changes will be added)
     it can captured before its morph completes.
     Paralyzed,fused,dead,trapped units cannot morph(only normal state units).
     Morph resets all unit stats to default(as if new unit was created in its place).
-     Max units of same type 16 mortal/8 Immortal;
-    Restrictions: Morph is restricted for immortal units, max 16 immortal units can exist at same time(e.g. 16frogs).
+     Max units of same type is 8 per player(e.g. 8 queens);
+ 
     -----------------------
     Empower - piece which is protected by
     one piece(except Kings/Pawns)) gains its native movement
@@ -300,7 +301,8 @@ at all squares.
     a copy of itself(new unit of same type) in an empty nearby (3x3) square.
     Both the original unit and the spawn square need not to be threatened by enemy units(even if unit is immortal).
     After spawn both units(the original and copy are paralyzed(bypasses paralysis immunity)) for 40 moves for non-pawn units and 15 for pawns.
-    Restrictions: 16 units of same type max, and 8 for immortal unit type(e.g. Frog).
+    Restrictions: 4 units of same type max can exist, if 4 units
+    already exist of same type - player cannot spawn more.
  Example: knight at b3 spawns a Knight a b2,
  both knight enter 40 turn ubreakable paralysis(bypasses any immunity/counter).
 
@@ -448,8 +450,10 @@ at all squares.
     example: Dragon arriving at d4(empty), capture
     units at d5,d3,c3,c4,c5,e3,e4,e5.
 
-    Dragon's Egg:Dragon can Lay a single Egg(each dragon can have one Egg on board) in empty, non-threatened square 1sq away from itself(3x3 box).
-    The Egg doesn't move and evolves into Dragon after 60 moves(Growth).
+    Dragon's Egg:Dragon can Lay a single Egg(each dragon can have one Egg on board) in empty, non-threatened square 1sq away from itself(3x3 box).  
+    The Egg doesn't move and evolves into Dragon after 60 moves(Growth)
+    If there are 4+ Dragons already owned by player, all egg growth stops.
+    
     Eggs which are threatened with capture stop their Growth.
     Eggs which are paralyzed reset their growth timer to 0(60 moves).
     Captured Eggs switch sides to capturer side (dead eggs switch side in tomb) and are bound to dragon of players choice(works as if it laid the egg:cannot lay another until the current dies/evolves into dragon).
