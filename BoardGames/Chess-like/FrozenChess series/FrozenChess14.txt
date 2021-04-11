@@ -47,7 +47,8 @@ FrozenChess 14.0 beta(further changes will be added)
     Pawn Fuse Stacked Move removed.
     Pawn Fusion bomb removed.
     Pawn promotion: 8 units of type limit
-    Egg Fusion removed. 
+    Egg Fusion removed, eggs rebalanced & simplified. 
+    Eggs now grow in 8 turns(much faster).
     Fusion Absorb removed.
     Fusion restriction on non-pawn/non-King units.
     Rook's Tower passive removed.
@@ -456,16 +457,13 @@ at all squares.
     units at d5,d3,c3,c4,c5,e3,e4,e5.
 
     Dragon's Egg:Dragon can Lay a single Egg(each dragon can have one Egg on board) in empty, non-threatened square 1sq away from itself(3x3 box).  
-    The Egg doesn't move and evolves into Dragon after 60 moves(Growth)
+    The Egg doesn't move and evolves into Dragon after 8 turns(Growth)
     If there are 4+ Dragons already owned by player, all egg growth stops.
     
     Eggs which are threatened with capture stop their Growth.
-    Eggs which are paralyzed reset their growth timer to 0(60 moves).
-    Captured Eggs switch sides to capturer side (dead eggs switch side in tomb) and are bound to dragon of players choice(works as if it laid the egg:cannot lay another until the current dies/evolves into dragon).
+    Eggs which are paralyzed reset their growth timer to 0.
+    Converted Eggs switch sides to capturer side(but stop growth if 4+ dragons exist).
     Eggs cannot use any ability/move,but can be affected by ability.
-    If the dragon that laid the egg dies, the Egg growth is stalled until it respawns.
-    Capture MM Awards/CRR for Eggs is same as Pawns.
-    Maximum number of Eggs laid per Dragon is 7 after which the Dragon cannot lay more eggs(captured&bound eggs don't count toward limit), but can still Spawn dragons.
     Quickening doubles rate of Growth.
 
      
