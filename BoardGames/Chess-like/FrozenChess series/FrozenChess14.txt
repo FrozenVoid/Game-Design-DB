@@ -64,6 +64,7 @@ FrozenChess 14.0 beta(further changes will be added)
     shadow pieces can now use abilities(effects restricted to shadow units)
     Spawn and Dragon's egg limited to unit type x4 max.
     Morph restricted to 8 units of same type max.
+    Morph paralysis penalty removed.
     
     --changes from v12--
 
@@ -233,9 +234,8 @@ FrozenChess 14.0 beta(further changes will be added)
   
 
     --------
-    Morph - Any unit which is not threatened by enemy units(not in capture area for single move), can transform into another unit (with exception of Kings/pawns which cannot use Morph or be transformed into). The new unit will be in paralysis for 18 turns of player(bypasses paralysis immunity)..effectivelly putting it in stasis where
-    it can captured before its morph completes.
-    Paralyzed,fused,dead,trapped units cannot morph(only normal state units).
+    Morph - Any unit which is not threatened by enemy units(not in capture area for single move), can transform into another unit (with exception of Kings/pawns which cannot use Morph or be transformed into).
+    Paralyzed,fused,shadow mode,trapped units cannot morph(only normal state units).
     Morph resets all unit stats to default(as if new unit was created in its place).
      Max units of same type is 8 per player(e.g. 8 queens);
  
