@@ -67,7 +67,7 @@ FrozenChess 14.0 beta(further changes will be added)
     Spawn and Dragon's egg limited to unit type x4 max.
     Morph restricted to 8 units of same type max.
     Morph paralysis penalty removed.
-    
+    Queen's Gaze extends to all squares threatened.
     --changes from v12--
 
     New Terrain levels mechanic:units can raise/lower terrain on which they stand: can only move to lower/equal elevation.(level is -63 +63)
@@ -500,9 +500,8 @@ at all squares.
     Queen ability:
     Conversion:Diagonal bishop move(See conversion section).
 
-    Queen's Gaze: Pawns in 1sq radius(3x3)
-    are paralyzed(automatic,doesn't prevent
-    capture by pawn with multimove),cannot use abilities.
+    Queen's Gaze: Pawns in queen capture range 
+    are paralyzed(passive) and cannot use abilities.
 
     Queen's Poison:Units that captured a queen
     become paralysed for 6 moves.
