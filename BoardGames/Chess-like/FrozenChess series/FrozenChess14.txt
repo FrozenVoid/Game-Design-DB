@@ -68,6 +68,8 @@ FrozenChess 14.0 beta(further changes will be added)
     Morph restricted to 8 units of same type max.
     Morph paralysis penalty removed.
     Queen's Gaze extends to all squares threatened.
+    Rook's Launch limited to 8sq ortho.
+    
     --changes from v12--
 
     New Terrain levels mechanic:units can raise/lower terrain on which they stand: can only move to lower/equal elevation.(level is -63 +63)
@@ -480,7 +482,8 @@ at all squares.
 
     Launch:Throws unit(enemy/friendly) directly forward
     at Aim Direction(thrown units destroy wallsquares
-    and other units) until it meets edge of board or obstacle wall/unit which is destroyed in explosion (3x3).
+    and other units) until it meets edge of board,8sq limit or obstacle wall/unit which is destroyed in explosion (3x3).
+    
     THe unit which is used as ammo also dies in explosion.(new dead squares).
     e.g. a Rook at d2 launches d3 pawn forward to d7
     where it explodes(3x3) meeting a wall.
