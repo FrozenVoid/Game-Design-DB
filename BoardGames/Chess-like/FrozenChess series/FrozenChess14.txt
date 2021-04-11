@@ -6,7 +6,7 @@ FrozenChess 14.0 beta(further changes will be added)
              
 
 
-        RJAOTDCQKCDTOAJR
+        RJADTDCQKCDTDAJR
         RNFNFXBJJBXFNFNR
         PPPPPPPPPPPPPPPP
         PPPPPPPPPPPPPPPP
@@ -19,16 +19,16 @@ FrozenChess 14.0 beta(further changes will be added)
         pppppppppppppppp
         pppppppppppppppp
         rnfnfxbjjbxfnfnr
-        rjaotdcqkcdtoajr
+        rjadtdcqkcdtdajr
 
 
 
     ----------------
     (where R=Rook(x4^),
-    D=Dragon(x2^),J=Jester(x4^),C=Chancellor(x2^),T=Templar(x2^),
+    D=Dragon(x4^),J=Jester(x4^),C=Chancellor(x2^),T=Templar(x2^),
     Q=Queen(x1^),K=King(x1^),
     ,P=pawn(x32^),F=Frog(x4^),N=Nightrider(x4^),
-    A=Assassin(x2^),X=Crossbowman(x2^),O=Cannon(x2^),B=Bishop(x2^))
+    A=Assassin(x2^),X=Crossbowman(x2^),B=Bishop(x2^))
 
 
     --changed from v13--
@@ -54,6 +54,7 @@ FrozenChess 14.0 beta(further changes will be added)
     restricted Spawn and Morph maximum 16/8 units of type.
     Rotation restricted to occupied lines/diagonals.
     Knight removed: limited Knight leap transfer to Nightrider(x4)
+    Cannon removed: redudant with Rook launch, Dragons increased(x4)
     
     
     --changes from v12--
@@ -410,25 +411,8 @@ as its uses wastes a valuable blocker unit.
      units in the diagonals paths. 
 
 
-    ==========CANNON===========
-    Cannon:Doesn't move by itself(can be moved by abilities/other units):
-    Capture forward only(3 squares in rook direction,
-    3sq in bishop direction),can attack walls.
-    Cannon Blast ability:Skips every second square,
-    can only aim forward(max range 6sq).
-    square Explodes(3x3 centered on CB square,destroys walls/units)
-    Example: cannot at d1 can capture at d4,a1,g1,
-    can aim CB at squares d3,d5,d7,etc.
-    Direction of aim can changed as special move,
-    Cannon rotation, as in Pawn rotation.
-
-    Ability:WallBlast 1sq orthogonal range.
-    Destroys all wallsquares connected to attacked wallsquare orhogonally:
-    example; a cannon at a1 Wallblasts a wall at a2,
-    which leads to any wall square orthogonally 
-    connected to it to Wallblast itself, until the 
-  wall's end.(this encourages diagonal wall placement) 
-
+    
+    
 
     ===ASSASSIN======
     Bonus stat:De-shadowing paralysis penalty is divided by 3.
@@ -522,7 +506,7 @@ as its uses wastes a valuable blocker unit.
     Launch:Throws unit(enemy/friendly) directly forward
     at Aim Direction(thrown units destroy wallsquares
     and other units) until it meets edge of board or obstacle wall/unit which is destroyed in explosion (3x3).
-    THe unit which is used as ammo also dies in explosion.(new tombs).
+    THe unit which is used as ammo also dies in explosion.(new dead squares).
     e.g. a Rook at d2 launches d3 pawn forward to d7
     where it explodes(3x3) meeting a wall.
 
