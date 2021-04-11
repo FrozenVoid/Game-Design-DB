@@ -70,6 +70,8 @@ FrozenChess 14.0 beta(further changes will be added)
     Queen's Gaze extends to all squares threatened.
     Rook's Launch limited to 8sq ortho.
     
+    NEW:Pawn Split ability.
+    
     --changes from v12--
 
     New Terrain levels mechanic:units can raise/lower terrain on which they stand: can only move to lower/equal elevation.(level is -63 +63)
@@ -346,7 +348,8 @@ at all squares.
     example: a knight at d4 is paralysed
     by enemy pawns at c4 and e4.
 
-
+    Split: if player has <16 pawns, he can split a pawn
+   (turn a pawn into 2-pawn fused unit). 
 
     =========BISHOP============
     Bishop:Moves:as chess bishop(diagonals)
