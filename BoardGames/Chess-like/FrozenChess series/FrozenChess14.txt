@@ -7,7 +7,7 @@ FrozenChess 14.0 beta(further changes will be added)
 
 
         RJAOTDCQKCDTOAJR
-        RLFNFXBJJBXFNFLR
+        RNFNFXBJJBXFNFNR
         PPPPPPPPPPPPPPPP
         PPPPPPPPPPPPPPPP
 
@@ -18,7 +18,7 @@ FrozenChess 14.0 beta(further changes will be added)
 
         pppppppppppppppp
         pppppppppppppppp
-        rlfnfxbjjbxfnflr
+        rnfnfxbjjbxfnfnr
         rjaotdcqkcdtoajr
 
 
@@ -27,8 +27,8 @@ FrozenChess 14.0 beta(further changes will be added)
     (where R=Rook(x4^),
     D=Dragon(x2^),J=Jester(x4^),C=Chancellor(x2^),T=Templar(x2^),
     Q=Queen(x1^),K=King(x1^),
-    ,P=pawn(x32^),F=Frog(x4^),N=Nightrider(x2^),
-    A=Assassin(x2^),X=Crossbowman(x2^),O=Cannon(x2^),B=Bishop(x2^),L=Knight(x2^))
+    ,P=pawn(x32^),F=Frog(x4^),N=Nightrider(x4^),
+    A=Assassin(x2^),X=Crossbowman(x2^),O=Cannon(x2^),B=Bishop(x2^))
 
 
     --changed from v13--
@@ -53,6 +53,8 @@ FrozenChess 14.0 beta(further changes will be added)
     Bounces can now use any obstacle square(occupied/dead/wall/unit) to "bounce off" as if it was edge of board.
     restricted Spawn and Morph maximum 16/8 units of type.
     Rotation restricted to occupied lines/diagonals.
+    Knight removed: limited Knight leap transfer to Nightrider(x4)
+    
     
     --changes from v12--
 
@@ -308,42 +310,6 @@ at all squares.
     Restrictions: 16 units of same type max, and 8 for immortal unit type(e.g. Frog).
  Example: knight at b3 spawns a Knight a b2,
  both knight enter 40 turn ubreakable paralysis(bypasses any immunity/counter).
- 
-    ======UNIT TYPE==================
-    Siege Units:Units that can attack walls:
-    Cannon
-
-    Leapers:
-    Units can leap over units and walls/tombs.
-    Queen(Knightmove),Dragon(knightmove),
-    Chancellor,Jester,Frog,Assassin,Pawn(2sq ortho),Crossbowman(2sq diag),Nightrider(knight move diagonally).
-    Every other unit doesn't leap.
-
-    Riders(7):
-    Units that can move in
-    one direction to maximum range:
-    Rook,Queen,Dragon,Templar,Nightrider,Bishop.
-
-
-    Immobile(1):
-    Cannot move by itself:
-    Cannon.
-
-    Immortal(1);
-    units that cannot be captured.
-    Frog.
-
-    No_Capture;Cannot Capture Units:
-    Jesters(except self-explosion),Frog,Crossbowman
-
-    High-value Units:
-    Rook(siege/tower),
-    Crossbowman(range shot),
-    Templar(shield/Blizzard),
-    Dragon(Dragon's Fire/Eggs),
-    Jester(paralysis/explodes),
-    Chancellor(teleswap)
-    Queen(capture range).
 
     -==Units and their moves==
     ==========PAWN==========
@@ -415,31 +381,8 @@ This special ability is useful at max frog capacity(8)
 as its uses wastes a valuable blocker unit.
 
 
-
-    =====KNIGHT==============
-    Knight:as chess knight+optionally 1sq
-    forward diagonally:
-    Example: at d4 any knight move or
-    to c3,c5,e3,e5.
-
-    Knight Special Moves:
-    Knight's Leap - Knight can capture by
-    leaping over(both squares captured at once)
-    pieces as if it was a normal capture
-    (can capture along with normal capture),
-    even within double move(capture ends movement, cannot capture more than 3 pieces per turn).
-    Single move can capture 3 pieces(1 normal,2 leap).
-    Example a knight at d4 capturing a bishop at e6
-    also captures a pawn at d5, and rook at e5,
-    as both are in knight-leap move-paths(L and its mirror).
-
-    Knight's March: Can move 4 moves in a turn if no capture occurs.
-    Movement is restricted to one of 4 cardinal directions,
-    but the path can vary(e.g.movement is up, varying left/right).
+   
   
-
-    Knightmare:pawns in 1move capture range can't
-    use special moves/ability/capture(can only move 1sq forward and cannot change direction/fuse/etc). The ability is passive and remains under paralysis.
 
     ==NIGHTRIDER===
     Moves as knight diagonally(repeated knight moves
@@ -447,7 +390,8 @@ as its uses wastes a valuable blocker unit.
     , captures as moves. 
     Range is never reduced due capture
     (can move up to edge of board).
-    Lacks knight abilities.
+   Special move:
+   Knight leap - capture a unit leaped over(limited 1 per turn).
     
 
     ====CROSSBOWMAN=====
