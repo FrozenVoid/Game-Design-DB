@@ -6,7 +6,7 @@ FrozenChess 14.0 beta(further changes will be added)
              
 
 
-        RJADTDCQKCDTDAJR
+        RJADCDCQKCDCDAJR
         RNBNXXBJJBXXNBNR
         PPPPPPPPPPPPPPPP
         PPPPPPPPPPPPPPPP
@@ -19,13 +19,13 @@ FrozenChess 14.0 beta(further changes will be added)
         pppppppppppppppp
         pppppppppppppppp
         rnbnxxbjjbxxnbnr
-        rjadtdcqkcdtdajr
+        rjadcdcqkcdcdajr
 
 
 
     ----------------
     (where R=Rook(x4^),
-    D=Dragon(x4^),J=Jester(x4^),C=Chancellor(x2^),T=Templar(x2^),
+    D=Dragon(x4^),J=Jester(x4^),C=Chancellor(x4^),
     Q=Queen(x1^),K=King(x1^),
     ,P=pawn(x32^),N=Nightrider(x4^),
     A=Assassin(x2^),X=Crossbowman(x4^),B=Bishop(x4^))
@@ -58,6 +58,8 @@ FrozenChess 14.0 beta(further changes will be added)
     Knight removed: limited Knight leap transfer to Nightrider(x4)
     Cannon removed: redudant with Rook launch, Dragons increased(x4)
     Frog removed: slime explosion transfer to Jester,bishop and crossbowman increased to x4,x4 units quantity.
+    Templar removed: immunity to push transfer to rooks, abilities
+    to Chancellor(x4).
     
     --changes from v12--
 
@@ -493,7 +495,9 @@ at all squares.
     units along the movepath are in paralysis for 1 move(next turn).
     Green=movement, purple=swipe paralysis.
     e.g. rook moving d2-d7, swipes c2-c7/e2-e7 lines.
-
+    Passive:
+    Immunity to Push.(passive, in non-box, non-paralysed form.)
+  
     ===========QUEEN============
 
     Queen:as chess rook,bishop or knight(Amazon):
@@ -668,50 +672,40 @@ at all squares.
     Quickening lasts 64(normal,global player moves)
     moves per square(cumulative with multiple casts,+64),
     and cost 5 paralysis moves for chancellor.
+    
+    Blizzard:
+    Cost: 20 moves paralysis.
+    Cast Range 1-5sq diagonally.
+    Area(5x5) around center of Blizzard is paralyzed for 4 turns.Affects friendly&enemy units(except kings and the 
+    casting Chancellor itself).
 
+    Avalanche:
+    Cost: 10 moves paralysis.
+    Cast Range as rook movement range(bypasses units).
+    All units at line of sight of rook range are pushed to edge of board or first obstacle.
+    e.g. a chancellor at d8, will push enemy units
+    at d7,d5,d4,d2 into d4,d3,d2,d1.
 
     Immunity to SwapShot from enemy.
     Immunity to Jesters presence(Jesters paralysis).
-
-    =========TEMPLAR==============
-    Templar:as Rook or diagonally 2 squares
-    and optionally 1 square diagonally to side.
-    T-like capture area.
-    e.g. a Templar at d4 can move 
-    as Rook, or to f6,a6,a2,f2 and e7,g5,e1,g3,c1,a3,
-    a5,c7(edges of T),the diagonal/T move is counted 
-    as leap of knight.
-    
+   
     special ability:
-
     Templar's Shield:
-    Units cannot capture The Templar if they
+    Units cannot capture Chancellor if they
     are in his capture range
-    (if a templar can capture your unit
+    (if a Chancellor can capture your unit
     at the square from where
     you attempt to capture it,
-    it cannot capture the templar).
+    it cannot capture the Chancellor).
     Range of Shield is 1 normal move without bounce.
 
     
 
    
 
-    Blizzard:
-    Cost: 20 moves paralysis.
-    Cast Range as T-shape movement range(non-rook).
-    Area(5x5) around center of Blizzard is paralyzed for 4 turns.Affects friendly&enemy units(except kings and the 
-    casting Templar itself).
-    
 
-    Avalanche::
-    Cost: 10 moves paralysis.
-    Cast Range as rook movement range(bypasses units).
-    All units at line of sight of rook range are pushed to edge of board or first obstacle.
-    e.g. a templar at d8, will push enemy units
-    at d7,d5,d4,d2 into d4,d3,d2,d1.
    
-    Immunity to Push.(passive, in non-box, non-paralysed form.)
+   
 
     =======ADVANCED MOVES===========
     Special Abilities of units are unavailable during advanced movement: exception is attack ability(like conversion/paralysis/capturemove) during multimove, which when used ends multimove.
