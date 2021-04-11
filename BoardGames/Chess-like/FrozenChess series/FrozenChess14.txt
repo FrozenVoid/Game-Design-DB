@@ -60,6 +60,8 @@ FrozenChess 14.0 beta(further changes will be added)
     Frog removed: slime explosion transfer to Jester,bishop and crossbowman increased to x4,x4 units quantity.
     Templar removed: immunity to push transfer to rooks, abilities
     to Chancellor(x4).
+    To reduce complexity of movelists: Loops, Multimove and Monads have been removed.
+    
     
     --changes from v12--
 
@@ -142,28 +144,13 @@ FrozenChess 14.0 beta(further changes will be added)
     ====================================================
     Key mechanics
     ===============
-
-    Loop: a preset Circular path can be declared as move for a unit(similar to Monad), which it would do each move(before player's turn,one move of loop per turn). Units in Loop cannot be controlled by player,but can be affected by any enemy move. Loop path must end at start square of loop. Loops can be thought as adding anothe Thread to the game(separate movelist to player controlled side), which is indepedently executed for the unit:
-    the enemy knows the squares of entire loop and can prepare its own counters, even sacrificing own units into
-    counter-loops to move and capture the looped unit.
-    Loops are entered like a movelist of Monad. Loops will repeat forever until stop on capture/paralysis or loop path blocked/illegal to move into. Units resume movement 
-    when path clears, but once in Loop the unit is forfeit
-    form player control forever(transferred to Loop domain).
-    A limit of 16 maximum moves in a loop 
-    with +2 per capture by unit exists:
-    e.g. a knight that captured 2 pawns can
-    enter a 16+4=20 move loop.
-
-
     Box/Unbox: Special move by changing any unit into a Box(a safe transport unit containing the player unit).
     Unbox(only by owning player) removes unit from Box mode at cost of paralysis of N/3(where N is amount of squares travelled in Box form). Boxes cannot move, but can be pushed/teleswapped/pulled/moved by external means(including moves by enemy).
     Box can be thought of as safe container that 
    cannot be captured, and can be used to block paths
    or landing squares, as well as moving units into
    specific position for tactical advantage.
- 
-    
-    
+   
     Syzygy: A non-pawn unitA moving into mirror portal(board square where board is mirrored 
     x,y->Len-y,Len-x) square of enemy unitB of same kind(A and B of same type) locks both units in place as if they are both paralyzed. Units A/B cannot be selected/used while in this state.
     Syzygy is removed when one of units is rotated/teleswapped/swapshotted/pulled/pushed or moved by external means. 
@@ -714,15 +701,9 @@ at all squares.
     Double Move - A unit can do 2 moves per
     turn if they are not captures or
     special moves(i.e.normal moves from A to B).
-
     Checks/Checkmates are counted as normal moves.
 
-    MultiMove- rewarded for unit captures:
-    Multimove nullifies DoubleMove ability
-    (as it is an upgraded form) for a piece
-    that gets MultiMove..
-    It allows N unrestricted moves/specialmoves
-    per turn for the unit that possesses the ability.
+
 
     Diagonal Bounce - chess Bishop-type movement
     can reflect
@@ -860,35 +841,7 @@ he MCs queen to move d2-g2, triggering an explosion which kills it.
     shadow unit can shoot at it(via capture move) a shot which converts UnitA to shadowUnitA
     at cost of 10 move paralysis
     (of the Shadowstriker unit).
-    ---------Shadow Monads----------
-    Monads: Shadowed pieces may enter Monad state which they cannot leave by themself.
-    States of Monad:
-    Inactive:paralyzed, but cannot be captured.
-    Activated:performs multimove sequence in 1 turn and stops(at sequence end).
-    Monad state:
-    1.Player first enters a sequence of 1 to 16 moves, which will be performed in shadow-form(future moves).
-    Moves can include De-shadowing and any special ability(Paralysis applies normally for use of De-shadow/ability). The sequence is a prearranged multi-move than would be performed if Monad is activated.
-    2.Piece Enters an inactive Monad state, where it cannot move/use ability/capture and cannot be affected by the game mechanics except rotate.
-    3.Activation:when monad is activated, the player Loses control of the piece,
-    as it performs the multi-move sequence until the moves
-    become illegal,piece dies/paralyzed or sequence completes. The player regains control of piece at next turn(monad activation->monad multi-move->
-    next player turn(regains control)
-
-    6.At all times the Monad sequence of moves is visible to enemy players and cannot change once created.Moves of monad are independent of player and occur after enemy moves.
-    -=--------------
-    Monad Activation:
-    Monad(as all shadow units) can share squares with any piece.
-    by Shadowform:enemy piece at square of Monad, enters shadow form.
-    by Shadowstrike:enemy piece at square of Monad, is shadowstriken.
-    by push:enemy shadow piece is pushed into square of Monad.
-    by pull:enemy shadow piece is pulled into square of Monad.
-    by other method:enemy shadow piece becomes present at square of Monad(by portals/teleswap/swapshot/etc).
-    Shadow units which existed at square of Monad before its
-    creation don't affect it, until they move away: moving away activates the monad(leaving square of Monad).
-
-    ---------------
-
-
+  
     Note:The game mechanic allows one to deliver
     de-shadowed checkmate, or de-shadow with
     Guards(who can also de-shadow earlier),
@@ -899,13 +852,7 @@ he MCs queen to move d2-g2, triggering an explosion which kills it.
     ----------------------------
     ====CAPTURE==============
     Capture mechanics:
-    Capture Multimove Award:If a non-pawn
-    piece captures 3 non-pawns or
-    10 pawns(separate counters for each)
-    it gets +1 move(multimove ability upgrade),
-    repeated for each series of captures
-    (+1 extra move per 3or10).
-    
+   
     -------------------------
    Dead Squares:
    After any unit has been captured,
