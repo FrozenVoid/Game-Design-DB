@@ -7,7 +7,7 @@ FrozenChess 14.0 beta(further changes will be added)
 
 
         RJADTDCQKCDTDAJR
-        RNFNFXBJJBXFNFNR
+        RNBNXXBJJBXXNBNR
         PPPPPPPPPPPPPPPP
         PPPPPPPPPPPPPPPP
 
@@ -18,7 +18,7 @@ FrozenChess 14.0 beta(further changes will be added)
 
         pppppppppppppppp
         pppppppppppppppp
-        rnfnfxbjjbxfnfnr
+        rnbnxxbjjbxxnbnr
         rjadtdcqkcdtdajr
 
 
@@ -27,11 +27,12 @@ FrozenChess 14.0 beta(further changes will be added)
     (where R=Rook(x4^),
     D=Dragon(x4^),J=Jester(x4^),C=Chancellor(x2^),T=Templar(x2^),
     Q=Queen(x1^),K=King(x1^),
-    ,P=pawn(x32^),F=Frog(x4^),N=Nightrider(x4^),
-    A=Assassin(x2^),X=Crossbowman(x2^),B=Bishop(x2^))
+    ,P=pawn(x32^),N=Nightrider(x4^),
+    A=Assassin(x2^),X=Crossbowman(x4^),B=Bishop(x4^))
 
 
     --changed from v13--
+    Overall: Major simplifications, less unit types.
     Tomb System removed: instead a Dead Square appears
     at capture place after capturer leaves it(Dead Squares
     cannot be moved in or through by any means effectively
@@ -44,6 +45,7 @@ FrozenChess 14.0 beta(further changes will be added)
     Pawn Accceleration removed.
     Pawn Rotations replaced by free omnidirectional movement.
     Pawn Fuse Stacked Move removed.
+    Pawn Fusion bomb removed.
     Egg Fusion removed. 
     Fusion Absorb removed.
     Fusion restriction on non-pawn/non-King units.
@@ -55,7 +57,7 @@ FrozenChess 14.0 beta(further changes will be added)
     Rotation restricted to occupied lines/diagonals.
     Knight removed: limited Knight leap transfer to Nightrider(x4)
     Cannon removed: redudant with Rook launch, Dragons increased(x4)
-    
+    Frog removed: slime explosion transfer to Jester,bishop and crossbowman increased to x4,x4 units quantity.
     
     --changes from v12--
 
@@ -184,7 +186,7 @@ FrozenChess 14.0 beta(further changes will be added)
     with any capture/abilitymove.
     Example:
    a knight at b3 cannot capture a knight at d4.
-    Exceptions:pawns,kings(can aid checkmate) and immortal units(frogs) can affect each other(but not capture if non-pawn unit).
+    Exceptions:pawns,kings(can aid checkmate) can affect each other(but not capture if non-pawn unit).
 
     ----
     Shift - Special move: move a line orthogonally on board where only your units exist, wrapping over the edge of board. Squares don't change color, only units are shifted
@@ -345,9 +347,6 @@ at all squares.
     by enemy pawns at c4 and e4.
 
 
-    Pawn Fusion Bomb:fuse 7 pawns to explode 5x5 at fused unit square.
-    example: a 6-fused pawn at d4 is fused with another
-    pawn, it explodes in 5x5 square centered on d4.
 
     =========BISHOP============
     Bishop:Moves:as chess bishop(diagonals)
@@ -358,28 +357,7 @@ at all squares.
     Ability:Conversion(Diagonal)
 
 
-    =========FROG=============
 
-    Cannot capture or be captured.
-    Cannot land on tombs/walls.
-    Serves to block or disrupt enemy movement.
-    moves:2-3 diag,3ortho
-    example: a Frog at d4 can leap diagonally
-    to f6,g7,b6,a7,b2,a1,f2,g1,
-    and leap orthogonally to d1,d7,a4,g4,
- 
-
-    Long Jump: Jumps to a square near(3x3) another(Enemy or Friendly) Frog
-    from anywhere on board.This is a tactical
-    move of a frog, which should be used instead of
-    its normal move.
-    Long Jump adds paralysis of N/2 where N is distance in squares.
-   Example: from jumps from b2 to a7 next to a8 knight.
-   
-    Slime Explosion:Frog explodes(dies),sending slime at units in nearby (3x3) squares
-    which gets paralyzed for 11 moves(slime doesn't kill).
-This special ability is useful at max frog capacity(8)
-as its uses wastes a valuable blocker unit.
 
 
    
@@ -629,6 +607,9 @@ as its uses wastes a valuable blocker unit.
     Detonate:
     Explodes self-as if it was captured,3x3 explosion.
     Available when the jester stays on same place for 10 moves.
+    
+    Slime explosion; explode 5x5 square centered on jester,
+    creating slime(4 move paralysis), jester enters 16 move paralysis.
     
     Distract:
     A jester can Cast(normal move range) distract on a square.
