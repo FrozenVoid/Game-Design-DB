@@ -1,0 +1,13 @@
+A time bonus applies to item use independent of its attributes
+or charge-systems(that apply to temporary use patterns):
+The system is similar to skill-use upgrades(where use of skill
+upgrades its attributes).
+
+Several types of upgrades are common:
+1.Item gains levels with use, unlocking new abilities/techniques/skills
+ that are item-bound and require item use to upgrade.
+2.Item gains new attributes with proportional levels it gains.
+3.Item attributes are upgraded with use(permanently, without level bounds)
+4.Item mutation: item visual appearance/class upgrades with levels of use.
+
+
