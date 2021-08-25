@@ -1,0 +1,13 @@
+The below scale tranlates relative quality of property/class
+that can be shown to user interface (instead of showing numerals of limited range)
+Internal level | Verbal descriptor
+10 Perfect
+9 Excellent
+8 Great
+7 Good
+6 Fine
+5 Mediocre
+4 Subpar
+3 Deficient
+2 Inferior
+1 Worthless
