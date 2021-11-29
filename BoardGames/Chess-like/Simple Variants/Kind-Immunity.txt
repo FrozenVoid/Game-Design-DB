@@ -1,0 +1,4 @@
+A variant which has Kind Immunity
+makes a piece-type A immune to
+any move/effect/spell from
+enemy piece-type A.
