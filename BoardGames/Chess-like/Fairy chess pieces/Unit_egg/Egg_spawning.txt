@@ -1,0 +1,23 @@
+Egg spawning is the ability 
+of piece-type or spell cast
+on unit which produces the egg
+at unoccupied,safe square(untargeted
+by enemy or area spell)
+of player choice in 3x3 grid 
+center on egg-production unit.
+
+Variants:
+1.Innate ability:
+e.g. dragon able to spawn eggs
+at some cooldown cost(N player moves).
+
+2.Spellcast:
+Spellcaster unit cast 'Egg spawn'
+on mundane unit to produce an 
+egg at some cooldown cost per spell.
+
+3.Enemy spell:
+Enemy spawns own egg(s) of player's unit
+piece-type,though this is rarely
+useful due eggs easily being captured
+ in such case.
