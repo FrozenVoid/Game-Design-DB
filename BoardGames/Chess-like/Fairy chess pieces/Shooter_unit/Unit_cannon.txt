@@ -1,0 +1,23 @@
+A unit cannon is a piece that
+shoots units.
+Typically an 'ammo' unit(usually
+a low-rank/pawn unit) is pulled
+ or steps itself into cannon piece
+ square to charge the cannon.
+After charge, the unit-cannon
+can shoot the piece towards
+its destination square in attack range.
+
+Variations:
+1.Exploding unit:
+the unit being shot explodes in 3x3
+ range of destination, killing all pieces
+ in 3x3 range.
+2.Portal cannon:
+the unit being shot
+arrives unharmed as if by portal.
+3.Spell-cannon: unit-cannon
+uses the unit as fuel to cast
+some spell on target area.
+The unit being 'shot' is consumed
+in process as in #1.
