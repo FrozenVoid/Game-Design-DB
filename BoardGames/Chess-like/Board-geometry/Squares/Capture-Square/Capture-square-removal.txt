@@ -1,0 +1,9 @@
+In this rule, the square of capture
+of any piece is removed from board,
+disallow movement through/into it.
+Typically the square is removed
+when the capturer leaves it,
+but some variants may remove
+the capturing unit with it(as default
+or per player choice to create
+a 'dead square')
