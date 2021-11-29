@@ -1,0 +1,9 @@
+This rule disallows moving 
+a non-pawn piece of same kind
+as previous move,e.g. no
+two consecutive knight-piece moves:
+this rule usually ignores
+ pawn moves and situations where
+ only one non-king/non-pawn type
+ of piece remains, as well as 
+ lack of alternative moves
