@@ -1,0 +1,10 @@
+Obstacle unit which can be
+targeted and moved into by enemy
+or allied units, which results
+in them 'slipping' into next
+square of the their movement
+path, bypassing the obstacle unit.
+e.g. slip obstacle unit
+at d3 being moved from d6 results
+in moving unit placed in d2 instead
+of d3.
