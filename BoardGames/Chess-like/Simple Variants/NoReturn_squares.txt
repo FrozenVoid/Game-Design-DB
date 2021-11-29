@@ -1,0 +1,10 @@
+This rule forbids moving to 
+last N squares from which the 
+moving unit has made a move,
+typically disallowing
+moving back into starting square
+of last move, but can be extended
+to any number of 'last-touched squares',
+with extreme variants only
+allowing movement into least-recently
+or untouched square.
