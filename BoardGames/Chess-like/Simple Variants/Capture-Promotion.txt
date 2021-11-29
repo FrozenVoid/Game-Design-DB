@@ -6,3 +6,7 @@ In this variant a piece can
  to a Knight, but player might
  promote a knight capturing bishop
  to a Bishop.
+
+Variations:
+A popular variant is to 
+use this for pawn promotions only, with pawn assuming form of any captured piece at its square.
