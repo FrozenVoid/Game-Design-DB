@@ -1,0 +1,10 @@
+A rotation move allows the player
+with control of an abstract
+ NxN square to rotate it at will,
+which moves pieces to new locations
+in the square borders.
+
+Control can be determined by majority
+of pieces or their combined 'weight score'
+in some variants:e.g. pieces
+on own-color squares count twice as much .
