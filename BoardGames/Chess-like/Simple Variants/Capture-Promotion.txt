@@ -1,0 +1,8 @@
+In this variant a piece can
+ promote to its captured unit 
+ piece-type if the player
+ wants it.
+ e.g. Queen capturing knight will not promote
+ to a Knight, but player might
+ promote a knight capturing bishop
+ to a Bishop.
