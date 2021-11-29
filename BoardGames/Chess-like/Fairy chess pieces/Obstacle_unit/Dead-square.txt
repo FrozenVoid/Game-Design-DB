@@ -1,0 +1,9 @@
+Dead square or 'removed/destroyed square'
+is a board state of a square
+which has been rendered incapable
+of supporting movement due
+spellcast or some game event/mechanism.
+
+Some variations also forbid
+ leaping over the dead square
+ and shooting through the square.
