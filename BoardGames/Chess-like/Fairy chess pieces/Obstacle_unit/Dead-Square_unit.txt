@@ -1,0 +1,10 @@
+A dead-square unit is immobile
+ piece that occupies a square
+ that cannot be moved/captured or
+ affected for the rest of the game:
+ usually this is some end-state
+ of obstable unit with limited
+ number of moves or result
+ of permanent effect of spell,
+ which effectivelly creates
+ a 'dead square'.
