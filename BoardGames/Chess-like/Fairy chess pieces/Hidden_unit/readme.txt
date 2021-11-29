@@ -1,5 +1,5 @@
-Also named hidden/stasis units:
-such units can enter a hidden/burrowed
+Also named burrowed/stasis units:
+such units can enter a hidden/burrowed/stasis 
  state where they cannot move but
  cannot be targeted(except some spells).
  
