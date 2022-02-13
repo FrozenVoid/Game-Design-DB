@@ -1,0 +1,5 @@
+Quadratic scroll increments/decrements
+the value in box by square of 
+scrolled distance:
+e.g. 5 scrolls up = +25 val
++1(6 continious scrolls)=+36 val
