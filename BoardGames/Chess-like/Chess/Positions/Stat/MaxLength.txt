@@ -1,0 +1,2 @@
+5899 max moves per 50-moves
+https://chess.stackexchange.com/questions/4113/longest-chess-game-possible-maximum-moves
