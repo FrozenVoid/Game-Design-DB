@@ -1,0 +1,2 @@
+218 possible moves per position.
+https://chess.stackexchange.com/questions/4490/maximum-possible-movement-in-a-turn
