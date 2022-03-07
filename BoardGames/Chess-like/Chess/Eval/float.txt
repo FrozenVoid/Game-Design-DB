@@ -1,0 +1,3 @@
+Using float/double would allow
+to tune values at extreme precision
+instead of centipawn units.
