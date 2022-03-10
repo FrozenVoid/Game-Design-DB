@@ -1,0 +1,5 @@
+Movecount mobility is 
+calculated by multiplying
+ PieceMult*PieceMoves
+Where PieceMult is a fraction
+of material value of e.g. Queen
