@@ -1,0 +1,4 @@
+3 bit From square(0-63)
+3 bit To Square(0-63)
+2 bit flags: 0-3(promoted piece QRBK,
+or special move flags(castling/ep/check))
