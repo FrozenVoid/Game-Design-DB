@@ -1,0 +1,6 @@
+A compressed file of level/map
+can be used directly as seed
+to music generators.
+Fractal and "harmonizing" algorithms
+ can be seeded once each N minutes
+ from file data.
