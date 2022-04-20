@@ -1,0 +1,11 @@
+Buttons which gate character/player capability
+to use various functions:
+"You have researched digging with a shovel"
+"You have researched longer range trebuchets"
+Alternatives:
+RPG- avoid "capability research":
+Consumable materials, limited durability,
+level requirements
+
+Strategy/Other- dynamic/selective enablement:
+Unit levels, single-capability buildings,addon unit purchase.
