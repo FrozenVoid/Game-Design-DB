@@ -1,0 +1,8 @@
+Most chess engines errors and blunders
+occur due pruning in early search depths,
+as variations can have unexpected tactical
+ benefits where sacrifices or combinations
+seem as low eval boards.
+Human advantage over engines is ability
+to deeply analyze these early move 
+combinations and their implications.
