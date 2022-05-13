@@ -1,0 +1,8 @@
+Null move is an illegal move that
+is often used to speed up search with
+NullMove heuristic: switching side to move
+to enemy side and reducing search depth 
+by N. Where N is number of turns given up
+or "Null moves".
+
+https://en.wikipedia.org/wiki/Null-move_heuristic
