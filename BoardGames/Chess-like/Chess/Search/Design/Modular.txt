@@ -1,0 +1,5 @@
+Chess engine search function 
+can be made modular by spinning off parts
+as function calls. If multiple copies
+of search function are produced by compilation,
+the modular design will reduce the space used.
