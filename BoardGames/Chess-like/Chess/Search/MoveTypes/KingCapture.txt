@@ -1,0 +1,7 @@
+King capture is an illegal move that
+can be used to speed up search,
+with large material value for king.
+The search in this case treats checkmates
+as normal and doesn't prune "counters"
+ as next board has large negative score.
+ https://en.wikipedia.org/wiki/Chess_piece_relative_value#cite_ref-8
