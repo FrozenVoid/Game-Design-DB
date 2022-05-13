@@ -1,0 +1,2 @@
+Judy arrays are a fast,collision-free alternative
+to hash tables used in most engines.
