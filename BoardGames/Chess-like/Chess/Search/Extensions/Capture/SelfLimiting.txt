@@ -1,0 +1,4 @@
+Capture extensions are self-limiting due
+recapture chains having material limits,
+making it safer to use Capture extensions
+with larger depth.
