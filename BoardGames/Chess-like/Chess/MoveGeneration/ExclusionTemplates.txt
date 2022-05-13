@@ -1,0 +1,14 @@
+Move generation can be sped up, 
+by switching off features at compile time,
+Creating multiple varitions of move generation
+function that exclude castling, en passant, 
+specific piece types,etc
+
+Example:
+Castling switch off:
+a search from a position that has no 
+castling opportunity can switch permanently
+to "CastlingLess movegen" that doesn't 
+consider the Castling as a boolean constant
+that is "false" at start of function
+e.g. template <bool HasCastling>
