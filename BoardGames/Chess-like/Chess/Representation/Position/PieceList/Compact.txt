@@ -1,1 +1,1 @@
-KingSquare,numPawns,[PawnSquares],Square{QRBN}
+KingSquare,numPawns,[PawnSquares],numPieces,Square{QRBN}
