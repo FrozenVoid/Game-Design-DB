@@ -1,0 +1,6 @@
+In this variant the board
+with most pieces(usually oldest in time) is the one
+where game plays, until pieces are captured:
+if the board has less pieces then gameplay switches
+to next richest-in-pieces board(chronological priorioty
+to oldest if N equal boards).
