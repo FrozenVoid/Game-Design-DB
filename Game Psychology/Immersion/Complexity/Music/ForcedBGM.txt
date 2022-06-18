@@ -1,0 +1,9 @@
+in a immersive setting with environmental
+sound sources and dynamic, moving sound generators
+(incl. particle sounds), Background music
+will distract from in-world immersion:
+Music that does fit an environment could be unobtrusive
+but will sound artificially inserted
+and mood-forcing element that is ingenuine
+and lacks felxibility to response to actual
+"mood of the player's world".
